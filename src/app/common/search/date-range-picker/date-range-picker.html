@@ -1,0 +1,50 @@
+<div class="date-picker-wrapper position-relative">
+    <input
+        type="text"
+        class="date-input form-control form-select"
+        [value]="displayValue"
+        readonly
+        (click)="toggle()"
+    />
+    <div class="date-picker-container date-picker" [class.active]="open">
+        <div class="calendar-navigation">
+            <button type="button" class="nav-button prev-month" (click)="prevMonth()">
+                <i class="ri-arrow-left-s-line"></i>
+            </button>
+            <div class="month-year">
+                {{ monthLabel }}
+            </div>
+            <button type="button" class="nav-button next-month" (click)="nextMonth()">
+                <i class="ri-arrow-right-s-line"></i>
+            </button>
+        </div>
+        <div class="calendar-grid">
+            <div class="weekdays">
+                @for (w of weekdays; track $index) {
+                    <div class="weekday">
+                        {{ w }}
+                    </div>
+                }
+            </div>
+            <div class="days">
+                @for (cell of days; track $index) {
+                    <div
+                        class="day"
+                        [ngClass]="{
+                            'other-month': cell.isOtherMonth,
+                            'today': isToday(cell),
+                            'start': isStart(cell),
+                            'end': isEnd(cell),
+                            'selected': isStart(cell) || isEnd(cell),
+                            'in-range': isInRange(cell)
+                        }"
+                        (click)="onDayClick(cell)"
+                    >
+                        {{ cell.date.getDate() }}
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <i class="ri-calendar-2-line icon"></i>
+</div>

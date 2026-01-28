@@ -1,0 +1,279 @@
+@use "../partners/partners.scss" as *;
+
+.process-area {
+    .col-lg-3 {
+        &:last-child {
+            .process-single-item {
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+.process-single-item {
+    position: relative;
+
+    .icon {
+        width: 100px;
+        height: 100px;
+        line-height: 113px;
+        text-align: center;
+        display: inline-block;
+        border-radius: 100px;
+        background-color: var(--primaryColor);
+        color: var(--whiteColor);
+        margin-bottom: 25px;
+        position: relative;
+        z-index: 1;
+
+        i {
+            font-size: 50px;
+        }
+        .count {
+            width: 50px;
+            height: 50px;
+            line-height: 43px;
+            text-align: center;
+            display: inline-block;
+            border-radius: 50px;
+            background-color: var(--grayColor);
+            color: var(--blackColor);
+            position: absolute;
+            top: 0;
+            right: -27px;
+            font-size: 24px;
+            font-weight: 700;
+            font-family: var(--headingFontFamily);
+        }
+    }
+    h3 {
+        font-size: 24px;
+    }
+    &.style-two {
+        .icon {
+            background-color: transparent;
+            border: 1px dashed var(--primaryColor);
+            color: var(--primaryColor);
+
+            .count {
+                background-color: var(--whiteColor);
+            }
+        }
+    } 
+}
+.how-it-works-wrap {
+    background-color: var(--grayColor);
+    border-radius: 10px;
+}
+.how-it-works-single-item {
+    border-radius: 10px;
+    border: 1px solid #E0E0E0;
+    background: var(--whiteColor);
+    padding: 30px 24px;
+    transition: var(--transition);
+
+    .icon {
+        color: var(--primaryColor);
+        font-size: 50px;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        display: inline-block;
+        border: 1px dashed var(--primaryColor);
+        text-align: center;
+        border-radius: 100px;
+    }
+    .count {
+        width: 50px;
+        height: 50px;
+        line-height: 42px;
+        text-align: center;
+        display: inline-block;
+        color: var(--blackColor);
+        font-family: var(--headingFontFamily);
+        font-size: 24px;
+        font-weight: 700;
+        background-color: var(--secondaryColor);
+        border-radius: 50%;
+        position: relative;
+        z-index: 1;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -55px;
+            right: 0;
+            left: 0;
+            margin: auto;
+            width: 1px;
+            height: 55px;
+            background-color: #D7DAE0;
+        }
+    }
+    h3 {
+        font-size: 24px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+    p {
+        color: var(--bodyColor);
+    }
+    ul {
+        li {
+            span {
+               color: var(--bodyColor); 
+            }
+        }
+    }
+    i {
+        font-size: 18px;
+        color: var(--primaryColor);
+    }
+    &:hover {
+        transform: rotate(0) !important;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .process-single-item {
+        .icon {
+            margin-bottom: 15px;
+            width: 80px;
+            height: 80px;
+            line-height: 90px;
+            i {
+                font-size: 40px;
+            }
+            .count {
+                width: 40px;
+                height: 40px;
+                line-height: 33px;
+                font-size: 20px;
+                right: -20px;
+            }
+        }
+        h3 {
+            font-size: 20px;
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 992px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .process-single-item {
+        .icon {
+            margin-bottom: 15px;
+            width: 80px;
+            height: 80px;
+            line-height: 90px;
+            i {
+                font-size: 40px;
+            }
+            .count {
+                width: 40px;
+                height: 40px;
+                line-height: 33px;
+                font-size: 20px;
+                right: -20px;
+            }
+        }
+        h3 {
+            font-size: 22px;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .process-single-item {
+        .icon {
+            margin-bottom: 15px;
+            width: 80px;
+            height: 80px;
+            line-height: 90px;
+            i {
+                font-size: 40px;
+            }
+            .count {
+                width: 40px;
+                height: 40px;
+                line-height: 33px;
+                font-size: 20px;
+                right: -20px;
+            }
+        }
+        h3 {
+            font-size: 20px;
+        }
+    }
+
+}
+
+/* Min width 1399px */
+@media (min-width: 1399px) {
+
+    .process-single-item {
+        &::before {
+            content: "";
+            position: absolute;
+            top: -17px;
+            right: -80px;
+            width: 100%;
+            height: 71px;
+            background-image: url(../../../../public/images/process-shape.png);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        &.before-none {
+            &::before {
+                display: none;
+            }   
+        }
+    }
+    .how-it-works-wrap {
+        position: relative;
+        z-index: 1;
+        border-radius: 10px;
+        background-color: transparent;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 1320px;
+            height: 100%;
+            background-color: var(--grayColor);
+            border-radius: 10px;
+            margin: auto;
+            z-index: -1;
+        }
+    }
+    .how-it-works-single-item {
+        &.one {
+            transform: rotate(-10deg);
+            margin-top: 50px;
+        }
+        &.two {
+            transform: rotate(-5deg);
+        }
+        &.three {
+            transform: rotate(5deg);
+        }
+        &.four {
+            transform: rotate(10deg);
+            margin-top: 50px;
+        }
+    }
+
+}

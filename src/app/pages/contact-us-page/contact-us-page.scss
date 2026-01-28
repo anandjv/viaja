@@ -1,0 +1,94 @@
+.contact-info-wrap {
+    max-width: 535px;
+    h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        margin-top: 40px;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    ul {
+        li {
+            margin-bottom: 6px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            span {
+                font-weight: 700;
+                color: var(--blackColor);
+            }
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+    iframe {
+        display: block;
+        width: 100%;
+        height: 568px;
+        border-radius: 10px;
+    }
+}
+.contact-form {
+    border-radius: 10px;
+    background: #FAFAFB;
+    padding: 80px 100px;
+
+    h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .form-control {
+        background-color: var(--whiteColor);
+        border-radius: 10px;
+        border: 1px solid #E0E0E0;
+        border-radius: 5px;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .contact-form {
+        padding: 25px;
+
+        h3 {
+            font-size: 21px;
+        }
+    }
+    .contact-info-wrap {
+        h3, .h3 {
+            font-size: 20px;
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 992px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .contact-form {
+        padding: 50px;
+
+        h3 {
+            font-size: 21px;
+        }
+    }
+    .contact-info-wrap {
+        h3, .h3 {
+            font-size: 21px;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px)  {
+
+    .contact-form {
+        padding: 80px 50px;
+    }
+
+}

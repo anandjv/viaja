@@ -1,0 +1,83 @@
+<div class="traveler-dropdown-wrapper position-relative">
+    <button
+        class="form-control text-start form-select position-relative traveler-input"
+        type="button"
+        (click)="toggleOpen()"
+        [class.active]="open"
+        aria-expanded="{{ open }}"
+    >
+        {{ label }}
+    </button>
+    <i class="ri-user-line icon"></i>
+    <div class="dropdown-menu p-3 travelers-dropdown" [class.show]="open">
+        <div class="traveler-row">
+            <span>Adults</span>
+            <div class="counter">
+                <button
+                    type="button"
+                    class="btn btn-outline-secondary btn-sm minus"
+                    (click)="change('adult', -1)"
+                >
+                    -
+                </button>
+                <span class="count" data-type="adult">{{ counts.adult }}</span>
+                <button
+                    type="button"
+                    class="btn btn-outline-secondary btn-sm plus"
+                    (click)="change('adult', 1)"
+                >
+                    +
+                </button>
+            </div>
+        </div>
+        <div class="traveler-row">
+            <span>Youth</span>
+            <div class="counter">
+                <button
+                    type="button"
+                    class="btn btn-outline-secondary btn-sm minus"
+                    (click)="change('youth', -1)"
+                >
+                    -
+                </button>
+                <span class="count" data-type="youth">{{ counts.youth }}</span>
+                <button
+                    type="button"
+                    class="btn btn-outline-secondary btn-sm plus"
+                    (click)="change('youth', 1)"
+                >
+                    +
+                </button>
+            </div>
+        </div>
+        <div class="traveler-row">
+            <span>Children</span>
+            <div class="counter">
+                <button
+                    type="button"
+                    class="btn btn-outline-secondary btn-sm minus"
+                    (click)="change('child', -1)"
+                >
+                    -
+                </button>
+                <span class="count" data-type="child">{{ counts.child }}</span>
+                <button
+                    type="button"
+                    class="btn btn-outline-secondary btn-sm plus"
+                    (click)="change('child', 1)"
+                >
+                    +
+                </button>
+            </div>
+        </div>
+        <div class="text-center mt-2">
+            <button
+                type="button"
+                class="btn btn-primary w-100 apply-travelers"
+                (click)="apply()"
+            >
+                Apply
+            </button>
+        </div>
+    </div>
+</div>

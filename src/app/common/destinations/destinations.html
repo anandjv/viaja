@@ -1,0 +1,407 @@
+<div
+    class="trending-destinations-area bg-img pt-120"
+    style="background-image: url(images/trending-bg.jpg);"
+>
+    <div class="container mw-1680">
+        <div class="text-start mb-40">
+            <h2 class="main-title text-white mx-0">Trending Destinations</h2>
+            <p class="text-white">Explore the world's most breathtaking adventure hotspots</p>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="trending-destinations-slide">
+            <owl-carousel-o [options]="destinationsSlider">
+                <ng-template carouselSlide>
+                    <div class="trending-destinations-single-item">
+                        <div class="trending-destinations-img position-relative z-1">
+                            <a routerLink="/destination-details" class="text-decoration-none d-block">
+                                <img src="images/trending-destinations1.jpg" alt="trending-destinations">
+                            </a>   
+                            <a routerLink="." class="tag d-inline-block text-decoration-none">Trending</a>
+                        </div> 
+                        <div class="trending-destinations-content">
+                            <a routerLink="/destination-details" class="title d-block text-decoration-none">
+                                <h3>Australia</h3>
+                            </a>
+                            <p>Where the Himalayas touch the sky</p>
+                            <h4>Adventure Highlights</h4>
+                            <ul class="p-0 m-0 list-unstyled">
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Everest Base Camp Trek</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Annapurna Circuit</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Helicopter tours</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Cultural village stays</span>
+                                </li>
+                            </ul>
+                            <a routerLink="/destination-details" class="read-more d-inline-block text-decoration-none">
+                                <span>Explore Australia</span>
+                                <i class="ri-arrow-right-long-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="trending-destinations-single-item">
+                        <div class="trending-destinations-img position-relative z-1">
+                            <a routerLink="/destination-details" class="text-decoration-none d-block">
+                                <img src="images/trending-destinations2.jpg" alt="trending-destinations">
+                            </a>   
+                            <a routerLink="." class="tag d-inline-block text-decoration-none">Popular</a>
+                        </div> 
+                        <div class="trending-destinations-content">
+                            <a routerLink="/destination-details" class="title d-block text-decoration-none">
+                                <h3>Costa Rica</h3>
+                            </a>
+                            <p>Jungle meets ocean paradise</p>
+                            <h4>Adventure Highlights</h4>
+                            <ul class="p-0 m-0 list-unstyled">
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Rainforest wildlife safaris</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Pacific coast surfing</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Volcano hiking tours</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Zip-lining canopy tours</span>
+                                </li>
+                            </ul>
+                            <a routerLink="/destination-details" class="read-more d-inline-block text-decoration-none">
+                                <span>Explore Costa Rica</span>
+                                <i class="ri-arrow-right-long-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="trending-destinations-single-item">
+                        <div class="trending-destinations-img position-relative z-1">
+                            <a routerLink="/destination-details" class="text-decoration-none d-block">
+                                <img src="images/trending-destinations3.jpg" alt="trending-destinations">
+                            </a> 
+                        </div> 
+                        <div class="trending-destinations-content">
+                            <a routerLink="/destination-details" class="title d-block text-decoration-none">
+                                <h3>New Zealand</h3>
+                            </a>
+                            <p>The adventure capital of the world</p>
+                            <h4>Adventure Highlights</h4>
+                            <ul class="p-0 m-0 list-unstyled">
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Bungee jumping in Queenstown</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Franz Josef Glacier hikes</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Milford Sound kayaking</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Hobbiton movie set tours</span>
+                                </li>
+                            </ul>
+                            <a routerLink="/destination-details" class="read-more d-inline-block text-decoration-none">
+                                <span>Explore Australia</span>
+                                <i class="ri-arrow-right-long-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="trending-destinations-single-item">
+                        <div class="trending-destinations-img position-relative z-1">
+                            <a routerLink="/destination-details" class="text-decoration-none d-block">
+                                <img src="images/trending-destinations4.jpg" alt="trending-destinations">
+                            </a>   
+                            <a routerLink="." class="tag d-inline-block text-decoration-none">Trending</a>
+                        </div> 
+                        <div class="trending-destinations-content">
+                            <a routerLink="/destination-details" class="title d-block text-decoration-none">
+                                <h3>Iceland</h3>
+                            </a>
+                            <p>Land of fire and ice</p>
+                            <h4>Adventure Highlights</h4>
+                            <ul class="p-0 m-0 list-unstyled">
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Northern Lights expeditions</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Volcano hiking</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Glacier lagoon kayaking</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Blue Lagoon geothermal spas</span>
+                                </li>
+                            </ul>
+                            <a routerLink="/destination-details" class="read-more d-inline-block text-decoration-none">
+                                <span>Explore Iceland</span>
+                                <i class="ri-arrow-right-long-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="trending-destinations-single-item">
+                        <div class="trending-destinations-img position-relative z-1">
+                            <a routerLink="/destination-details" class="text-decoration-none d-block">
+                                <img src="images/trending-destinations5.jpg" alt="trending-destinations">
+                            </a>   
+                            <a routerLink="." class="tag d-inline-block text-decoration-none">Popular</a>
+                        </div> 
+                        <div class="trending-destinations-content">
+                            <a routerLink="/destination-details" class="title d-block text-decoration-none">
+                                <h3>Patagonia</h3>
+                            </a>
+                            <p>Untamed wilderness at world's end</p>
+                            <h4>Adventure Highlights</h4>
+                            <ul class="p-0 m-0 list-unstyled">
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Torres del Paine trekking</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Andean condor spotting</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Perito Moreno Glacier tours</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Gaucho culture experiences</span>
+                                </li>
+                            </ul>
+                            <a routerLink="/destination-details" class="read-more d-inline-block text-decoration-none">
+                                <span>Explore Patagonia</span>
+                                <i class="ri-arrow-right-long-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="trending-destinations-single-item">
+                        <div class="trending-destinations-img position-relative z-1">
+                            <a routerLink="/destination-details" class="text-decoration-none d-block">
+                                <img src="images/trending-destinations1.jpg" alt="trending-destinations">
+                            </a>   
+                            <a routerLink="." class="tag d-inline-block text-decoration-none">Trending</a>
+                        </div> 
+                        <div class="trending-destinations-content">
+                            <a routerLink="/destination-details" class="title d-block text-decoration-none">
+                                <h3>Australia</h3>
+                            </a>
+                            <p>Where the Himalayas touch the sky</p>
+                            <h4>Adventure Highlights</h4>
+                            <ul class="p-0 m-0 list-unstyled">
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Everest Base Camp Trek</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Annapurna Circuit</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Helicopter tours</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Cultural village stays</span>
+                                </li>
+                            </ul>
+                            <a routerLink="/destination-details" class="read-more d-inline-block text-decoration-none">
+                                <span>Explore Australia</span>
+                                <i class="ri-arrow-right-long-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="trending-destinations-single-item">
+                        <div class="trending-destinations-img position-relative z-1">
+                            <a routerLink="/destination-details" class="text-decoration-none d-block">
+                                <img src="images/trending-destinations2.jpg" alt="trending-destinations">
+                            </a>   
+                            <a routerLink="." class="tag d-inline-block text-decoration-none">Popular</a>
+                        </div> 
+                        <div class="trending-destinations-content">
+                            <a routerLink="/destination-details" class="title d-block text-decoration-none">
+                                <h3>Costa Rica</h3>
+                            </a>
+                            <p>Jungle meets ocean paradise</p>
+                            <h4>Adventure Highlights</h4>
+                            <ul class="p-0 m-0 list-unstyled">
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Rainforest wildlife safaris</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Pacific coast surfing</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Volcano hiking tours</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Zip-lining canopy tours</span>
+                                </li>
+                            </ul>
+                            <a routerLink="/destination-details" class="read-more d-inline-block text-decoration-none">
+                                <span>Explore Costa Rica</span>
+                                <i class="ri-arrow-right-long-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="trending-destinations-single-item">
+                        <div class="trending-destinations-img position-relative z-1">
+                            <a routerLink="/destination-details" class="text-decoration-none d-block">
+                                <img src="images/trending-destinations3.jpg" alt="trending-destinations">
+                            </a> 
+                        </div> 
+                        <div class="trending-destinations-content">
+                            <a routerLink="/destination-details" class="title d-block text-decoration-none">
+                                <h3>New Zealand</h3>
+                            </a>
+                            <p>The adventure capital of the world</p>
+                            <h4>Adventure Highlights</h4>
+                            <ul class="p-0 m-0 list-unstyled">
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Bungee jumping in Queenstown</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Franz Josef Glacier hikes</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Milford Sound kayaking</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Hobbiton movie set tours</span>
+                                </li>
+                            </ul>
+                            <a routerLink="/destination-details" class="read-more d-inline-block text-decoration-none">
+                                <span>Explore Australia</span>
+                                <i class="ri-arrow-right-long-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="trending-destinations-single-item">
+                        <div class="trending-destinations-img position-relative z-1">
+                            <a routerLink="/destination-details" class="text-decoration-none d-block">
+                                <img src="images/trending-destinations4.jpg" alt="trending-destinations">
+                            </a>   
+                            <a routerLink="." class="tag d-inline-block text-decoration-none">Trending</a>
+                        </div> 
+                        <div class="trending-destinations-content">
+                            <a routerLink="/destination-details" class="title d-block text-decoration-none">
+                                <h3>Iceland</h3>
+                            </a>
+                            <p>Land of fire and ice</p>
+                            <h4>Adventure Highlights</h4>
+                            <ul class="p-0 m-0 list-unstyled">
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Northern Lights expeditions</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Volcano hiking</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Glacier lagoon kayaking</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Blue Lagoon geothermal spas</span>
+                                </li>
+                            </ul>
+                            <a routerLink="/destination-details" class="read-more d-inline-block text-decoration-none">
+                                <span>Explore Iceland</span>
+                                <i class="ri-arrow-right-long-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="trending-destinations-single-item">
+                        <div class="trending-destinations-img position-relative z-1">
+                            <a routerLink="/destination-details" class="text-decoration-none d-block">
+                                <img src="images/trending-destinations5.jpg" alt="trending-destinations">
+                            </a>   
+                            <a routerLink="." class="tag d-inline-block text-decoration-none">Popular</a>
+                        </div> 
+                        <div class="trending-destinations-content">
+                            <a routerLink="/destination-details" class="title d-block text-decoration-none">
+                                <h3>Patagonia</h3>
+                            </a>
+                            <p>Untamed wilderness at world's end</p>
+                            <h4>Adventure Highlights</h4>
+                            <ul class="p-0 m-0 list-unstyled">
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Torres del Paine trekking</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Andean condor spotting</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Perito Moreno Glacier tours</span>
+                                </li>
+                                <li>
+                                    <i class="ri-check-line"></i>
+                                    <span>Gaucho culture experiences</span>
+                                </li>
+                            </ul>
+                            <a routerLink="/destination-details" class="read-more d-inline-block text-decoration-none">
+                                <span>Explore Patagonia</span>
+                                <i class="ri-arrow-right-long-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+    </div>
+    <div class="pb-120"></div>
+    <app-offer />
+</div>

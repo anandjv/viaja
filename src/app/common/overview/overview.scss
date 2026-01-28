@@ -1,0 +1,94 @@
+.speak-to-an-expert-content {
+    h2 {
+        font-size: 96px;
+        font-weight: 700;
+        line-height: 114.583%;
+        margin-bottom: 12px;
+    }
+    h6 {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 120%;
+        max-width: 560px;
+        margin: auto;
+        margin-bottom: 45px;
+    }
+    .speak-btn {
+        margin-bottom: 13px;
+    }
+}
+.speak-to-an-expert-area {
+    position: relative;
+    z-index: 1;
+    padding-top: 200px;
+    padding-bottom: 200px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+        background-image: linear-gradient(to bottom, transparent , #ffffff);
+        z-index: -1;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .speak-to-an-expert-content {
+        h2 {
+            font-size: 30px;
+        }
+        h6 {
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+    }
+    .speak-to-an-expert-area {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+}
+
+/* Min width 768px to Max width 992px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .speak-to-an-expert-content {
+        h2 {
+            font-size: 50px;
+        }
+        h6 {
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+    }
+    .speak-to-an-expert-area {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px)  {
+
+    .speak-to-an-expert-content {
+        h2 {
+            font-size: 60px;
+        }
+        h6 {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+    }
+    .speak-to-an-expert-area {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+}

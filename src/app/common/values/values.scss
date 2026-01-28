@@ -1,0 +1,130 @@
+.process-single-item {
+    position: relative;
+    .icon {
+        width: 100px;
+        height: 100px;
+        line-height: 113px;
+        text-align: center;
+        display: inline-block;
+        border-radius: 100px;
+        background-color: var(--primaryColor);
+        color: var(--whiteColor);
+        margin-bottom: 25px;
+        position: relative;
+        z-index: 1;
+        i {
+            font-size: 50px;
+        }
+        .count {
+            width: 50px;
+            height: 50px;
+            line-height: 43px;
+            text-align: center;
+            display: inline-block;
+            border-radius: 50px;
+            background-color: var(--grayColor);
+            color: var(--blackColor);
+            position: absolute;
+            top: 0;
+            right: -27px;
+            font-size: 24px;
+            font-weight: 700;
+            font-family: var(--headingFontFamily);
+        }
+    }
+    h3 {
+        font-size: 24px;
+    }
+    &.style-two {
+        .icon {
+            border: 1px dashed var(--primaryColor);
+            background-color: transparent;
+            color: var(--primaryColor);
+
+            .count {
+                background-color: var(--whiteColor);
+            }
+        }
+    } 
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .process-single-item {
+        .icon {
+            margin-bottom: 15px;
+            width: 80px;
+            height: 80px;
+            line-height: 90px;
+            i {
+                font-size: 40px;
+            }
+            .count {
+                width: 40px;
+                height: 40px;
+                line-height: 33px;
+                font-size: 20px;
+                right: -20px;
+            }
+        }
+        h3 {
+            font-size: 20px;
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 992px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .process-single-item {
+        .icon {
+            margin-bottom: 15px;
+            width: 80px;
+            height: 80px;
+            line-height: 90px;
+            i {
+                font-size: 40px;
+            }
+            .count {
+                width: 40px;
+                height: 40px;
+                line-height: 33px;
+                font-size: 20px;
+                right: -20px;
+            }
+        }
+        h3 {
+            font-size: 22px;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .process-single-item {
+        .icon {
+            margin-bottom: 15px;
+            width: 80px;
+            height: 80px;
+            line-height: 90px;
+            i {
+                font-size: 40px;
+            }
+            .count {
+                width: 40px;
+                height: 40px;
+                line-height: 33px;
+                font-size: 20px;
+                right: -20px;
+            }
+        }
+        h3 {
+            font-size: 20px;
+        }
+    }
+
+}

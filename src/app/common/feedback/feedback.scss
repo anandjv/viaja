@@ -1,0 +1,295 @@
+.what-our-travelers-say-single-item {
+    background-color: var(--whiteColor);
+    padding: 45px 30px;
+    border-radius: 20px;
+    position: relative;
+    transition: var(--transition);
+    transform: scale(1);
+
+    p {
+        font-size: 16px;
+        line-height: 150%;
+    }
+    .review {
+        margin-top: 35px;
+        margin-bottom: 30px;
+        gap: 1px;
+        font-size: 17px;
+    }
+    .info {
+        gap: 20px;
+
+        i {
+            width: 75px;
+            height: 75px;
+            line-height: 75px;
+            text-align: center;
+            display: inline-block;
+            border-radius: 75px;
+            background-color: var(--primaryColor);
+            color: var(--whiteColor);
+            font-size: 40px;
+        }
+        h4 {
+            font-size: 16px;
+            font-family: var(--bodyFontFamily);
+        }
+    }
+    &.two {
+        background-color: var(--blackColor);
+        p {
+            color: var(--whiteColor);
+        }
+        .review {
+            i {
+                color: var(--whiteColor);
+            }
+        }
+        .info {
+            h4 {
+                color: var(--whiteColor);
+            }
+            span {
+                color: var(--whiteColor);
+            }
+        }
+    }
+}
+.testimonials-single-item {
+    text-align: center;
+    max-width: 875px;
+    margin: auto;
+
+    .star {
+        gap: 1px;
+        margin-bottom: 20px;
+        margin-top: 15px;
+    }
+    h4 {
+        font-size: 24px;
+        font-weight: 700;
+        line-height:  130%;
+        margin-bottom: 35px;
+    }
+    h3 {
+        font-family: var(--bodyFontFamily);
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+}
+.testimonial-arrow {
+    position: relative;
+    z-index: 1;
+    max-width: 650px;
+    margin: auto;
+    margin-top: 40px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #D7DAE0;
+        z-index: -1;
+    }
+    &::after {
+        content: "";
+        background-color: var(--whiteColor);
+        width: 185px;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        position: absolute;
+        z-index: -1;
+    }
+}
+.extra-height {
+    height: 30px;
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .what-our-travelers-say-single-item {
+        padding: 25px;
+        border-radius: 10px;
+
+        .review {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            gap: 1px;
+            font-size: 15px;
+        }
+        .info {
+            gap: 10px;
+            i {
+                width: 55px;
+                height: 55px;
+                line-height: 55px;
+                font-size: 30px;
+            }
+            h4 {
+                font-size: 14px;
+                margin-bottom: 3px;
+            }
+        }
+    }
+    .testimonials-single-item {
+        h4 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+    }
+    .testimonials-area {
+        padding-top: 0;
+    }
+
+}
+
+/* Min width 768px to Max width 992px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .what-our-travelers-say-single-item {
+        padding: 30px;
+        border-radius: 15px;
+
+        .review {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            gap: 1px;
+        }
+        .info {
+            gap: 10px;
+            i {
+                width: 60px;
+                height: 60px;
+                line-height: 60px;
+                font-size: 30px;
+            }
+            h4 {
+                font-size: 15px;
+                margin-bottom: 3px;
+            }
+        }
+    }
+    .testimonials-single-item {
+        h4 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+    }
+    .testimonials-area {
+        padding-top: 0;
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .what-our-travelers-say-single-item {
+        padding: 25px;
+        border-radius: 10px;
+
+        .review {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            gap: 1px;
+            font-size: 15px;
+        }
+        .info {
+            gap: 10px;
+            i {
+                width: 55px;
+                height: 55px;
+                line-height: 55px;
+                font-size: 30px;
+            }
+            h4 {
+                font-size: 14px;
+                margin-bottom: 3px;
+            }
+        }
+    }
+    .testimonials-area {
+        padding-top: 0;
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .testimonials-area {
+        padding-top: 0;
+    }
+
+}
+
+/* Max width 1199px */
+@media only screen and (max-width: 1199px) {
+
+    .testimonial-slide-thumb {
+        .one {
+            left: 200px;
+        }
+        .two {
+            right: 150px;
+        }
+        .three {
+            left: 120px;
+            bottom: 0;
+        }
+        .four {
+            right: 30px;
+        }
+    }
+
+}
+
+/* Min width 1399px */
+@media (min-width: 1399px) {
+
+    .what-our-travelers-say-single-item {
+        width: 424px;
+        &.one {
+            transform: rotate(-15deg);
+        }
+        &.two {
+            transform: rotate(-10deg);
+        }
+        &.three {
+            transform: unset;
+            z-index: 1;
+        }
+        &.five {
+            z-index: -1;
+        }
+        &:hover {
+            position: relative;
+            z-index: 3;
+            transform: scale(1.1);
+        }
+    }
+    .testimonials-area {
+        position: relative;
+        z-index: 1;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 15px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            height: 90px;
+            width: 1px;
+            background-color: #D7DAE0;
+        }
+    }
+
+}

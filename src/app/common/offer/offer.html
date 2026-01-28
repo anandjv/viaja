@@ -1,0 +1,66 @@
+@if (router.url === '/index-2') {
+
+    <div class="offer-area-two">
+        <div class="container mw-1680">
+            <div class="row g-4">
+                <div class="col-xl-5 col-lg-4 col-md-6">
+                    <a routerLink="/tour-listing" class="d-block offer-img">
+                        <img src="images/offer1.svg" class="w-100" alt="offer">
+                    </a>
+                </div>
+                <div class="col-xl-5 col-lg-4 col-md-6">
+                    <a routerLink="/tour-listing" class="d-block offer-img">
+                        <img src="images/offer2.svg" class="w-100" alt="offer">
+                    </a>
+                </div>
+                <div class="col-xl-2 col-lg-4">
+                    <div class="award-wrap-two d-flex justify-content-center align-items-center">
+                        <div>
+                            <img src="images/award.png" alt="award">
+                            <span>Award Winning Company</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+} @else if (router.url === '/index-3' || router.url === '/index-4') {
+
+    <div class="offer-area-three">
+        <div class="container mw-1345">
+            <div class="row g-4">
+                <div class="col-sm-6">
+                    <a routerLink="/tour-listing" class="d-block offer-img">
+                        <img src="images/offer1.svg" alt="offer">
+                    </a>
+                </div>
+                <div class="col-sm-6">
+                    <a routerLink="/tour-listing" class="d-block offer-img">
+                        <img src="images/offer2.svg" alt="offer">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+} @else {
+
+    <div class="offer-area">
+        <div class="container mw-1345">
+            <div class="row g-4">
+                <div class="col-sm-6">
+                    <a routerLink="/tour-listing" class="d-block offer-img">
+                        <img src="images/offer1.svg" alt="offer">
+                    </a>
+                </div>
+                <div class="col-sm-6">
+                    <a routerLink="/tour-listing" class="d-block offer-img">
+                        <img src="images/offer2.svg" alt="offer">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

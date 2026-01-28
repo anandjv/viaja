@@ -1,0 +1,307 @@
+<div class="featured-adventure-tours-area pt-120 position-relative z-1 overflow-hidden">
+    <div class="container mw-1680">
+        <div class="d-flex flex-wrap gap-15 justify-content-between align-items-center mb-50">
+            <div>
+                <h2 class="main-title">Featured Adventure Tours</h2>
+                <p>Discover our handpicked selection of thrilling expeditions across the globe</p>
+            </div>
+            <a routerLink="/tour-listing" class="read-more">
+                <span>View All Tours</span>
+                <i class="ri-arrow-right-long-line"></i>
+            </a>
+        </div>
+        <div class="featured-adventure-tours-slide">
+            <owl-carousel-o [options]="featuredToursSlider">
+                <ng-template carouselSlide>
+                    <div class="featured-adventure-tours-single-item">
+                        <a routerLink="/tour-details" class="featured-adventure-img position-relative z-1 d-block text-decoration-none">
+                            <img src="images/featured-adventure1.jpg" alt="featured-adventure">
+                            <span class="person d-inline-block">From $1,899 <span>per person</span></span>
+                        </a>
+                        <div class="featured-adventure-tours-single-item-content position-relative z-1">
+                            <a routerLink="." class="tags text-decoration-none">Challenging</a>
+                            <div class="d-flex gap-8 location">
+                                <i class="ri-map-pin-line text-primary"></i>
+                                <span class="fs-14">Khumbu Valley, Australia</span>
+                            </div>
+                            <a routerLink="/tour-details" class="title">
+                                <h3>Everest Base Camp Trek</h3>
+                            </a>
+                            <div class="info d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span>Duration</span>
+                                    <h4>14 Days</h4>
+                                </div>
+                                <div>
+                                    <span>Accommodation</span>
+                                    <h4>Teahouses</h4>
+                                </div>
+                                <div>
+                                    <span>Group Size</span>
+                                    <h4>12 People</h4>
+                                </div>
+                            </div>
+                            <a routerLink="/tour-details" class="read-more">
+                                <span>View Details</span>
+                                <i class="ri-arrow-right-long-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="featured-adventure-tours-single-item">
+                        <a routerLink="/tour-details" class="featured-adventure-img position-relative z-1 d-block text-decoration-none">
+                            <img src="images/featured-adventure2.jpg" alt="featured-adventure">
+                            <span class="person d-inline-block">From $899 <span>per person</span></span>
+                        </a>
+                        <div class="featured-adventure-tours-single-item-content position-relative z-1">
+                            <a routerLink="." class="tags text-decoration-none">Moderate</a>
+                            <div class="d-flex gap-8 location">
+                                <i class="ri-map-pin-line text-primary"></i>
+                                <span class="fs-14">Verdon Groge, France</span>
+                            </div>
+                            <a routerLink="/tour-details" class="title">
+                                <h3>France Bungee Adventure</h3>
+                            </a>
+                            <div class="info d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span>Duration</span>
+                                    <h4>5 Days</h4>
+                                </div>
+                                <div>
+                                    <span>Accommodation</span>
+                                    <h4>Hotels</h4>
+                                </div>
+                                <div>
+                                    <span>Group Size</span>
+                                    <h4>8 People</h4>
+                                </div>
+                            </div>
+                            <a routerLink="/tour-details" class="read-more">
+                                <span>View Details</span>
+                                <i class="ri-arrow-right-long-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="featured-adventure-tours-single-item">
+                        <a routerLink="/tour-details" class="featured-adventure-img position-relative z-1 d-block text-decoration-none">
+                            <img src="images/featured-adventure3.jpg" alt="featured-adventure">
+                            <span class="person d-inline-block">From $1,299 <span>per person</span></span>
+                        </a>
+                        <div class="featured-adventure-tours-single-item-content position-relative z-1">
+                            <a routerLink="." class="tags text-decoration-none">Moderate</a>
+                            <div class="d-flex gap-8 location">
+                                <i class="ri-map-pin-line text-primary"></i>
+                                <span class="fs-14">Corcovado, Costa Rica</span>
+                            </div>
+                            <a routerLink="/tour-details" class="title">
+                                <h3>Costa Rica Wildlife Safari</h3>
+                            </a>
+                            <div class="info d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span>Duration</span>
+                                    <h4>8 Days</h4>
+                                </div>
+                                <div>
+                                    <span>Accommodation</span>
+                                    <h4>Eco Lodges</h4>
+                                </div>
+                                <div>
+                                    <span>Group Size</span>
+                                    <h4>10 People</h4>
+                                </div>
+                            </div>
+                            <a routerLink="/tour-details" class="read-more">
+                                <span>View Details</span>
+                                <i class="ri-arrow-right-long-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="featured-adventure-tours-single-item">
+                        <a routerLink="/tour-details" class="featured-adventure-img position-relative z-1 d-block text-decoration-none">
+                            <img src="images/featured-adventure4.jpg" alt="featured-adventure">
+                            <span class="person d-inline-block">From $1,599 <span>per person</span></span>
+                        </a>
+                        <div class="featured-adventure-tours-single-item-content position-relative z-1">
+                            <a routerLink="." class="tags text-decoration-none">Challenging</a>
+                            <div class="d-flex gap-8 location">
+                                <i class="ri-map-pin-line text-primary"></i>
+                                <span class="fs-14">Vatnajokull, Iceland</span>
+                            </div>
+                            <a routerLink="/tour-details" class="title">
+                                <h3>Iceland Glacier Expedition</h3>
+                            </a>
+                            <div class="info d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span>Duration</span>
+                                    <h4>7 Days</h4>
+                                </div>
+                                <div>
+                                    <span>Accommodation</span>
+                                    <h4>Mountain Huts</h4>
+                                </div>
+                                <div>
+                                    <span>Group Size</span>
+                                    <h4>6 People</h4>
+                                </div>
+                            </div>
+                            <a routerLink="/tour-details" class="read-more">
+                                <span>View Details</span>
+                                <i class="ri-arrow-right-long-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="featured-adventure-tours-single-item">
+                        <a routerLink="/tour-details" class="featured-adventure-img position-relative z-1 d-block text-decoration-none">
+                            <img src="images/featured-adventure1.jpg" alt="featured-adventure">
+                            <span class="person d-inline-block">From $1,899 <span>per person</span></span>
+                        </a>
+                        <div class="featured-adventure-tours-single-item-content position-relative z-1">
+                            <a routerLink="." class="tags text-decoration-none">Challenging</a>
+                            <div class="d-flex gap-8 location">
+                                <i class="ri-map-pin-line text-primary"></i>
+                                <span class="fs-14">Khumbu Valley, Australia</span>
+                            </div>
+                            <a routerLink="/tour-details" class="title">
+                                <h3>Everest Base Camp Trek</h3>
+                            </a>
+                            <div class="info d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span>Duration</span>
+                                    <h4>14 Days</h4>
+                                </div>
+                                <div>
+                                    <span>Accommodation</span>
+                                    <h4>Teahouses</h4>
+                                </div>
+                                <div>
+                                    <span>Group Size</span>
+                                    <h4>12 People</h4>
+                                </div>
+                            </div>
+                            <a routerLink="/tour-details" class="read-more">
+                                <span>View Details</span>
+                                <i class="ri-arrow-right-long-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="featured-adventure-tours-single-item">
+                        <a routerLink="/tour-details" class="featured-adventure-img position-relative z-1 d-block text-decoration-none">
+                            <img src="images/featured-adventure2.jpg" alt="featured-adventure">
+                            <span class="person d-inline-block">From $899 <span>per person</span></span>
+                        </a>
+                        <div class="featured-adventure-tours-single-item-content position-relative z-1">
+                            <a routerLink="." class="tags text-decoration-none">Moderate</a>
+                            <div class="d-flex gap-8 location">
+                                <i class="ri-map-pin-line text-primary"></i>
+                                <span class="fs-14">Verdon Groge, France</span>
+                            </div>
+                            <a routerLink="/tour-details" class="title">
+                                <h3>France Bungee Adventure</h3>
+                            </a>
+                            <div class="info d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span>Duration</span>
+                                    <h4>5 Days</h4>
+                                </div>
+                                <div>
+                                    <span>Accommodation</span>
+                                    <h4>Hotels</h4>
+                                </div>
+                                <div>
+                                    <span>Group Size</span>
+                                    <h4>8 People</h4>
+                                </div>
+                            </div>
+                            <a routerLink="/tour-details" class="read-more">
+                                <span>View Details</span>
+                                <i class="ri-arrow-right-long-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="featured-adventure-tours-single-item">
+                        <a routerLink="/tour-details" class="featured-adventure-img position-relative z-1 d-block text-decoration-none">
+                            <img src="images/featured-adventure3.jpg" alt="featured-adventure">
+                            <span class="person d-inline-block">From $1,299 <span>per person</span></span>
+                        </a>
+                        <div class="featured-adventure-tours-single-item-content position-relative z-1">
+                            <a routerLink="." class="tags text-decoration-none">Moderate</a>
+                            <div class="d-flex gap-8 location">
+                                <i class="ri-map-pin-line text-primary"></i>
+                                <span class="fs-14">Corcovado, Costa Rica</span>
+                            </div>
+                            <a routerLink="/tour-details" class="title">
+                                <h3>Costa Rica Wildlife Safari</h3>
+                            </a>
+                            <div class="info d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span>Duration</span>
+                                    <h4>8 Days</h4>
+                                </div>
+                                <div>
+                                    <span>Accommodation</span>
+                                    <h4>Eco Lodges</h4>
+                                </div>
+                                <div>
+                                    <span>Group Size</span>
+                                    <h4>10 People</h4>
+                                </div>
+                            </div>
+                            <a routerLink="/tour-details" class="read-more">
+                                <span>View Details</span>
+                                <i class="ri-arrow-right-long-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="featured-adventure-tours-single-item">
+                        <a routerLink="/tour-details" class="featured-adventure-img position-relative z-1 d-block text-decoration-none">
+                            <img src="images/featured-adventure4.jpg" alt="featured-adventure">
+                            <span class="person d-inline-block">From $1,599 <span>per person</span></span>
+                        </a>
+                        <div class="featured-adventure-tours-single-item-content position-relative z-1">
+                            <a routerLink="." class="tags text-decoration-none">Challenging</a>
+                            <div class="d-flex gap-8 location">
+                                <i class="ri-map-pin-line text-primary"></i>
+                                <span class="fs-14">Vatnajokull, Iceland</span>
+                            </div>
+                            <a routerLink="/tour-details" class="title">
+                                <h3>Iceland Glacier Expedition</h3>
+                            </a>
+                            <div class="info d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span>Duration</span>
+                                    <h4>7 Days</h4>
+                                </div>
+                                <div>
+                                    <span>Accommodation</span>
+                                    <h4>Mountain Huts</h4>
+                                </div>
+                                <div>
+                                    <span>Group Size</span>
+                                    <h4>6 People</h4>
+                                </div>
+                            </div>
+                            <a routerLink="/tour-details" class="read-more">
+                                <span>View Details</span>
+                                <i class="ri-arrow-right-long-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+    </div>
+    <img src="images/featured-adventure-tours-shape.png" class="featured-adventure-tours-shape position-absolute bottom-0 start-0 end-0" alt="featured-adventure-tours-shape">
+</div>

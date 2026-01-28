@@ -1,0 +1,1532 @@
+<div class="popular-destinations-area bg-gray ptb-120">
+    <div class="container mw-1345">
+        <div class="row align-items-center g-3 g-md-4 mb-40">
+            <div class="col-lg-6">
+                <div class="text-center text-lg-start">
+                    <h2 class="main-title">Popular Destinations</h2>
+                    <p>Explore our most sought-after travel locations around the world</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <ul class="list-unstyled d-flex flex-wrap align-items-center nav nav-tabs popular-destinations-tab justify-content-lg-between px-0">
+                    <li class="nav-item">
+                        <button
+                            [ngClass]="{'active': currentTab === 'tab1'}"
+                            (click)="switchTab($event, 'tab1')"
+                            class="nav-link"
+                            type="button"
+                        >
+                            Beach
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button
+                            [ngClass]="{'active': currentTab === 'tab2'}"
+                            (click)="switchTab($event, 'tab2')"
+                            class="nav-link"
+                            type="button"
+                        >
+                            Mountain
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button
+                            [ngClass]="{'active': currentTab === 'tab3'}"
+                            (click)="switchTab($event, 'tab3')"
+                            class="nav-link"
+                            type="button"
+                        >
+                            City
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button
+                            [ngClass]="{'active': currentTab === 'tab4'}"
+                            (click)="switchTab($event, 'tab4')"
+                            class="nav-link"
+                            type="button"
+                        >
+                            Adventure
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button
+                            [ngClass]="{'active': currentTab === 'tab5'}"
+                            (click)="switchTab($event, 'tab5')"
+                            class="nav-link"
+                            type="button"
+                        >
+                            Budget
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button
+                            [ngClass]="{'active': currentTab === 'tab6'}"
+                            (click)="switchTab($event, 'tab6')"
+                            class="nav-link"
+                            type="button"
+                        >
+                            Luxury
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="tab-content">
+            @if (currentTab === 'tab1') {
+                <div class="tab-pane fade show active">
+                    <div class="popular-destinations-slide">
+                        <owl-carousel-o [options]="destinationsSlider">
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination1.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $499 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>5 (3 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Bali, Indonesia</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Ubud, Seminyak, Mount Batur, Tanah Lot Temple</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination2.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $799 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.9 (5 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Paris, France</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Eiffel Tower, Seine River Cruise, Montmartre, Louvre Museum </p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination3.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $899 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>5 (1 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Cape Town, South Africa</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Table Mountain, Cape of Good Hope, Wine Route, Robben Island</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination4.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $849 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.9 (2 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Venice, Italy</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target">  Grand Canal, St. Mark’s Basilica, Doge’s Palace</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination5.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $499 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.8 (3 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Phuket, Thailand</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Phi Phi Islands, Big Buddha, Patong Beach, local markets</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination6.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $799 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.6 (12 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Paris, France</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Eiffel Tower, Louvre Museum, Seine River Cruise, Montmartre</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination7.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $999 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.9 (25 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Dubai, UAE</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Burj Khalifa, Desert Safari, Dubai Mall, Palm Jumeirah</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination8.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $699 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.5 (8 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Bali, Indonesia</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Ubud Rice Terraces, Tanah Lot Temple, Seminyak Beach, local spas</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination9.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $1,299 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.7 (18 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Rome, Italy</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Colosseum, Vatican City, Trevi Fountain, Roman Forum</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                        </owl-carousel-o>
+                    </div>
+                </div>
+            }
+            @if (currentTab === 'tab2') {
+                <div class="tab-pane fade show active">
+                    <div class="popular-destinations-slide">
+                        <owl-carousel-o [options]="destinationsSlider">
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination6.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $799 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.6 (12 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Paris, France</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Eiffel Tower, Louvre Museum, Seine River Cruise, Montmartre</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination7.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $999 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.9 (25 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Dubai, UAE</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Burj Khalifa, Desert Safari, Dubai Mall, Palm Jumeirah</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination8.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $699 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.5 (8 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Bali, Indonesia</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Ubud Rice Terraces, Tanah Lot Temple, Seminyak Beach, local spas</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination9.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $1,299 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.7 (18 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Rome, Italy</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Colosseum, Vatican City, Trevi Fountain, Roman Forum</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination1.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $499 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>5 (3 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Bali, Indonesia</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Ubud, Seminyak, Mount Batur, Tanah Lot Temple</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination2.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $799 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.9 (5 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Paris, France</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Eiffel Tower, Seine River Cruise, Montmartre, Louvre Museum </p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination3.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $899 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>5 (1 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Cape Town, South Africa</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Table Mountain, Cape of Good Hope, Wine Route, Robben Island</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination4.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $849 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.9 (2 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Venice, Italy</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target">  Grand Canal, St. Mark’s Basilica, Doge’s Palace</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination5.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $499 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.8 (3 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Phuket, Thailand</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Phi Phi Islands, Big Buddha, Patong Beach, local markets</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                        </owl-carousel-o>
+                    </div>
+                </div>
+            }
+            @if (currentTab === 'tab3') {
+                <div class="tab-pane fade show active">
+                    <div class="popular-destinations-slide">
+                        <owl-carousel-o [options]="destinationsSlider">
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination1.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $499 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>5 (3 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Bali, Indonesia</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Ubud, Seminyak, Mount Batur, Tanah Lot Temple</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination2.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $799 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.9 (5 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Paris, France</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Eiffel Tower, Seine River Cruise, Montmartre, Louvre Museum </p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination3.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $899 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>5 (1 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Cape Town, South Africa</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Table Mountain, Cape of Good Hope, Wine Route, Robben Island</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination4.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $849 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.9 (2 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Venice, Italy</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target">  Grand Canal, St. Mark’s Basilica, Doge’s Palace</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination5.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $499 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.8 (3 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Phuket, Thailand</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Phi Phi Islands, Big Buddha, Patong Beach, local markets</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination6.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $799 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.6 (12 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Paris, France</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Eiffel Tower, Louvre Museum, Seine River Cruise, Montmartre</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination7.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $999 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.9 (25 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Dubai, UAE</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Burj Khalifa, Desert Safari, Dubai Mall, Palm Jumeirah</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination8.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $699 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.5 (8 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Bali, Indonesia</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Ubud Rice Terraces, Tanah Lot Temple, Seminyak Beach, local spas</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination9.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $1,299 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.7 (18 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Rome, Italy</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Colosseum, Vatican City, Trevi Fountain, Roman Forum</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                        </owl-carousel-o>
+                    </div>
+                </div>
+            }
+            @if (currentTab === 'tab4') {
+                <div class="tab-pane fade show active">
+                    <div class="popular-destinations-slide">
+                        <owl-carousel-o [options]="destinationsSlider">
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination4.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $849 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.9 (2 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Venice, Italy</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target">  Grand Canal, St. Mark’s Basilica, Doge’s Palace</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination5.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $499 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.8 (3 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Phuket, Thailand</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Phi Phi Islands, Big Buddha, Patong Beach, local markets</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination6.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $799 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.6 (12 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Paris, France</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Eiffel Tower, Louvre Museum, Seine River Cruise, Montmartre</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination7.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $999 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.9 (25 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Dubai, UAE</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Burj Khalifa, Desert Safari, Dubai Mall, Palm Jumeirah</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination1.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $499 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>5 (3 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Bali, Indonesia</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Ubud, Seminyak, Mount Batur, Tanah Lot Temple</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination2.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $799 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.9 (5 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Paris, France</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Eiffel Tower, Seine River Cruise, Montmartre, Louvre Museum </p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination3.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $899 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>5 (1 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Cape Town, South Africa</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Table Mountain, Cape of Good Hope, Wine Route, Robben Island</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination8.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $699 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.5 (8 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Bali, Indonesia</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Ubud Rice Terraces, Tanah Lot Temple, Seminyak Beach, local spas</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination9.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $1,299 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.7 (18 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Rome, Italy</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Colosseum, Vatican City, Trevi Fountain, Roman Forum</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                        </owl-carousel-o>
+                    </div>
+                </div>
+            }
+            @if (currentTab === 'tab5') {
+                <div class="tab-pane fade show active">
+                    <div class="popular-destinations-slide">
+                        <owl-carousel-o [options]="destinationsSlider">
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination3.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $899 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>5 (1 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Cape Town, South Africa</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Table Mountain, Cape of Good Hope, Wine Route, Robben Island</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination4.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $849 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.9 (2 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Venice, Italy</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target">  Grand Canal, St. Mark’s Basilica, Doge’s Palace</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination5.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $499 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.8 (3 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Phuket, Thailand</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Phi Phi Islands, Big Buddha, Patong Beach, local markets</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination6.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $799 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.6 (12 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Paris, France</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Eiffel Tower, Louvre Museum, Seine River Cruise, Montmartre</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination7.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $999 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.9 (25 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Dubai, UAE</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Burj Khalifa, Desert Safari, Dubai Mall, Palm Jumeirah</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination8.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $699 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.5 (8 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Bali, Indonesia</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Ubud Rice Terraces, Tanah Lot Temple, Seminyak Beach, local spas</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination9.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $1,299 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.7 (18 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Rome, Italy</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Colosseum, Vatican City, Trevi Fountain, Roman Forum</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination1.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $499 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>5 (3 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Bali, Indonesia</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Ubud, Seminyak, Mount Batur, Tanah Lot Temple</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination2.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $799 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.9 (5 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Paris, France</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Eiffel Tower, Seine River Cruise, Montmartre, Louvre Museum </p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                        </owl-carousel-o>
+                    </div>
+                </div>
+            }
+            @if (currentTab === 'tab6') {
+                <div class="tab-pane fade show active">
+                    <div class="popular-destinations-slide">
+                        <owl-carousel-o [options]="destinationsSlider">
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination6.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $799 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.6 (12 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Paris, France</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Eiffel Tower, Louvre Museum, Seine River Cruise, Montmartre</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination7.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $999 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.9 (25 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Dubai, UAE</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Burj Khalifa, Desert Safari, Dubai Mall, Palm Jumeirah</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination1.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $499 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>5 (3 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Bali, Indonesia</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Ubud, Seminyak, Mount Batur, Tanah Lot Temple</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination2.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $799 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.9 (5 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Paris, France</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Eiffel Tower, Seine River Cruise, Montmartre, Louvre Museum </p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination3.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $899 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>5 (1 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Cape Town, South Africa</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Table Mountain, Cape of Good Hope, Wine Route, Robben Island</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination4.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $849 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.9 (2 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Venice, Italy</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target">  Grand Canal, St. Mark’s Basilica, Doge’s Palace</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination5.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $499 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.8 (3 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Phuket, Thailand</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Phi Phi Islands, Big Buddha, Patong Beach, local markets</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination8.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $699 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.5 (8 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Bali, Indonesia</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Ubud Rice Terraces, Tanah Lot Temple, Seminyak Beach, local spas</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="popular-destinations-single-item">
+                                    <a routerLink="/destination-details" class="d-block text-decoration-none destinations-img position-relative z-1">
+                                        <img src="images/destination9.jpg" alt="destination">
+                                        <span class="person d-inline-block">From: $1,299 / person</span>
+                                    </a>
+                                    <div class="d-flex align-items-center review">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                            <i class="ri-star-fill text-warning"></i>
+                                        </div>
+                                        <span>4.7 (18 reviews)</span>
+                                    </div>
+                                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                                        <h3>Rome, Italy</h3>
+                                    </a>
+                                    <p class="d-flex align-items-start gap-6"><img src="images/target.png" class="w-auto d-inline-block" alt="target"> Colosseum, Vatican City, Trevi Fountain, Roman Forum</p>
+                                    <a routerLink="/destination-details" class="read-more d-flex align-items-center">
+                                        <span>View Packages</span>
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </a>
+                                </div>
+                            </ng-template>
+                        </owl-carousel-o>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

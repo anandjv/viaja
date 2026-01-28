@@ -1,0 +1,113 @@
+.faq-wrapper {
+    &.accordion {
+        .accordion-item {
+            padding: 0;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            background-color: #FAFAFB;
+            border: 1px solid #D7DAE0 !important;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            .accordion-header {
+                .accordion-button {
+                    border-width: 0;
+                    font-size: 16px;
+                    font-weight: 700;
+                    box-shadow: none;
+                    padding: 27px 30px;
+                    line-height: normal;
+                    color: var(--blackColor);
+                    background-color: transparent;
+                    font-family: var(--bodyFontFamily);
+                    &::after {
+                        background-image: url(../../../../public/images/plus.svg);
+                    }
+                    &.open {
+                        &::after {
+                            background-image: url(../../../../public/images/minus.svg);
+                        }
+                    }
+                }
+            }
+            .accordion-body {
+                padding: 18px 30px;
+                padding-top: 0;
+                p {
+                    span {
+                        color: var(--blackColor);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .faq-wrapper {
+        &.accordion {
+            .accordion-item {
+                .accordion-header {
+                    .accordion-button {
+                        font-size: 15px;
+                        padding: 12px 20px;
+                    }
+                }
+                .accordion-body {
+                    padding: 12px 20px;
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+    .faq-content-bottom {
+        margin-top: 15px;
+    }
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px)  {
+
+    .faq-wrapper {
+        &.accordion {
+            .accordion-item {
+                .accordion-header {
+                    .accordion-button {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1399px */
+@media (min-width: 1399px) {
+
+    .faq-content-wrap {
+        max-width: 600px;
+    }
+    .faq-content-bottom {
+        max-width: 335px;
+        margin-left: 109px;
+        p {
+            margin-top: 24px;
+        }
+        &.style-two {
+            margin-top: 350px;
+        }
+    }
+    .faq-wrapper {
+        &.accordion {
+            .accordion-item {
+                .accordion-body {
+                    padding-right: 70px;
+                }
+            }
+        }
+    }
+
+}

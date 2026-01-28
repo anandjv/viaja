@@ -1,0 +1,435 @@
+<div class="d-flex flex-wrap gap-10 align-items-center justify-content-between gap-20 mb-25">
+    <h3 class="db-title">Booking</h3>
+    <ul class="nav nav-tabs border-0 justify-content-center authentication-tab">
+        <li class="nav-item">
+            <button
+                [ngClass]="{'active': currentTab === 'tab1'}"
+                class="nav-link bg-transparent border-0"
+                (click)="switchTab($event, 'tab1')"
+                type="button"
+            >
+                All Types
+            </button>
+        </li>
+        <li class="nav-item">
+            <button
+                [ngClass]="{'active': currentTab === 'tab2'}"
+                class="nav-link bg-transparent border-0"
+                (click)="switchTab($event, 'tab2')"
+                type="button"
+            >
+                Hotels
+            </button>
+        </li>
+        <li class="nav-item">
+            <button
+                [ngClass]="{'active': currentTab === 'tab3'}"
+                class="nav-link bg-transparent border-0"
+                (click)="switchTab($event, 'tab3')"
+                type="button"
+            >
+                Flights
+            </button>
+        </li>
+    </ul>
+</div>
+<div class="tab-content">
+    @if (currentTab === 'tab1') {
+        <div class="tab-pane fade show active">
+            <div class="db-table table-responsive">
+                <table class="table align-middle">
+                    <thead>
+                        <tr>
+                            <th scope="col">Booking ID</th>
+                            <th scope="col">Customer</th>
+                            <th scope="col">Tour</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">People</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#TEX-1582</td>
+                            <td>Sherry Carroll</td>
+                            <td>Bali Cultural Adventure</td>
+                            <td>Oct 15, 2025</td>
+                            <td>$1,299</td>
+                            <td>01</td>
+                            <td class="text-success">Confirmed</td>
+                            <td>
+                                <div class="d-flex gap-10">
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-eye-line"></i>
+                                    </button>
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-delete-bin-line"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#TEX-1617</td>
+                            <td>William Ladd</td>
+                            <td>Everest Base Camp Trek</td>
+                            <td>Nov 2, 2025</td>
+                            <td>$1,899</td>
+                            <td>03</td>
+                            <td class="text-success">Confirmed</td>
+                            <td>
+                                <div class="d-flex gap-10">
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-eye-line"></i>
+                                    </button>
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-delete-bin-line"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#TEX-1745</td>
+                            <td>Cecile Morgan</td>
+                            <td>Maldives Paradise Escape</td>
+                            <td>Dec 10, 2025</td>
+                            <td>$2,499</td>
+                            <td>05</td>
+                            <td class="text-warning">Pending</td>
+                            <td>
+                                <div class="d-flex gap-10">
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-eye-line"></i>
+                                    </button>
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-delete-bin-line"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#TEX-1781</td>
+                            <td>Guadalupe Washington</td>
+                            <td>Italian Luxury Getaway</td>
+                            <td>Sep 28, 2025</td>
+                            <td>$3,499</td>
+                            <td>02</td>
+                            <td class="text-danger">Cancelled</td>
+                            <td>
+                                <div class="d-flex gap-10">
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-eye-line"></i>
+                                    </button>
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-delete-bin-line"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#TEX-1874</td>
+                            <td>James Munoz</td>
+                            <td>Costa Rica Adventure</td>
+                            <td>Jan 5, 2026</td>
+                            <td>$1,299</td>
+                            <td>01</td>
+                            <td class="text-success">Confirmed</td>
+                            <td>
+                                <div class="d-flex gap-10">
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-eye-line"></i>
+                                    </button>
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-delete-bin-line"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-flex flex-wrap gap-10 align-items-center justify-content-between">
+                <span>Showing 1–9 of 15 results</span>
+                <div class="pagination-area d-flex align-items-center">
+                    <button class="next page-numbers border-0">
+                        <i class="ri-arrow-left-long-line"></i>
+                    </button>
+                    <span class="page-numbers border-0 current" aria-current="page">01</span>
+                    <button class="page-numbers border-0">02</button>
+                    <button class="page-numbers border-0">03</button>
+                    <button class="next page-numbers border-0">
+                        <i class="ri-arrow-right-long-line"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    }
+    @if (currentTab === 'tab2') {
+        <div class="tab-pane fade show active">
+            <div class="db-table table-responsive">
+                <table class="table align-middle">
+                    <thead>
+                        <tr>
+                            <th scope="col">Booking ID</th>
+                            <th scope="col">Customer</th>
+                            <th scope="col">Tour</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">People</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#TEX-1781</td>
+                            <td>Guadalupe Washington</td>
+                            <td>Italian Luxury Getaway</td>
+                            <td>Sep 28, 2025</td>
+                            <td>$3,499</td>
+                            <td>02</td>
+                            <td class="text-danger">Cancelled</td>
+                            <td>
+                                <div class="d-flex gap-10">
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-eye-line"></i>
+                                    </button>
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-delete-bin-line"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#TEX-1874</td>
+                            <td>James Munoz</td>
+                            <td>Costa Rica Adventure</td>
+                            <td>Jan 5, 2026</td>
+                            <td>$1,299</td>
+                            <td>01</td>
+                            <td class="text-success">Confirmed</td>
+                            <td>
+                                <div class="d-flex gap-10">
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-eye-line"></i>
+                                    </button>
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-delete-bin-line"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#TEX-1582</td>
+                            <td>Sherry Carroll</td>
+                            <td>Bali Cultural Adventure</td>
+                            <td>Oct 15, 2025</td>
+                            <td>$1,299</td>
+                            <td>01</td>
+                            <td class="text-success">Confirmed</td>
+                            <td>
+                                <div class="d-flex gap-10">
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-eye-line"></i>
+                                    </button>
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-delete-bin-line"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+    @if (currentTab === 'tab3') {
+        <div class="tab-pane fade show active">
+            <div class="db-table table-responsive">
+                <table class="table align-middle">
+                    <thead>
+                        <tr>
+                            <th scope="col">Booking ID</th>
+                            <th scope="col">Customer</th>
+                            <th scope="col">Tour</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">People</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#TEX-1582</td>
+                            <td>Sherry Carroll</td>
+                            <td>Bali Cultural Adventure</td>
+                            <td>Oct 15, 2025</td>
+                            <td>$1,299</td>
+                            <td>01</td>
+                            <td class="text-success">Confirmed</td>
+                            <td>
+                                <div class="d-flex gap-10">
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-eye-line"></i>
+                                    </button>
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-delete-bin-line"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#TEX-1617</td>
+                            <td>William Ladd</td>
+                            <td>Everest Base Camp Trek</td>
+                            <td>Nov 2, 2025</td>
+                            <td>$1,899</td>
+                            <td>03</td>
+                            <td class="text-success">Confirmed</td>
+                            <td>
+                                <div class="d-flex gap-10">
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-eye-line"></i>
+                                    </button>
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-delete-bin-line"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#TEX-1745</td>
+                            <td>Cecile Morgan</td>
+                            <td>Maldives Paradise Escape</td>
+                            <td>Dec 10, 2025</td>
+                            <td>$2,499</td>
+                            <td>05</td>
+                            <td class="text-warning">Pending</td>
+                            <td>
+                                <div class="d-flex gap-10">
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-eye-line"></i>
+                                    </button>
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-delete-bin-line"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#TEX-1781</td>
+                            <td>Guadalupe Washington</td>
+                            <td>Italian Luxury Getaway</td>
+                            <td>Sep 28, 2025</td>
+                            <td>$3,499</td>
+                            <td>02</td>
+                            <td class="text-danger">Cancelled</td>
+                            <td>
+                                <div class="d-flex gap-10">
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-eye-line"></i>
+                                    </button>
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-delete-bin-line"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#TEX-1874</td>
+                            <td>James Munoz</td>
+                            <td>Costa Rica Adventure</td>
+                            <td>Jan 5, 2026</td>
+                            <td>$1,299</td>
+                            <td>01</td>
+                            <td class="text-success">Confirmed</td>
+                            <td>
+                                <div class="d-flex gap-10">
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-eye-line"></i>
+                                    </button>
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-delete-bin-line"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#TEX-1582</td>
+                            <td>Sherry Carroll</td>
+                            <td>Bali Cultural Adventure</td>
+                            <td>Oct 15, 2025</td>
+                            <td>$1,299</td>
+                            <td>01</td>
+                            <td class="text-success">Confirmed</td>
+                            <td>
+                                <div class="d-flex gap-10">
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-eye-line"></i>
+                                    </button>
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-delete-bin-line"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#TEX-1617</td>
+                            <td>William Ladd</td>
+                            <td>Everest Base Camp Trek</td>
+                            <td>Nov 2, 2025</td>
+                            <td>$1,899</td>
+                            <td>03</td>
+                            <td class="text-success">Confirmed</td>
+                            <td>
+                                <div class="d-flex gap-10">
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-eye-line"></i>
+                                    </button>
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-delete-bin-line"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#TEX-1745</td>
+                            <td>Cecile Morgan</td>
+                            <td>Maldives Paradise Escape</td>
+                            <td>Dec 10, 2025</td>
+                            <td>$2,499</td>
+                            <td>05</td>
+                            <td class="text-warning">Pending</td>
+                            <td>
+                                <div class="d-flex gap-10">
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-eye-line"></i>
+                                    </button>
+                                    <button class="bg-transparent p-0 border-0">
+                                        <i class="ri-delete-bin-line"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-flex flex-wrap gap-10 align-items-center justify-content-between">
+                <span>Showing 1–9 of 15 results</span>
+                <div class="pagination-area d-flex align-items-center">
+                    <button class="next page-numbers border-0">
+                        <i class="ri-arrow-left-long-line"></i>
+                    </button>
+                    <span class="page-numbers border-0 current" aria-current="page">01</span>
+                    <button class="page-numbers border-0">02</button>
+                    <button class="page-numbers border-0">03</button>
+                    <button class="next page-numbers border-0">
+                        <i class="ri-arrow-right-long-line"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    }
+</div>

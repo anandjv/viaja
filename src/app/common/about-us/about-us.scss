@@ -1,0 +1,126 @@
+.about-img {
+    img {
+        border-radius: 20px;
+    }
+}
+.about-us-content {
+    h3 {
+        font-size: 24px;
+    }
+    p {
+        color: var(--bodyColor);
+    }
+    .our-simple-mission {
+        border-top: 1px solid #E0E0E0;
+        border-bottom: 1px solid #E0E0E0;
+        margin-top: 40px;
+        padding-top: 40px;
+        margin-bottom: 20px;
+        padding-bottom: 40px;
+
+        h3 {
+            margin-bottom: 8px;
+        }
+        .content {
+            max-width: 312px;
+        }
+        .user {
+            max-width: 224px;
+            border-left: 1px solid #E0E0E0;
+            padding-left: 24px;
+
+            .img {
+                border: 1px solid var(--whiteColor);
+                margin: 0 -5px;
+                border-radius: 100px;
+                width: 50px;
+            }
+        }
+    }
+    .contact-info {
+        .call {
+            i {
+                width: 54px;
+                height: 54px;
+                line-height: 54px;
+                text-align: center;
+                display: inline-block;
+                font-size: 16px;
+                background-color: var(--secondaryColor);
+                border-radius: 100px;
+                transition: var(--transition);
+                color: var(--blackColor);
+            }
+            span {
+                color: var(--blackColor);
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 113.333%;
+                transition: var(--transition);
+            }
+            &:hover {
+                i {
+                    background-color: var(--primaryColor);
+                    color: var(--whiteColor);
+                }  
+                span {
+                    color: var(--primaryColor);
+                } 
+            }
+        }
+        
+    }
+}
+.about-shape {
+    position: absolute;
+    left: 150px;
+    top: 125px;
+    z-index: -1;
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .about-us-content {
+        h3 {
+            font-size: 20px;
+        }
+        .our-simple-mission {
+            padding-top: 20px;
+            margin-top: 20px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+
+            .user {
+                border: none;
+                padding-left: 0;
+            }
+        }
+        
+    }
+
+}
+
+/* Min width 768px to Max width 992px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .about-us-content {
+        .our-simple-mission {
+            padding-top: 30px;
+            margin-top: 30px;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+    }
+
+}
+
+/* Min width 1399px */
+@media (min-width: 1399px) {
+
+    .about-us-content {
+        max-width: 648px;
+        margin-left: auto;
+    }
+
+}

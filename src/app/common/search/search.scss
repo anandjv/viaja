@@ -1,0 +1,288 @@
+.book-form-wrap {
+    border-radius: 15px;
+    border: 1px solid #D9D9D9;
+    background-color: var(--whiteColor);
+
+    .p-30 {
+        padding: 30px;
+    }
+    .dropdown-menu {
+        min-width: 280px;
+    }
+    .traveler-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .counter {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        button {
+            width: 35px;
+            height: 35px;
+            border: 1px solid #D9D9D9;
+
+            &:hover {
+                background-color: var(--primaryColor);
+                border-color: var(--primaryColor);
+            }
+        }
+    }
+    .default-btn {
+        gap: 10px;
+        display: block;
+        padding: 14px 23px;
+        
+        i {
+            position: relative;
+            top: 1px;
+        }
+    }
+    .icon {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        color: var(--primaryColor);
+    }
+    .form-control {
+        padding-left: 40px;
+        color: var(--bodyColor);
+    }
+    .nav-tabs {
+        border-bottom: 1px solid #D9D9D9;
+        margin-bottom: 0;
+        padding-bottom: 17px;
+        gap: 40px;
+        padding-top: 25px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        .nav-item { 
+            .nav-link {
+                border: none;
+                background-color: transparent;
+                position: relative;
+                padding: 8px 5px;
+                padding-top: 0;
+                color: var(--bodyColor);
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 0;
+                    height: 2px;
+                    background-color: var(--primaryColor);
+                    transition: var(--transition);
+                }
+                &.active {
+                    color: var(--primaryColor);
+
+                    &::before {
+                        width: 100%;
+                        right: auto;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+    .form-select {
+        background-image: url(../../../../public/images/down.svg);
+        background-size: auto;
+    }
+    &.style-two {
+        padding: 50px;
+        padding-top: 45px;
+        border-radius: 20px;
+        border: 1px solid #D6DAE0;
+        background-color: var(--whiteColor);
+        max-width: 462px;
+        margin-left: auto;
+
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .mb-12 {
+            margin-bottom: 12px;
+        }
+        .default-btn {
+            margin-top: 20px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        .form-control {
+            background-color: #F7F7F7;
+            border-color: #F7F7F7;
+        }
+        .label {
+            margin-bottom: 2px;
+        }
+    }  
+    &.style-three {
+        border-radius: 10px;
+        border: 1px solid var(--secondaryColor) !important;
+        background-color: rgba(0, 0, 0, 0.30) !important;
+        padding: 30px;
+
+        .form-control {
+            padding-left: 20px;
+        }
+        .label {
+            margin-bottom: 0;
+        }
+    }
+    &.style-four {
+        border-radius: 10px;
+        padding: 30px;
+        background-color: #F7F7F7;
+        border-color: #F7F7F7;
+        margin-bottom: 30px;
+
+        .form-control {
+            background-color: var(--whiteColor);
+            border-color: #D9D9D9;
+            padding-left: 20px;
+        }
+
+    }
+}
+.trust-indicators {
+    margin-top: 22px;
+    padding: 0 30px;
+
+    .ri-global-line {
+        position: relative;
+        top: 2px;
+    }
+}
+.book-form-area {
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        left: 0;
+        bottom: 0;
+        content: "";
+        z-index: -1;
+        width: 100%;
+        height: 137px;
+        position: absolute;
+        background-color: var(--grayColor);
+    }
+}
+.book-form-caption-wrap {
+    margin-top: -100px;
+
+    .book-form-title {
+        color: var(--whiteColor);
+        margin-bottom: 24px;
+        text-align: center;
+        font-size: 24px;
+    }
+}
+.tour-booking-form {
+    max-width: 870px;
+    margin: auto;
+
+    h3 {
+        font-size: 24px;
+        margin-top: 40px;
+        margin-bottom: 5px;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .book-form-wrap {
+        .p-30 {
+            padding: 20px;
+        }
+        .nav-tabs {
+            gap: 20px;
+            padding-top: 15px;
+        }
+        &.style-two {
+            max-width: 100%;
+            padding: 25px;
+
+            h3 {
+                font-size: 20px;
+            }
+        }
+    }
+    .book-form-caption-wrap {
+        .book-form-title {
+            font-size: 20px;
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 992px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .book-form-wrap {
+        .p-30 {
+            padding: 25px;
+        }
+        .nav-tabs {
+            padding-top: 20px;
+        }
+        &.style-two {
+            max-width: 100%;
+        }
+    }
+    .book-form-caption-wrap {
+        .book-form-title {
+            font-size: 22px;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .book-form-wrap {
+        &.style-two {
+            padding: 25px;
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .book-form-wrap {
+        &.style-two {
+            padding: 25px;
+        }
+    }
+    
+}
+
+/* Min width 1399px */
+@media (min-width: 1399px) {
+
+    .book-form-wrap {
+        .ps-20 {
+            padding-left: 20px;
+        }
+    }
+    .book-form-area {
+        margin-top: -100px;
+        position: relative;
+        z-index: 1;
+    }
+
+}

@@ -1,0 +1,16 @@
+.item-quantity {
+    width: 150px;
+    height: 54px;
+    border-radius: 5px;
+    background: #FAFAFB;
+    border: 1px solid #D7DAE0;
+
+    input {
+        width: 50px;
+        font-weight: 700;
+    }
+    .quantity-btn {
+        font-weight: 500;
+        margin: 10px;
+    }
+}

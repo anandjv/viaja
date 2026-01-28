@@ -1,0 +1,196 @@
+.testimonials-single-item {
+    text-align: center;
+    max-width: 875px;
+    margin: auto;
+
+    .star {
+        gap: 1px;
+        margin-bottom: 20px;
+        margin-top: 15px;
+    }
+    h4 {
+        font-size: 24px;
+        font-weight: 700;
+        line-height:  130%;
+        margin-bottom: 35px;
+    }
+    h3 {
+        font-family: var(--bodyFontFamily);
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+}
+.testimonial-slide-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    .slide-item {
+        width: auto !important;
+        height: auto !important;
+        position: absolute;
+        img {
+            border-radius: 10px;
+        }
+    }
+    .one {
+        left: 490px;
+        top: 55px;
+    }
+    .two {
+        right: 245px;
+        top: 70px;
+    }
+    .three {
+        left: 120px;
+        bottom: 112px;
+    }
+    .four {
+        right: 30px;
+        bottom: 0;
+    }
+}
+::ng-deep {
+    .testimonial-slide-thumb2 {
+        .owl-theme {
+            .owl-nav {
+                gap: 10px;
+                display: flex;
+                margin-top: 25px;
+                align-items: center;
+                justify-content: center;
+                [class*='owl-'] {
+                    margin: 0;
+                    padding: 0;
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    font-size: 18px;
+                    border-radius: 50%;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--blackColor);
+                    border: 1px solid #D7DAE0;
+                    backdrop-filter: blur(7.5px);
+                    transition: var(--transition);
+                    background-color: var(--whiteColor);
+                    &:hover {
+                        color: var(--whiteColor);
+                        border-color: var(--primaryColor);
+                        background-color: var(--primaryColor);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .testimonials-single-item {
+        h4 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+    }
+    .testimonials-area {
+        padding-top: 0;
+    }
+    ::ng-deep {
+        .testimonial-slide-thumb2 {
+            .owl-theme {
+                .owl-nav {
+                    [class*='owl-'] {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 992px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .testimonials-single-item {
+        h4 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+    }
+    .testimonials-area {
+        padding-top: 0;
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .testimonials-area {
+        padding-top: 0;
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .testimonials-area {
+        padding-top: 0;
+    }
+
+}
+
+/* Max width 1199px */
+@media only screen and (max-width: 1199px) {
+
+    .testimonial-slide-thumb {
+        .one {
+            left: 200px;
+        }
+        .two {
+            right: 150px;
+        }
+        .three {
+            left: 120px;
+            bottom: 0;
+        }
+        .four {
+            right: 30px;
+        }
+    }
+
+}
+
+/* Min width 1399px */
+@media (min-width: 1399px) {
+
+    .testimonials-area {
+        position: relative;
+        z-index: 1;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 15px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            height: 90px;
+            width: 1px;
+            background-color: #D7DAE0;
+        }
+        &.style-two {
+            &::before {
+                display: none;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,166 @@
+<div class="faq-area for-dark-gap pt-120">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-5">
+                <div class="faq-content-wrap d-flex flex-column justify-content-between h-100">
+                    <div>
+                        <h2 class="main-title">Frequently Asked Questions</h2>
+                        <p>Everything you need to know before your adventure</p>
+                    </div>
+                    <div class="faq-content-bottom">
+                        <img src="images/about-shape.png" class="d-none d-lg-inline-block" alt="about-shape">
+                        <p>Still have questions? <a routerLink="/faq" class="text-primary">Contact our adventure specialists</a> - we're happy to help!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="faq-content">
+                    <div class="accordion faq-wrapper">
+                        <div class="accordion-item border-0">
+                            <h2 class="accordion-header">
+                                <button
+                                    [ngClass]="{ 'open': isSectionOpen(0) }"
+                                    (click)="toggleSection(0)"
+                                    class="accordion-button"
+                                    type="button"
+                                >
+                                    1. How do I book a tour on Viaja?
+                                </button>
+                            </h2>
+                            <div
+                                class="accordion-collapse collapse"
+                                [ngClass]="{ 'show': isSectionOpen(0) }"
+                            >
+                                <div class="accordion-body">
+                                    <p><span class="fw-bold">Answer:</span> Booking is easy! Simply choose your adventure, select your dates, and click “Book Now.” You’ll be guided through a secure checkout process and receive instant confirmation via email.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-0">
+                            <h2 class="accordion-header">
+                                <button
+                                    [ngClass]="{ 'open': isSectionOpen(1) }"
+                                    (click)="toggleSection(1)"
+                                    class="accordion-button"
+                                    type="button"
+                                >
+                                    2. What is included in the tour price?
+                                </button>
+                            </h2>
+                            <div
+                                class="accordion-collapse collapse"
+                                [ngClass]="{ 'show': isSectionOpen(1) }"
+                            >
+                                <div class="accordion-body">
+                                    <p><span class="fw-bold">Answer:</span> Building Permit: Required for new construction, additions, renovations, or major structural changes. Zoning Approval: Ensures your project complies with local land-use regulations (e.g., residential, commercial, industrial). Some projects require both.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-0">
+                            <h2 class="accordion-header">
+                                <button
+                                    [ngClass]="{ 'open': isSectionOpen(2) }"
+                                    (click)="toggleSection(2)"
+                                    class="accordion-button"
+                                    type="button"
+                                >
+                                    3. Can I customize my trip?
+                                </button>
+                            </h2>
+                            <div
+                                class="accordion-collapse collapse"
+                                [ngClass]="{ 'show': isSectionOpen(2) }"
+                            >
+                                <div class="accordion-body">
+                                    <p><span class="fw-bold">Answer:</span> Registering to vote or updating your voter information is the official process that ensures you are eligible to participate in elections and that your personal details are accurate in the voter rolls. This process typically requires providing proof of identity, residency, and age. It can be done online, in person, or by mail, depending on your local election authority. Updating your information is important if you move, change your name, or need to modify party affiliation, as it ensures you receive the correct ballot and can vote without issues. Always verify your registration status after submission to confirm your eligibility.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-0">
+                            <h2 class="accordion-header">
+                                <button
+                                    [ngClass]="{ 'open': isSectionOpen(3) }"
+                                    (click)="toggleSection(3)"
+                                    class="accordion-button"
+                                    type="button"
+                                >
+                                    4. Is it safe to travel on your tours?
+                                </button>
+                            </h2>
+                            <div
+                                class="accordion-collapse collapse"
+                                [ngClass]="{ 'show': isSectionOpen(3) }"
+                            >
+                                <div class="accordion-body">
+                                    <p><span class="fw-bold">Answer:</span> Municipal and city government services are public services provided by local government authorities to meet the needs of residents and maintain community well-being. These services vary by city but generally include essential, regulatory, and recreational functions.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-0">
+                            <h2 class="accordion-header">
+                                <button
+                                    [ngClass]="{ 'open': isSectionOpen(4) }"
+                                    (click)="toggleSection(4)"
+                                    class="accordion-button"
+                                    type="button"
+                                >
+                                    5. What is your cancellation and refund policy?
+                                </button>
+                            </h2>
+                            <div
+                                class="accordion-collapse collapse"
+                                [ngClass]="{ 'show': isSectionOpen(4) }"
+                            >
+                                <div class="accordion-body">
+                                    <p><span class="fw-bold">Answer:</span> We repair a wide range of appliances including refrigerators washing machines dryers dishwashers ovens microwaves air conditioners and more. If you are unsure whether we service your specific appliance feel free to contact</p>
+                                </div>
+                            </div>
+                        </div>
+                        @if (router.url === '/faq') {
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button
+                                        [ngClass]="{ 'open': isSectionOpen(5) }"
+                                        (click)="toggleSection(5)"
+                                        class="accordion-button"
+                                        type="button"
+                                    >
+                                        6. What if I get sick or injured during the trek?
+                                    </button>
+                                </h2>
+                                <div
+                                    class="accordion-collapse collapse"
+                                    [ngClass]="{ 'show': isSectionOpen(5) }"
+                                >
+                                    <div class="accordion-body">
+                                        <p>We repair a wide range of appliances including refrigerators washing machines dryers dishwashers ovens microwaves air conditioners and more. If you are unsure whether we service your specific appliance feel free to contact</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button
+                                        [ngClass]="{ 'open': isSectionOpen(6) }"
+                                        (click)="toggleSection(6)"
+                                        class="accordion-button"
+                                        type="button"
+                                    >
+                                        7.  Is travel insurance required?
+                                    </button>
+                                </h2>
+                                <div
+                                    class="accordion-collapse collapse"
+                                    [ngClass]="{ 'show': isSectionOpen(6) }"
+                                >
+                                    <div class="accordion-body">
+                                        <p>We repair a wide range of appliances including refrigerators washing machines dryers dishwashers ovens microwaves air conditioners and more. If you are unsure whether we service your specific appliance feel free to contact</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

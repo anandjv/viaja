@@ -1,0 +1,45 @@
+<div
+    class="booking-area bg-img"
+    style="background-image: url(images/booking-bg.jpg); background-attachment: fixed;"
+>
+    <div class="container mw-1345">
+        <div class="booking-content">
+            <h2 class="main-title ms-0 text-white">Get 10% Off Your First Booking!</h2>
+            <p class="dec text-white">Subscribe to our newsletter and receive exclusive deals, travel tips, and your discount code immediately</p>
+            <ul class="p-0 m-0 list-unstyled d-flex flex-wrap align-items-center timer" id="count_down_date">
+                <li>
+                    <h2 id="days">
+                        {{ countdown.days }}
+                    </h2>
+                    <span>Days</span>
+                </li>
+                <li>
+                    <h2 id="hours">
+                        {{ countdown.hours }}
+                    </h2>
+                    <span>Hours</span>
+                </li>
+                <li>
+                    <h2 id="minutes">
+                        {{ countdown.minutes }}
+                    </h2>
+                    <span>Mins</span>
+                </li>
+                <li>
+                    <h2 id="seconds">
+                        {{ countdown.seconds }}
+                    </h2>
+                    <span>Secs</span>
+                </li>
+            </ul>
+            <form class="position-relative z-1 discount-form">
+                <input type="email" class="form-control" placeholder="Enter your email address">
+                <button type="submit" class="submit-btn style-two default-btn position-absolute top-50 end-0 translate-middle-y">
+                    <i class="ri-send-plane-2-line d-sm-none"></i>
+                    <span class="d-none d-sm-inline-block">Get My Discount</span>
+                </button>
+            </form>
+            <p class="text-white">We respect your privacy. Unsubscribe at any time.</p>
+        </div>
+    </div>
+</div>

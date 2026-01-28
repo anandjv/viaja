@@ -1,0 +1,82 @@
+.sidebar-menu-area {
+	background-color: var(--primaryColor);
+    .dashboard-logo {
+        background-color: #FAFAFB;
+        padding: 25px;
+    }
+	ul {
+        padding: {
+            top: 17px;
+            bottom: 17px;
+        };
+		li {
+            margin-bottom: 8px;
+			a {
+				color: var(--whiteColor);
+				text-decoration: none;
+				padding: 8px 25px;
+                gap: 10px;
+				i {
+					color: var(--whiteColor);
+				}
+				&.active {
+					background-color: rgba(255, 255, 255, 0.1);
+					color: var(--whiteColor);
+					i {
+						color: var(--whiteColor);
+					}
+				}
+				&:hover {
+					background-color: rgba(255, 255, 255, 0.1);
+					color: var(--whiteColor);
+					i {
+						color: var(--whiteColor);
+					}
+				}
+			}
+            &:last-child {
+                margin-bottom: 0;
+            }
+		}
+	}
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .sidebar-menu-area {
+        .dashboard-logo {
+            padding: 20px;
+        }
+        ul {
+            padding: {
+                top: 15px;
+                bottom: 15px;
+            };
+            li {
+                a {
+                    padding: {
+                        left: 20px;
+                        right: 20px;
+                    };
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1920px */
+@media only screen and (min-width: 1920px) {}

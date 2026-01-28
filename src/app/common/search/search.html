@@ -1,0 +1,235 @@
+<div class="book-form-area">
+    <div class="container mw-1345">
+        <div class="book-form-wrap">
+            <!-- Nav Tabs -->
+            <ul class="nav nav-tabs justify-content-center">
+                <li class="nav-item">
+                    <button
+                        [ngClass]="{'active': currentTab === 'tab1'}"
+                        (click)="switchTab($event, 'tab1')"
+                        class="nav-link"
+                        type="button"
+                    >
+                        Tours
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button
+                        [ngClass]="{'active': currentTab === 'tab2'}"
+                        (click)="switchTab($event, 'tab2')"
+                        class="nav-link"
+                        type="button"
+                    >
+                        Hotels
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button
+                        [ngClass]="{'active': currentTab === 'tab3'}"
+                        (click)="switchTab($event, 'tab3')"
+                        class="nav-link"
+                        type="button"
+                    >
+                        Flights
+                    </button>
+                </li>
+            </ul>
+            <div class="tab-content">
+                @if (currentTab === 'tab1') {
+                    <div class="tab-pane fade show active">
+                        <!-- Form -->
+                        <div class="p-30">
+                            <form class="row align-items-center g-3">
+                                <div class="col-lg-10">
+                                    <div class="row g-3 g-10">
+                                        <!-- Destination -->
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="position-relative">
+                                                <select class="form-select form-control">
+                                                    <option selected>Destination</option>
+                                                    <option>Indonesia</option>
+                                                    <option>France</option>
+                                                    <option>Italy</option>
+                                                    <option>Thailand</option>
+                                                    <option>South Africa</option>
+                                                </select>
+                                                <i class="ri-map-pin-line icon"></i>
+                                            </div>
+                                        </div>
+                                        <!-- Tour Type -->
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="position-relative">
+                                                <select class="form-select form-control">
+                                                    <option selected>Tour Type</option>
+                                                    <option>Adventure</option>
+                                                    <option>Hiking</option>
+                                                    <option>City Tour</option>
+                                                    <option>Beach Tour</option>
+                                                    <option>Wildlife Safari</option>
+                                                </select>
+                                                <i class="ri-walk-line icon"></i>
+                                            </div>
+                                        </div>
+                                        <!-- Date -->
+                                        <div class="col-lg-3 col-sm-6">
+                                            <app-date-range-picker />
+                                        </div>
+                                        <!-- Travelers Dropdown -->
+                                        <div class="col-lg-3 col-sm-6">
+                                            <app-travelers-dropdown />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <!-- Search Button -->
+                                    <div class="ps-20">
+                                        <button type="submit" class="default-btn w-100">
+                                            <span class="d-flex align-items-center justify-content-center gap-10">
+                                                <i class="ri-search-line"></i>
+                                                <span>Search</span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                }
+                @if (currentTab === 'tab2') {
+                    <div class="tab-pane fade show active">
+                        <!-- Form -->
+                        <div class="p-30">
+                            <form class="row align-items-center g-3">
+                                <div class="col-lg-10">
+                                    <div class="row g-3 g-10">
+                                        <!-- Destination -->
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="position-relative">
+                                                <select class="form-select form-control">
+                                                    <option selected>Destination</option>
+                                                    <option>Indonesia</option>
+                                                    <option>France</option>
+                                                    <option>Italy</option>
+                                                    <option>Thailand</option>
+                                                    <option>South Africa</option>
+                                                </select>
+                                                <i class="ri-map-pin-line icon"></i>
+                                            </div>
+                                        </div>
+                                        <!-- Hotel Type -->
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="position-relative">
+                                                <select class="form-select form-control">
+                                                    <option selected>Hotel Type</option>
+                                                    <option>Adventure</option>
+                                                    <option>Hiking</option>
+                                                    <option>City Tour</option>
+                                                    <option>Beach Tour</option>
+                                                    <option>Wildlife Safari</option>
+                                                </select>
+                                                <i class="ri-walk-line icon"></i>
+                                            </div>
+                                        </div>
+                                        <!-- Date -->
+                                        <div class="col-lg-3 col-sm-6">
+                                            <app-date-range-picker />
+                                        </div>
+                                        <!-- Travelers Dropdown -->
+                                        <div class="col-lg-3 col-sm-6">
+                                            <app-travelers-dropdown />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <!-- Search Button -->
+                                    <div class="ps-20">
+                                        <button type="submit" class="default-btn w-100">
+                                            <span class="d-flex align-items-center justify-content-center gap-10">
+                                                <i class="ri-search-line"></i>
+                                                <span>Search</span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                }
+                @if (currentTab === 'tab3') {
+                    <div class="tab-pane fade show active">
+                        <!-- Form -->
+                        <div class="p-30">
+                            <form class="row align-items-center g-3">
+                                <div class="col-lg-10">
+                                    <div class="row g-3 g-10">
+                                        <!-- Destination -->
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="position-relative">
+                                                <select class="form-select form-control">
+                                                    <option selected>Destination</option>
+                                                    <option>Indonesia</option>
+                                                    <option>France</option>
+                                                    <option>Italy</option>
+                                                    <option>Thailand</option>
+                                                    <option>South Africa</option>
+                                                </select>
+                                                <i class="ri-map-pin-line icon"></i>
+                                            </div>
+                                        </div>
+                                        <!-- Flight Type -->
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="position-relative">
+                                                <select class="form-select form-control">
+                                                    <option selected>Flight Type</option>
+                                                    <option>Adventure</option>
+                                                    <option>Hiking</option>
+                                                    <option>City Tour</option>
+                                                    <option>Beach Tour</option>
+                                                    <option>Wildlife Safari</option>
+                                                </select>
+                                                <i class="ri-walk-line icon"></i>
+                                            </div>
+                                        </div>
+                                        <!-- Date -->
+                                        <div class="col-lg-3 col-sm-6">
+                                            <app-date-range-picker />
+                                        </div>
+                                        <!-- Travelers Dropdown -->
+                                        <div class="col-lg-3 col-sm-6">
+                                            <app-travelers-dropdown />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <!-- Search Button -->
+                                    <div class="ps-20">
+                                        <button type="submit" class="default-btn w-100">
+                                            <span class="d-flex align-items-center justify-content-center gap-10">
+                                                <i class="ri-search-line"></i>
+                                                <span>Search</span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="d-flex justify-content-center justify-content-md-between align-items-center flex-wrap gap-10 trust-indicators">
+            <div class="d-flex align-items-center gap-10">
+                <i class="ri-star-fill text-warning"></i>
+                <span>4.8/5 (10K+ Reviews)</span>
+            </div>
+            <div class="d-flex align-items-center gap-10">
+                <i class="ri-global-line text-warning"></i>
+                <span>Trusted by 500K+ Travelers</span>
+            </div>
+            <div class="d-flex align-items-center gap-10">
+                <i class="ri-git-repository-private-line text-warning"></i>
+                <span>Secure Booking</span>
+            </div>
+        </div>
+    </div>
+</div>

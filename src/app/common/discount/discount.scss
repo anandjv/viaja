@@ -1,0 +1,78 @@
+.booking-area {
+    padding: 170px 0;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.50) 22.16%, rgba(0, 0, 0, 0.00) 55.15%);
+        z-index: -1;
+    }
+}
+.booking-content {
+    max-width: 700px;
+
+    .timer {
+        gap: 10px;
+
+        li {
+            width: 120px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 16px 20px;
+            text-align: center;
+            border-radius: 15px;
+
+            h2 {
+                font-size: 30px;
+                font-weight: 700;
+                color: var(--whiteColor);
+                margin-bottom: 0;
+            }
+            span {
+                font-size: 15px;
+                font-weight: 400;
+                color: var(--whiteColor);
+            }
+        }
+    }
+    .discount-form {
+        max-width: 648px;
+        margin-top: 30px;
+        margin-bottom: 14px;
+
+        .default-btn {
+            padding: 14px 23px;
+        }
+    }
+}   
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .booking-area {
+        padding: 60px 0;
+
+        &::before {
+            background: rgba(0, 0, 0, 0.5);
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 992px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .booking-area {
+        padding: 70px 0;
+
+        &::before {
+            background: rgba(0, 0, 0, 0.5);
+        }
+    }
+
+}

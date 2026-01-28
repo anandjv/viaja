@@ -1,0 +1,46 @@
+.icon {
+    top: 50%;
+    left: 15px;
+    margin-top: -1px;
+    position: absolute;
+    color: var(--primaryColor);
+    transform: translateY(-50%);
+}
+.form-control {
+    padding-left: 40px;
+    padding-right: 30px;
+    color: var(--bodyColor);
+}
+.dropdown-menu {
+    min-width: 249px;
+}
+.traveler-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+.counter {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+
+    button {
+        padding: 0;
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+        color: var(--blackColor);
+        border: 1px solid #D9D9D9;
+
+        &:hover {
+            background-color: var(--primaryColor);
+            border-color: var(--primaryColor);
+            color: var(--whiteColor);
+        }
+    }
+}
+.form-select {
+    background-image: url(../../../../../public/images/down.svg);
+    background-size: auto;
+}

@@ -1,0 +1,228 @@
+.featured-adventure-tours-single-item {
+    transition: var(--transition);
+    background-color: var(--whiteColor);
+
+    .featured-adventure-img {
+        overflow: hidden;
+        border-radius: 10px 10px 0 0;
+        img {
+            border-radius: 10px 10px 0 0;
+            transition: var(--transition);
+            transform: scale(1) rotate(0deg);
+        }
+       .person {
+            color: var(--whiteColor);
+            font-weight: 600;
+            background-color: #227950;
+            padding: 4px 10px;
+            border-radius: 5px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 20px;
+
+            span {
+                font-weight: 400;
+                font-size: 14px;
+            }
+        }
+    }
+    .tags {
+        color: var(--whiteColor);
+        background-color: var(--primaryColor);
+        padding: 5.5px 10px;
+        border-radius: 5px;
+        position: absolute;
+        top: -16px;
+        right: 0;
+        margin: 0 20px;
+        font-size: 14px;
+    } 
+    .location {
+        span {
+            color: var(--bodyColor);
+        }
+    }
+    .title {
+        text-decoration: none;
+        display: block;
+        margin-top: 8px;
+        h3 {
+            font-size: 24px;
+        }
+    }
+    .info {
+        border-top: 1px solid #E0E0E0;
+        border-bottom: 1px solid #E0E0E0;
+        padding-top: 15px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+
+        span {
+            font-size: 14px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        h4 {
+            font-size: 20px;
+            margin-bottom: 0;
+        }
+    }
+    .featured-adventure-tours-single-item-content {
+        border: 1px solid #E0E0E0;
+        padding: 30px;
+        border-radius: 0 0 10px 10px;
+    }
+    &:hover {
+        transform: translateY(-5px);
+        .featured-adventure-img {
+            img {
+                transform: scale(1.3) rotate(10deg);
+            }
+        }
+    }
+}
+.featured-adventure-tours-shape {
+    bottom: 60px !important;
+}
+::ng-deep {
+    .featured-adventure-tours-slide {
+        .owl-theme {
+            .owl-nav {
+                gap: 10px;
+                display: flex;
+                margin-top: 35px;
+                align-items: center;
+                justify-content: center;
+                [class*='owl-'] {
+                    margin: 0;
+                    padding: 0;
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    font-size: 18px;
+                    border-radius: 50%;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--blackColor);
+                    border: 1px solid #D7DAE0;
+                    backdrop-filter: blur(7.5px);
+                    transition: var(--transition);
+                    background-color: var(--whiteColor);
+                    &:hover {
+                        color: var(--whiteColor);
+                        border-color: var(--primaryColor);
+                        background-color: var(--primaryColor);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .featured-adventure-tours-single-item {
+        .featured-adventure-tours-single-item-content {
+            padding: 20px;
+        }
+        .title {
+            h3 {
+                font-size: 18px;
+            }
+        }
+        .info {
+            h4 {
+                font-size: 16px;
+            }
+        }
+    }
+    ::ng-deep {
+        .featured-adventure-tours-slide {
+            .owl-theme {
+                .owl-nav {
+                    margin-top: 25px;
+                    [class*='owl-'] {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 992px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .featured-adventure-tours-single-item {
+        .featured-adventure-tours-single-item-content {
+            padding: 25px;
+        }
+        .title {
+            h3 {
+                font-size: 19px;
+            }
+        }
+        .info {
+            h4 {
+                font-size: 17px;
+            }
+        }
+    }
+    ::ng-deep {
+        .featured-adventure-tours-slide {
+            .owl-theme {
+                .owl-nav {
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .featured-adventure-tours-single-item {
+        .featured-adventure-tours-single-item-content {
+            padding: 20px;
+        }
+        .title {
+            h3 {
+                font-size: 18px;
+            }
+        }
+        .info {
+            h4 {
+                font-size: 16px;
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .featured-adventure-tours-single-item {
+        .featured-adventure-tours-single-item-content {
+            padding: 25px;
+        }
+        .title {
+            h3 {
+                font-size: 19px;
+            }
+        }
+        .info {
+            h4 {
+                font-size: 17px;
+            }
+        }
+    }
+
+}

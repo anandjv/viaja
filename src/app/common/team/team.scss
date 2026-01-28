@@ -1,0 +1,220 @@
+.guides-single-item {
+    background-color: #F7F7F7;
+    padding: 40px 30px;
+    border-radius: 20px;
+
+    h3 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+    .social-link {
+        gap: 8px;
+        a {
+            text-align: center;
+            display: inline-block;
+            color: var(--bodyColor);
+        }
+    }
+    .mb-25 {
+        margin-bottom: 25px;
+    }
+    h4 {
+        font-family: var(--bodyFontFamily);
+        font-size: 19px;
+    }
+    .guide-img {
+        margin-bottom: 24px;
+
+        img {
+            border-radius: 10px;
+        }
+    }
+    .info {
+        li {
+            margin-bottom: 5px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+            span {
+                font-weight: 700;
+                color: var(--blackColor);
+            }
+        }
+    }
+}
+::ng-deep {
+    .guides-slide {
+        .owl-theme {
+            .owl-nav {
+                gap: 10px;
+                bottom: 0;
+                left: -448px;
+                display: flex;
+                margin-top: 0;
+                position: absolute;
+                align-items: center;
+                justify-content: center;
+                [class*='owl-'] {
+                    margin: 0;
+                    padding: 0;
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    font-size: 18px;
+                    border-radius: 50%;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--blackColor);
+                    border: 1px solid #D7DAE0;
+                    backdrop-filter: blur(7.5px);
+                    transition: var(--transition);
+                    background-color: var(--whiteColor);
+                    &:hover {
+                        color: var(--whiteColor);
+                        border-color: var(--primaryColor);
+                        background-color: var(--primaryColor);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .guides-single-item {
+        padding: 20px;
+
+        h3 {
+            font-size: 20px;
+        }
+        h4 {
+            font-size: 18px;
+        }
+    }
+    ::ng-deep {
+        .guides-slide {
+            .owl-theme {
+                .owl-nav {
+                    left: 0;
+                    margin-top: 25px;
+                    position: relative;
+                    [class*='owl-'] {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 992px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .guides-single-item {
+        padding: 20px;
+
+        h3 {
+            font-size: 22px;
+        }
+        h4 {
+            font-size: 18px;
+        }
+    }
+    ::ng-deep {
+        .guides-slide {
+            .owl-theme {
+                .owl-nav {
+                    left: 0;
+                    margin-top: 25px;
+                    position: relative;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .guides-single-item {
+        padding: 20px;
+
+        h3 {
+            font-size: 20px;
+        }
+        h4 {
+            font-size: 18px;
+        }
+    }
+    ::ng-deep {
+        .guides-slide {
+            .owl-theme {
+                .owl-nav {
+                    left: -319px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    ::ng-deep {
+        .guides-slide {
+            .owl-theme {
+                .owl-nav {
+                    left: -380px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Max width 991px */
+@media only screen and (max-width: 991px) {
+
+    .guides-arrow {
+        position: unset !important;
+    }
+
+}
+
+/* Min width 1399px */
+@media (min-width: 1399px) {
+
+    .guides-single-item {
+        .guide-img {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+    }
+    .guides-slide {
+        margin-right: -150px;
+    }
+    .guides-arrow {
+        z-index: 1;
+        width: 100%;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            width: 68%;
+            height: 1px;
+            background-color: #D7DAE0;
+        }
+    }
+
+}

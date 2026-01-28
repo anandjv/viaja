@@ -1,0 +1,232 @@
+.trending-destinations-single-item {
+    transition: var(--transition);
+
+    .trending-destinations-img {
+        overflow: hidden;
+        border-radius: 10px 10px 0 0;
+        img {
+            border-radius: 10px 10px 0 0;
+            transition: var(--transition);
+            transform: scale(1) rotate(0deg);
+        }
+        .tag {
+            padding: 4px 10px;
+            background-color: var(--secondaryColor);
+            color: var(--blackColor);
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 20px;
+            border-radius: 5px;
+        }
+    }
+    .trending-destinations-content {
+        background-color: var(--whiteColor);
+        padding: 20px 30px;
+        border-radius: 0 0 10px 10px;
+        position: relative;
+        z-index: 1;
+        
+        .person {
+            padding: 4px 10px;
+            background-color: #227950;
+            color: var(--whiteColor);
+            position: absolute;
+            top: -16px;
+            right: 0;
+            margin: 20px;
+            margin-top: 0;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin-bottom: 7px;
+            transition: var(--transition);
+        }
+        p {
+            color: var(--bodyColor);
+        }
+        h4 {
+            font-size: 20px;
+            border-top: 1px solid #E0E0E0;
+            padding-top: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        ul {
+            li {
+                margin-bottom: 4px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                i {
+                    color: var(--primaryColor);
+                    font-size: 18px;
+                }
+                span {
+                    color: var(--bodyColor);
+                }
+            }
+        }
+        .read-more {
+            margin-top: 15px;
+            color: var(--primaryColor);
+        }
+        &.bg-fafafb {
+            background-color: #fafafb;
+        }
+        .border-top {
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+    }
+    &:hover {
+        transform: translateY(-5px);
+        .trending-destinations-img {
+            img {
+                transform: scale(1.3) rotate(10deg);
+            }
+        }
+        .trending-destinations-content {
+            h3 {
+                color: var(--primaryColor);
+            }
+        }
+    }
+}
+.trending-destinations-area {
+    .container-fluid {
+        padding: {
+            left: calc((100% - 1620px) / 2);
+            right: 0;
+        };
+    }
+}
+::ng-deep {
+    .trending-destinations-slide {
+        .owl-theme {
+            .owl-nav {
+                gap: 10px;
+                top: -112px;
+                right: 25px;
+                display: flex;
+                margin-top: 0;
+                position: absolute;
+                align-items: center;
+                justify-content: center;
+                [class*='owl-'] {
+                    margin: 0;
+                    padding: 0;
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    font-size: 18px;
+                    border-radius: 50%;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--whiteColor);
+                    backdrop-filter: blur(20px);
+                    transition: var(--transition);
+                    border: 1px solid rgba(255, 255, 255, 0.50);
+                    background: radial-gradient(231% 135.8% at 0.9% 2.98%, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%);
+                    &:hover {
+                        color: var(--whiteColor);
+                        border-color: var(--primaryColor);
+                        background-color: var(--primaryColor);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .trending-destinations-single-item {
+        .trending-destinations-content {
+            padding: 20px;
+
+            h3 {
+                font-size: 20px;
+            }
+            h4 {
+                font-size: 18px;
+            }
+        }
+    }
+    .trending-destinations-area {
+        .container-fluid {
+            padding: {
+                left: 12px;
+                right: 12px;
+            };
+        }
+    }
+    ::ng-deep {
+        .trending-destinations-slide {
+            .owl-theme {
+                .owl-nav {
+                    top: 0;
+                    right: 0;
+                    margin-top: 25px;
+                    position: relative;
+                    [class*='owl-'] {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 992px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .trending-destinations-single-item {
+        .trending-destinations-content {
+            padding: 25px;
+
+            h3 {
+                font-size: 22px;
+            }
+            h4 {
+                font-size: 19px;
+            }
+        }
+    }
+    ::ng-deep {
+        .trending-destinations-slide {
+            .owl-theme {
+                .owl-nav {
+                    top: -100px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px)  {
+
+    .trending-destinations-single-item {
+        .trending-destinations-content {
+            padding: 20px;
+
+            h3 {
+                font-size: 20px;
+            }
+            h4 {
+                font-size: 18px;
+            }
+        }
+    }
+
+}

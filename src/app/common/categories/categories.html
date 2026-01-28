@@ -1,0 +1,195 @@
+@if (router.url === '/index-3' || router.url === '/index-4') {
+
+    <div
+        class="adventure-categories-area bg-img ptb-120"
+        style="background-image: url(images/adventure-categories-bg.png); background-position: bottom center; background-size: auto;"
+    >
+        <div class="container mw-1680">
+            <div class="text-center mb-40">
+                <h3 class="main-title">Popular Adventure Categories</h3>
+                <p>Find your perfect adventure across our diverse range of thrilling experiences</p>
+            </div>
+            <div class="adventure-categories-slide">
+                <owl-carousel-o [options]="categoriesSlider">
+                    <ng-template carouselSlide>
+                        <div class="adventure-categories-single-item">
+                            <a routerLink="/tour-listing" class="d-block text-decoration-none">
+                                <img src="images/categorie8.jpg" alt="adventure-categorie">
+                                <h3>Adventure</h3>
+                                <span>24 Adventures</span>
+                            </a>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="adventure-categories-single-item">
+                            <a routerLink="/tour-listing" class="d-block text-decoration-none">
+                                <img src="images/categorie9.jpg" alt="adventure-categorie">
+                                <h3>Safari & Wildlife</h3>
+                                <span>15 Adventures</span>
+                            </a>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="adventure-categories-single-item">
+                            <a routerLink="/tour-listing" class="d-block text-decoration-none">
+                                <img src="images/categorie10.jpg" alt="adventure-categorie">
+                                <h3>Camping</h3>
+                                <span>20 Adventures</span>
+                            </a>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="adventure-categories-single-item">
+                            <a routerLink="/tour-listing" class="d-block text-decoration-none">
+                                <img src="images/categorie11.jpg" alt="adventure-categorie">
+                                <h3>Camping</h3>
+                                <span>24 Adventures</span>
+                            </a>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="adventure-categories-single-item">
+                            <a routerLink="/tour-listing" class="d-block text-decoration-none">
+                                <img src="images/categorie12.jpg" alt="adventure-categorie">
+                                <h3>Luxury Expeditions</h3>
+                                <span>18 Adventures</span>
+                            </a>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="adventure-categories-single-item">
+                            <a routerLink="/tour-listing" class="d-block text-decoration-none">
+                                <img src="images/categorie8.jpg" alt="adventure-categorie">
+                                <h3>Adventure</h3>
+                                <span>24 Adventures</span>
+                            </a>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="adventure-categories-single-item">
+                            <a routerLink="/tour-listing" class="d-block text-decoration-none">
+                                <img src="images/categorie9.jpg" alt="adventure-categorie">
+                                <h3>Safari & Wildlife</h3>
+                                <span>15 Adventures</span>
+                            </a>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="adventure-categories-single-item">
+                            <a routerLink="/tour-listing" class="d-block text-decoration-none">
+                                <img src="images/categorie10.jpg" alt="adventure-categorie">
+                                <h3>Camping</h3>
+                                <span>20 Adventures</span>
+                            </a>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="adventure-categories-single-item">
+                            <a routerLink="/tour-listing" class="d-block text-decoration-none">
+                                <img src="images/categorie11.jpg" alt="adventure-categorie">
+                                <h3>Camping</h3>
+                                <span>24 Adventures</span>
+                            </a>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="adventure-categories-single-item">
+                            <a routerLink="/tour-listing" class="d-block text-decoration-none">
+                                <img src="images/categorie12.jpg" alt="adventure-categorie">
+                                <h3>Luxury Expeditions</h3>
+                                <span>18 Adventures</span>
+                            </a>
+                        </div>
+                    </ng-template>
+                </owl-carousel-o>
+            </div>
+        </div>
+    </div>
+
+} @else {
+
+    <div class="top-categories-area bg-warning">
+        <div class="container-fluid">
+            <div class="d-sm-flex align-items-center gap-78">
+                <div class="mb-3 mb-sm-0">
+                    <h3 class="categories-title">Top categories</h3>
+                </div>
+                <div class="marquee-wrapper p-0 top-categories-wrap">
+                    <div class="marquee speed-300 d-flex gap-12">
+                        <div class="monogram">
+                            <a routerLink="/tour-listing" class="d-flex align-items-center categories-single-item gap-10 text-decoration-none">
+                                <div class="flex-shrink-0">
+                                    <img src="images/categorie1.png" class="bg-white rounded-circle m-0 position-static" style="width: 50px; height: 50px;" alt="categorie">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <span>Walking Tours</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="monogram">
+                            <a routerLink="/tour-listing" class="d-flex align-items-center categories-single-item gap-10 text-decoration-none">
+                                <div class="flex-shrink-0">
+                                    <img src="images/categorie2.png" class="bg-white rounded-circle m-0 position-static" style="width: 50px; height: 50px;" alt="categorie">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <span>Food & Drink Tours</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="monogram">
+                            <a routerLink="/tour-listing" class="d-flex align-items-center categories-single-item gap-10 text-decoration-none">
+                                <div class="flex-shrink-0">
+                                    <img src="images/categorie3.png" class="bg-white rounded-circle m-0 position-static" style="width: 50px; height: 50px;" alt="categorie">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <span>Historical Tours</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="monogram">
+                            <a routerLink="/tour-listing" class="d-flex align-items-center categories-single-item gap-10 text-decoration-none">
+                                <div class="flex-shrink-0">
+                                    <img src="images/categorie4.png" class="bg-white rounded-circle m-0 position-static" style="width: 50px; height: 50px;" alt="categorie">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <span>Nightlife Tours</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="monogram">
+                            <a routerLink="/tour-listing" class="d-flex align-items-center categories-single-item gap-10 text-decoration-none">
+                                <div class="flex-shrink-0">
+                                    <img src="images/categorie5.png" class="bg-white rounded-circle m-0 position-static" style="width: 50px; height: 50px;" alt="categorie">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <span>Nature & Parks Tour</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="monogram">
+                            <a routerLink="/tour-listing" class="d-flex align-items-center categories-single-item gap-10 text-decoration-none">
+                                <div class="flex-shrink-0">
+                                    <img src="images/categorie6.png" class="bg-white rounded-circle m-0 position-static" style="width: 50px; height: 50px;" alt="categorie">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <span>Custom/Private Tours</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="monogram">
+                            <a routerLink="/tour-listing" class="d-flex align-items-center categories-single-item gap-10 text-decoration-none">
+                                <div class="flex-shrink-0">
+                                    <img src="images/categorie7.png" class="bg-white rounded-circle m-0 position-static" style="width: 50px; height: 50px;" alt="categorie">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <span>Small Groups Tours</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

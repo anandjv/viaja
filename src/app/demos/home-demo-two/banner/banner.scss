@@ -1,0 +1,138 @@
+@use "../../../common/search/search.scss" as *;
+@use "../../../common/funfacts/funfacts.scss" as *;
+
+.banner-area-two {
+    padding: 100px 0;
+}
+.banner-img-two {
+    border-radius: 20px;
+
+    img {
+        width: 572px;
+        height: 535px;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+}
+.banner-content-two {
+    margin-top: -22px;
+    margin-left: 25px;
+    h2 {
+        font-size: 96px;
+        line-height: 114.583%;
+        margin-bottom: 28px;
+    }
+    p {
+        margin-bottom: 40px;
+        max-width: 335px;
+        color: var(--bodyColor);
+        opacity: 0.6;
+    }
+    .default-btn {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+.fun-fact-form-area {
+    margin-top: -268px;
+}
+::ng-deep {
+    .banner-area-two {
+        .date-picker-wrapper {
+            .form-control {
+                border-width: 0;
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+    
+    .banner-content-two {
+        margin: 0;
+        h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+    }
+    .fun-fact-form-area {
+        margin-top: 30px;
+    }
+    .banner-area-two {
+        padding: 60px 0;
+        padding-bottom: 0;
+    }
+    
+}
+
+/* Min width 768px to Max width 992px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    
+    .banner-content-two {
+        margin: 0;
+        padding: 70px 0;
+    }
+    .banner-img-two {
+        img {
+            width: 100%;
+        }
+    }
+    .banner-content-two {
+        margin: 0;
+        h2 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+    }
+    .fun-fact-form-area {
+        margin-top: 30px;
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    
+    .banner-content-two {
+        margin-top: 0;
+        h2 {
+            font-size: 60px;
+        }
+    }
+    .fun-fact-form-area {
+        margin-top: -218px;
+    }
+    
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .banner-content-two {
+        h2 {
+            font-size: 75px;
+        }
+    }
+    .fun-fact-form-area {
+        margin-top: -218px;
+    }
+
+}
+
+/* Min width 1400px to Max width 1799px */
+@media only screen and (min-width: 1400px) and (max-width: 1799px) {
+    
+    .banner-content-two {
+        h2 {
+            font-size: 73px;
+        }
+    }
+
+}

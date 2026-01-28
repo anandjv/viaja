@@ -1,0 +1,21 @@
+#backtotop {
+	z-index: 4;
+	right: 30px;
+	width: 40px;
+    bottom: 30px;
+	height: 40px;
+    display: flex;
+	position: fixed;
+    cursor: pointer;
+	font-size: 20px;
+	border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+	color: var(--whiteColor);
+	transition: var(--transition);
+	background-color: var(--primaryColor);
+
+	&:hover {
+		background-color: var(--blackColor);
+	}
+}
