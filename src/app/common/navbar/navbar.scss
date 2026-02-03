@@ -570,6 +570,7 @@
             margin-top: 15px;
         }
         .navbar-nav {
+            background-color: white;
             display: block;
             max-height: 60vh;
             margin: 0 !important;
@@ -591,7 +592,7 @@
                     padding: 0 !important;
                     color: var(--whiteColor) !important;
                     &:hover, &.active {
-                        color: var(--secondaryColor) !important;
+                        color: var(--0f0f0e) !important;
                     }
                 }
                 .dropdown-menu {
@@ -642,7 +643,7 @@
                     margin-bottom: 0;
                 }
                 &:has(.dropdown-menu .dropdown-item.active) > .nav-link {
-                    color: var(--secondaryColor) !important;
+                    color: var(--0f0f0e) !important;
                 }
             }
             &.ms-0 {

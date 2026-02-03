@@ -1,0 +1,78 @@
+<form [formGroup]="form">
+    <!-- SUCCESS MESSAGE -->
+    <div class="alert alert-success text-center" *ngIf="successMessage">
+        ✅ {{ successMessage }}
+    </div>
+
+    <!-- ERROR MESSAGE -->
+    <div class="alert alert-danger text-center" *ngIf="errorMessage">
+        ❌ {{ errorMessage }}
+    </div>
+
+    <div class="modal-body">
+
+        <!-- Image -->
+        <div class="mb-3">
+            <label class="form-label">Upload Image</label>
+            <input type="file" class="form-control" accept="image/*" (change)="onFileChange($event)" />
+            <div class="text-danger" *ngIf="form.get('image')?.touched && form.get('image')?.invalid">
+                Image is required
+            </div>
+        </div>
+
+        <!-- State Title -->
+        <div class="mb-3">
+            <label class="form-label">State Title</label>
+            <input type="text" class="form-control" formControlName="stateTitle" placeholder="State Title" />
+            <div class="text-danger" *ngIf="form.get('stateTitle')?.touched && form.get('stateTitle')?.invalid">
+                Title is required (min 3 characters)
+            </div>
+        </div>
+
+        <!-- Sub Title -->
+        <div class="mb-3">
+            <label class="form-label">Sub Heading Title</label>
+            <input type="text" class="form-control" formControlName="subheading" placeholder="Sub Heading Title" />
+            <div class="text-danger" *ngIf="form.get('subheading')?.touched && form.get('subheading')?.invalid">
+                Title is required (min 3 characters)
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Attractions</label>
+            <input type="text" class="form-control" formControlName="attractions" placeholder="Attractions" />
+            <div class="text-danger" *ngIf="form.get('attractions')?.touched && form.get('attractions')?.invalid">
+                Title is required (min 3 characters)
+            </div>
+        </div>
+
+        <!-- Highlights -->
+
+        <div formArrayName="highlights">
+            <div class="mb-2 d-flex gap-2" *ngFor="let ctrl of highlights.controls; let i = index">
+                <input type="text" class="form-control" [formControlName]="i" placeholder="Highlight {{ i + 1 }}" />
+
+                <!-- ADD -->
+                <button type="button" class="btn btn-success" (click)="addHighlight()"
+                    *ngIf="i === highlights.length - 1 && highlights.length < 9">
+                    +
+                </button>
+
+                <!-- REMOVE -->
+                <button type="button" class="btn btn-danger" (click)="removeHighlight(i)" *ngIf="highlights.length > 1">
+                    −
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" (click)="close()">Close</button>
+        <button class="btn btn-primary" type="button" (click)="save()" [disabled]="form.invalid">
+            Save
+        </button>
+    </div>
+
+</form>

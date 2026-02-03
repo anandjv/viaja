@@ -1,91 +1,327 @@
-@if (router.url === '/index-2') {
+@if (router.url === '/') {
 
-    <div class="blog-area ptb-120">
-        <div class="container mw-1680">
-            <div class="text-center mb-40">
-                <h2 class="main-title">Travel blog and tips</h2>
-                <p>Expert advice, insider knowledge, and inspiration for your next adventure</p>
-            </div>
-            <div class="row g-4 g-120 align-items-center justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-single-item style-two">
-                        <a routerLink="/blog-details" class="blog-img d-block text-decoration-none">
-                            <img src="images/blog4.jpg" alt="blog">
+   <div class="city-tours-area pt-120">
+    <div class="container mw-1680">
+        <div class="mb-50">
+            <h2 class="main-title ms-0">Short Trips</h2>
+            <p>Explore our most city Short Trips</p>
+        </div>
+        <div class="city-tours-slide">
+            <owl-carousel-o [options]="toursSlider">
+                <ng-template carouselSlide>
+                    <div class="city-tour-single-item">
+                        <a routerLink="/trivandrum" class="d-block text-decoration-none city-tour-img">
+                            <img src="../../../assets/image/citys/1.png" alt="city-tours">
                         </a>
-                        <div class="d-flex align-items-center info">
-                            <div class="d-flex align-items-center gap-10">
-                                <i class="ri-calendar-2-line text-primary"></i>
-                                <span class="fs-14">Dec 23, 2025</span>
+                        <div class="city-tour-content">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center review">
+                                    <div class="d-flex align-items-center">
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                    </div>
+                                    <span>4.9 (28 reviews)</span>
+                                </div>
                             </div>
-                            <div class="d-flex align-items-center gap-10">
-                                <i class="ri-time-line text-primary"></i>
-                                <span class="fs-14">6 min read</span>
-                            </div>
-                        </div>
-                        <a routerLink="/blog-details" class="title text-decoration-none d-block">
-                            <h3>Berlin Beyond the Wall: 10 Local Favorites You Can't Miss</h3>
-                        </a>
-                        <a routerLink="/booking-form" class="read-more d-flex align-items-center">
-                            <span>Book Now</span>
-                            <i class="ri-arrow-right-long-line"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-single-item style-two">
-                        <a routerLink="/blog-details" class="blog-img d-block text-decoration-none">
-                            <img src="images/blog5.jpg" alt="blog">
-                        </a>
-                        <div class="d-flex align-items-center info">
-                            <div class="d-flex align-items-center gap-10">
-                                <i class="ri-calendar-2-line text-primary"></i>
-                                <span class="fs-14">Dec 22, 2025</span>
-                            </div>
-                            <div class="d-flex align-items-center gap-10">
-                                <i class="ri-time-line text-primary"></i>
-                                <span class="fs-14">4 min read</span>
+                            <a routerLink="/trivandrum" class="text-decoration-none d-block title">
+                                <h3>Trivandrum</h3>
+                            </a>
+                            <div class="book-hours d-flex justify-content-between align-items-center">
+                                <a routerLink="/booking-form" class="read-more">
+                                    <span>Book Now</span>
+                                    <i class="ri-arrow-right-long-line"></i>
+                                </a>
+                                <div class="d-flex align-items-center gap-10">
+                                    <i class="ri-time-line text-primary"></i>
+                                    <span class="fs-14">2.5 hours</span>
+                                </div>
                             </div>
                         </div>
-                        <a routerLink="/blog-details" class="title text-decoration-none d-block">
-                            <h3>Prague in 3 Days: The Perfect Itinerary for First-Timers</h3>
-                        </a>
-                        <a routerLink="/booking-form" class="read-more d-flex align-items-center">
-                            <span>Book Now</span>
-                            <i class="ri-arrow-right-long-line"></i>
-                        </a>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-single-item style-two">
-                        <a routerLink="/blog-details" class="blog-img d-block text-decoration-none">
-                            <img src="images/blog6.jpg" alt="blog">
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="city-tour-single-item">
+                        <a routerLink="/kanyakumari" class="d-block text-decoration-none city-tour-img">
+                            <img src="../../../assets/image/citys/2.png" alt="city-tours">
                         </a>
-                        <div class="d-flex align-items-center info">
-                            <div class="d-flex align-items-center gap-10">
-                                <i class="ri-calendar-2-line text-primary"></i>
-                                <span class="fs-14">Dec 21, 2025</span>
+                        <div class="city-tour-content">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center review">
+                                    <div class="d-flex align-items-center">
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                    </div>
+                                    <span>4.9 (171 reviews)</span>
+                                </div>
                             </div>
-                            <div class="d-flex align-items-center gap-10">
-                                <i class="ri-time-line text-primary"></i>
-                                <span class="fs-14">10 min read</span>
+                            <a routerLink="/kanyakumari" class="text-decoration-none d-block title">
+                                <h3>Kanyakumari</h3>
+                            </a>
+                            <div class="book-hours d-flex justify-content-between align-items-center">
+                                <a routerLink="/booking-form" class="read-more">
+                                    <span>Book Now</span>
+                                    <i class="ri-arrow-right-long-line"></i>
+                                </a>
+                                <div class="d-flex align-items-center gap-10">
+                                    <i class="ri-time-line text-primary"></i>
+                                    <span class="fs-14">4 hours</span>
+                                </div>
                             </div>
                         </div>
-                        <a routerLink="/blog-details" class="title text-decoration-none d-block">
-                            <h3>Summer 2023: Europe's Can't-Miss Festivals & Events</h3>
-                        </a>
-                        <a routerLink="/booking-form" class="read-more d-flex align-items-center">
-                            <span>Book Now</span>
-                            <i class="ri-arrow-right-long-line"></i>
-                        </a>
                     </div>
-                </div>
-            </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="city-tour-single-item">
+                        <a routerLink="/cochin" class="d-block text-decoration-none city-tour-img">
+                            <img src="../../../assets/image/citys/200.png" alt="city-tours">
+                        </a>
+                        <div class="city-tour-content">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center review">
+                                    <div class="d-flex align-items-center">
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                    </div>
+                                    <span>4.8 (75 reviews)</span>
+                                </div>
+                            </div>
+                            <a routerLink="/cochin" class="text-decoration-none d-block title">
+                                <h3>Kochi</h3>
+                            </a>
+                            <div class="book-hours d-flex justify-content-between align-items-center">
+                                <a routerLink="/booking-form" class="read-more">
+                                    <span>Book Now</span>
+                                    <i class="ri-arrow-right-long-line"></i>
+                                </a>
+                                <div class="d-flex align-items-center gap-10">
+                                    <i class="ri-time-line text-primary"></i>
+                                    <span class="fs-14">2 hours</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="city-tour-single-item">
+                        <a routerLink="/teakady" class="d-block text-decoration-none city-tour-img">
+                            <img src="../../../assets/image/citys/444.png" alt="city-tours">
+                        </a>
+                        <div class="city-tour-content">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center review">
+                                    <div class="d-flex align-items-center">
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                    </div>
+                                    <span>4.9 (11928 reviews)</span>
+                                </div>
+                            </div>
+                            <a routerLink="/teakady" class="text-decoration-none d-block title">
+                                <h3>Teakady</h3>
+                            </a>
+                            <div class="book-hours d-flex justify-content-between align-items-center">
+                                <a routerLink="/booking-form" class="read-more">
+                                    <span>Book Now</span>
+                                    <i class="ri-arrow-right-long-line"></i>
+                                </a>
+                                <div class="d-flex align-items-center gap-10">
+                                    <i class="ri-time-line text-primary"></i>
+                                    <span class="fs-14">5 hours</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="city-tour-single-item">
+                        <a routerLink="/gmadurai" class="d-block text-decoration-none city-tour-img">
+                            <img src="../../../assets/image/citys/5.jpeg" alt="city-tours">
+                        </a>
+                        <div class="city-tour-content">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center review">
+                                    <div class="d-flex align-items-center">
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                    </div>
+                                    <span>4.9 (28 reviews)</span>
+                                </div>
+                            </div>
+                            <a routerLink="/madurai" class="text-decoration-none d-block title">
+                                <h3>Madurai</h3>
+                            </a>
+                            <div class="book-hours d-flex justify-content-between align-items-center">
+                                <a routerLink="/booking-form" class="read-more">
+                                    <span>Book Now</span>
+                                    <i class="ri-arrow-right-long-line"></i>
+                                </a>
+                                <div class="d-flex align-items-center gap-10">
+                                    <i class="ri-time-line text-primary"></i>
+                                    <span class="fs-14">2.5 hours</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="city-tour-single-item">
+                        <a routerLink="/ooty" class="d-block text-decoration-none city-tour-img">
+                            <img src="../../../assets/image/citys/6.jpeg" alt="city-tours">
+                        </a>
+                        <div class="city-tour-content">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center review">
+                                    <div class="d-flex align-items-center">
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                    </div>
+                                    <span>4.9 (171 reviews)</span>
+                                </div>
+                            </div>
+                            <a routerLink="/ooty" class="text-decoration-none d-block title">
+                                <h3>Ooty</h3>
+                            </a>
+                            <div class="book-hours d-flex justify-content-between align-items-center">
+                                <a routerLink="/booking-form" class="read-more">
+                                    <span>Book Now</span>
+                                    <i class="ri-arrow-right-long-line"></i>
+                                </a>
+                                <div class="d-flex align-items-center gap-10">
+                                    <i class="ri-time-line text-primary"></i>
+                                    <span class="fs-14">4 hours</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="city-tour-single-item">
+                        <a routerLink="/chennai"bollywood- class="d-block text-decoration-none city-tour-img">
+                            <img src="../../../assets/image/citys/7.jpeg" alt="city-tours">
+                        </a>
+                        <div class="city-tour-content">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center review">
+                                    <div class="d-flex align-items-center">
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                    </div>
+                                    <span>4.8 (75 reviews)</span>
+                                </div>
+                            </div>
+                            <a routerLink="/chennai" class="text-decoration-none d-block title">
+                                <h3>Chennai</h3>
+                            </a>
+                            <div class="book-hours d-flex justify-content-between align-items-center">
+                                <a routerLink="/booking-form" class="read-more">
+                                    <span>Book Now</span>
+                                    <i class="ri-arrow-right-long-line"></i>
+                                </a>
+                                <div class="d-flex align-items-center gap-10">
+                                    <i class="ri-time-line text-primary"></i>
+                                    <span class="fs-14">2 hours</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="city-tour-single-item">
+                        <a routerLink="/bengaluru" class="d-block text-decoration-none city-tour-img">
+                            <img src="../../../assets/image/citys/8.jpeg" alt="city-tours">
+                        </a>
+                        <div class="city-tour-content">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center review">
+                                    <div class="d-flex align-items-center">
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                    </div>
+                                    <span>4.9 (11928 reviews)</span>
+                                </div>
+                            </div>
+                            <a routerLink="/bengaluru" class="text-decoration-none d-block title">
+                                <h3>Bengaluru</h3>
+                            </a>
+                            <div class="book-hours d-flex justify-content-between align-items-center">
+                                <a routerLink="/booking-form" class="read-more">
+                                    <span>Book Now</span>
+                                    <i class="ri-arrow-right-long-line"></i>
+                                </a>
+                                <div class="d-flex align-items-center gap-10">
+                                    <i class="ri-time-line text-primary"></i>
+                                    <span class="fs-14">5 hours</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                   <ng-template carouselSlide>
+                    <div class="city-tour-single-item">
+                        <a routerLink="/mysore" class="d-block text-decoration-none city-tour-img">
+                            <img src="../../../assets/image/citys/9.jpeg" alt="city-tours">
+                        </a>
+                        <div class="city-tour-content">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center review">
+                                    <div class="d-flex align-items-center">
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                        <i class="ri-star-fill text-warning"></i>
+                                    </div>
+                                    <span>4.9 (11928 reviews)</span>
+                                </div>
+                            </div>
+                            <a routerLink="/mysore" class="text-decoration-none d-block title">
+                                <h3>Mysore</h3>
+                            </a>
+                            <div class="book-hours d-flex justify-content-between align-items-center">
+                                <a routerLink="/booking-form" class="read-more">
+                                    <span>Book Now</span>
+                                    <i class="ri-arrow-right-long-line"></i>
+                                </a>
+                                <div class="d-flex align-items-center gap-10">
+                                    <i class="ri-time-line text-primary"></i>
+                                    <span class="fs-14">5 hours</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
         </div>
     </div>
-
+</div>
+<br>
 } @else if (router.url === '/index-3' || router.url === '/index-4') {
 
-    <div class="blog-area-three ptb-120">
+    <!-- <div class="blog-area-three ptb-120">
         <div class="container mw-1345">
             <div class="mb-40 d-flex flex-wrap gap-10 justify-content-between align-items-end">
                 <div class="text-start">
@@ -181,11 +417,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 } @else {
 
-    <div class="blog-area ptb-120">
+    <!-- <div class="blog-area ptb-120">
         <div class="container mw-1345">
             <div class="mb-40 text-center">
                 <h2 class="main-title">Travel Blog and Guides</h2>
@@ -346,6 +582,6 @@
                 </owl-carousel-o>
             </div>
         </div>
-    </div>
+    </div> -->
 
 }

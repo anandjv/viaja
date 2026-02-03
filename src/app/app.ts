@@ -15,7 +15,7 @@ import { RouterOutlet, Router, Event, NavigationEnd } from '@angular/router';
 })
 export class App {
 
-    protected readonly title = signal('Viaja - Angular 20 Travel & Tour Booking Template');
+    protected readonly title = signal('INIGO TRAVELS');
 
     private previousUrl: string | null = null;
 

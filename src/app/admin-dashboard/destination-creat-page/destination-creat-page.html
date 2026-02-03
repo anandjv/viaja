@@ -1,0 +1,47 @@
+<h3 class="db-title">Create Destination</h3>
+<div class="city-tours-slide">
+    <owl-carousel-o *ngIf="destinations.length" [options]="toursSlider">
+        <ng-template carouselSlide *ngFor="let dest of destinations">
+            <div class="city-tour-single-item">
+                <a routerLink="/destination-details" class="d-block text-decoration-none city-tour-img">
+                    <img [src]="'https://www.inigotravels.com/bknd/uploads/' + dest.image" alt="{{ dest.title }}" />
+                </a>
+                <div class="city-tour-content">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center review">
+                            <div class="d-flex align-items-center">
+                                <i class="ri-star-fill text-warning"></i>
+                                <i class="ri-star-fill text-warning"></i>
+                                <i class="ri-star-fill text-warning"></i>
+                                <i class="ri-star-fill text-warning"></i>
+                                <i class="ri-star-fill text-warning"></i>
+                            </div>
+                            <span>4.9 (28 reviews)</span>
+                        </div>
+                    </div>
+                    <a routerLink="/destination-details" class="text-decoration-none d-block title">
+                        <h3>{{ dest.title }}</h3>
+                    </a>
+                    <div class="book-hours d-flex justify-content-between align-items-center">
+                        <a routerLink="/booking-form" class="read-more">
+                            <span>Book Now</span>
+                            <i class="ri-arrow-right-long-line"></i>
+                        </a>
+                        <div class="d-flex align-items-center gap-10">
+                            <i class="ri-time-line text-primary"></i>
+                            <span class="fs-14">2.5 hours</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </owl-carousel-o>
+</div>
+<br>
+<button class="btn btn-primary" (click)="open()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill"
+        viewBox="0 0 16 16">
+        <path
+            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+    </svg>&nbsp;&nbsp;Create Destination
+</button>

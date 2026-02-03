@@ -4,7 +4,7 @@ import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
     selector: 'app-cities',
-    imports: [RouterLink, CarouselModule],
+    imports: [CarouselModule],
     templateUrl: './cities.html',
     styleUrl: './cities.scss',
 })

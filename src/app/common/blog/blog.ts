@@ -14,13 +14,12 @@ export class Blog {
         public router: Router
     ) {}
 
-    // Owl Carousel
-    blogSlider: OwlOptions = {
-		nav: false,
+	  // Owl Carousel
+    toursSlider: OwlOptions = {
+		nav: true,
 		margin: 24,
-		dots: true,
         loop: true,
-        center: true,
+		dots: false,
 		autoplay: true,
         autoplayTimeout: 4000,
 		autoplayHoverPause: true,
@@ -42,7 +41,7 @@ export class Blog {
 				items: 3
 			},
 			1116: {
-				items: 3
+				items: 4
 			}
 		}
     }

@@ -1,372 +1,129 @@
-@if (router.url === '/index-2' || router.url === '/destinations-in-australia' || router.url === '/tour-listing-left-sidebar') {
+@if (router.url === '/' || router.url === '/destinations-in-australia' || router.url ===
+'/tour-listing-left-sidebar') {
 
-    <!-- Footer Area -->
-    <div class="footer-area bg-dark2 ptb-120">
-        <div class="container mw-1345">
-            <div class="pb-120">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <a class="d-inline-block" routerLink="/">
-                            <img src="images/footer-logo.svg" alt="footer-logo">
-                        </a>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="footer-content">
-                            <p>Your trusted partner for unforgettable travel experiences. We specialize in curated tours and personalized travel solutions around the globe.</p>
-                            <ul class="p-0 m-0 list-unstyled d-flex flex-wrap align-items-center social-link">
-                                <li>
-                                    <span class="text-white fs-14">Follow Us:</span>
-                                </li>
-                                <li>
-                                    <a href="https://www.facebook.com/" target="_blank">
-                                        <i class="ri-facebook-fill"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.twitter.com/" target="_blank">
-                                        <i class="ri-twitter-x-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.linkedin.com/" target="_blank">
-                                        <i class="ri-linkedin-fill"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.instagram.com/" target="_blank">
-                                        <i class="ri-instagram-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.youtube.com/" target="_blank">
-                                        <i class="ri-youtube-line"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>  
-                    </div>
-                </div>
-            </div>
-            <div class="footer-content-wrap pt-120">
-                <div class="row g-4">
-                    <div class="col-lg-4">
-                        <div class="footer-single-item mw-auto">
-                            <h3>Sign up for all the latest news and offers</h3>
-                            <form class="position-relative z-1 discount-form mx-auto">
-                                <input type="email" class="form-control" placeholder="Your email address">
-                                <button type="submit" class="submit-btn style-two default-btn position-absolute top-50 end-0 translate-middle-y gap-15 d-flex align-items-center">
-                                    <i class="ri-send-plane-fill"></i>
-                                </button>
-                            </form>
-                            <p class="dec">We respect your privacy. Unsubscribe at any time.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="d-flex justify-content-lg-center">
-                            <div class="footer-single-item mw-auto">
-                                <h3>Quick Links</h3>
-                                <div class="d-flex flex-wrap justify-content-between gap-10 gap-50">
-                                    <ul class="p-0 m-0 list-unstyled import-link">
-                                        <li>
-                                            <a routerLink="/about-us">About Us</a>
-                                        </li>
-                                        <li>
-                                            <a routerLink="/fa">FAQs</a>
-                                        </li>
-                                        <li>
-                                            <a routerLink="/contact-us">Contact Us</a>
-                                        </li>
-                                        <li>
-                                            <a routerLink="/tour-guide">Meet the Guides</a>
-                                        </li>
-                                        <li>
-                                            <a routerLink="/blog">Travel Blog</a>
-                                        </li>
-                                    </ul>
-                                    <ul class="p-0 m-0 list-unstyled import-link">
-                                        <li>
-                                            <a routerLink=".">Popular Cities</a>
-                                        </li>
-                                        <li>
-                                            <a routerLink="/privacy-policy">Privacy Policy</a>
-                                        </li>
-                                        <li>
-                                            <a routerLink="/terms-conditions">Terms & Conditions</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="d-flex justify-content-lg-end">
-                            <div class="footer-single-item">
-                                <h3>Contact info</h3>
-                                <p>258 Travel Street, Suite 101 San Francisco, CA 94847</p>
-                                <ul class="p-0 m-0 list-unstyled info-link">
-                                    <li class="d-flex align-items-center gap-10">
-                                        <i class="ri-mail-line text-primary"></i>
-                                        <a href="mailto:hello@viaja.com">hello@viaja.com</a>
-                                    </li>
-                                    <li class="d-flex align-items-center gap-10">
-                                        <i class="ri-phone-line text-primary"></i>
-                                        <a href="tel:+1(444)5859282">+1 (444) 585 - 9282</a>
-                                    </li>
-                                    <li class="d-flex align-items-center gap-10">
-                                        <i class="ri-time-line text-primary"></i>
-                                        <span>Mon-Fri: 9AM - 6PM   |   Sat: 10AM - 4PM</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Copyright Area -->
-    <div class="copyright-area style-two">
-        <div class="container">
-            <div class="d-flex flex-wrap justify-content-center gap-10 justify-content-md-between align-items-center">
-                <p class="copyright mb-0">© Viaja is Proudly Owned by <a href="https://envytheme.com/" target="_blank">EnvyTheme</a></p>
-                <div class="d-flex justify-content-center justify-content-md-end align-items-center gap-10 pay">
-                    <span>We Accept</span>
-                    <img src="images/mastercard.png" alt="mastercard">
-                    <img src="images/visa.png" alt="visa">
-                    <img src="images/paypal.png" alt="paypal">
-                    <img src="images/wechat-pay.png" alt="wechat-pay">
-                </div>
-            </div>
-        </div>
-    </div>
-
-} @else if (router.url === '/index-3' || router.url === '/index-4' || router.url === '/tour-listing-right-sidebar') {
-
-    <!-- Footer Area -->
-    <div class="footer-area-three pb-120">
-        <div class="container mw-1345">
-            <div class="pb-120">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <a class="d-inline-block footer-logo-wrap" routerLink="/">
-                            <img src="images/footer-logo2.svg" class="d-block" alt="footer-logo">
-                            <img src="images/footer-logo.svg" class="d-none" alt="footer-logo">
-                        </a>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="footer-content style-three">
-                            <p>Your trusted partner for unforgettable travel experiences. We specialize in curated tours and personalized travel solutions around the globe.</p>
-                            <ul class="p-0 m-0 list-unstyled d-flex flex-wrap align-items-center social-link">
-                                <li>
-                                    <span class="text-white fs-14">Follow Us:</span>
-                                </li>
-                                <li>
-                                    <a href="https://www.facebook.com/" target="_blank">
-                                        <i class="ri-facebook-fill"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.twitter.com/" target="_blank">
-                                        <i class="ri-twitter-x-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.linkedin.com/" target="_blank">
-                                        <i class="ri-linkedin-fill"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.instagram.com/" target="_blank">
-                                        <i class="ri-instagram-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.youtube.com/" target="_blank">
-                                        <i class="ri-youtube-line"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>  
-                    </div>
-                </div>
-            </div>
-            <div class="footer-content-wrap style-three pt-120">
-                <div class="row g-4">
-                    <div class="col-lg-4">
-                        <div class="footer-single-item style-three mw-auto">
-                            <h3>Sign up for all the latest news and offers</h3>
-                            <form class="position-relative z-1 discount-form mx-auto">
-                                <input type="email" class="form-control" placeholder="Your email address">
-                                <button type="submit" class="submit-btn style-two default-btn position-absolute top-50 end-0 translate-middle-y gap-15 d-flex align-items-center">
-                                    <i class="ri-send-plane-fill"></i>
-                                </button>
-                            </form>
-                            <p class="dec">We respect your privacy. Unsubscribe at any time.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="d-flex justify-content-lg-center">
-                            <div class="footer-single-item style-three mw-auto">
-                                <h3>Quick Links</h3>
-                                <div class="d-flex flex-wrap justify-content-between gap-10 gap-50">
-                                    <ul class="p-0 m-0 list-unstyled import-link">
-                                        <li>
-                                            <a routerLink="/about-us">About Us</a>
-                                        </li>
-                                        <li>
-                                            <a routerLink="/faq">FAQs</a>
-                                        </li>
-                                        <li>
-                                            <a routerLink="/contact-us">Contact Us</a>
-                                        </li>
-                                        <li>
-                                            <a routerLink="/tour-guide">Meet the Guides</a>
-                                        </li>
-                                        <li>
-                                            <a routerLink="/blog">Travel Blog</a>
-                                        </li>
-                                    </ul>
-                                    <ul class="p-0 m-0 list-unstyled import-link">
-                                        <li>
-                                            <a routerLink=".">Popular Cities</a>
-                                        </li>
-                                        <li>
-                                            <a routerLink="/privacy-policy">Privacy Policy</a>
-                                        </li>
-                                        <li>
-                                            <a routerLink="/terms-conditions">Terms & Conditions</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="d-flex justify-content-lg-end">
-                            <div class="footer-single-item style-three">
-                                <h3>Contact info</h3>
-                                <p>258 Travel Street, Suite 101 San Francisco, CA 94847</p>
-                                <ul class="p-0 m-0 list-unstyled info-link">
-                                    <li class="d-flex align-items-center gap-10">
-                                        <i class="ri-mail-line text-primary"></i>
-                                        <a href="mailto:hello@viaja.com">hello@viaja.com</a>
-                                    </li>
-                                    <li class="d-flex align-items-center gap-10">
-                                        <i class="ri-phone-line text-primary"></i>
-                                        <a href="tel:+1(444)5859282">+1 (444) 585 - 9282</a>
-                                    </li>
-                                    <li class="d-flex align-items-center gap-10">
-                                        <i class="ri-time-line text-primary"></i>
-                                        <span>Mon-Fri: 9AM - 6PM   |   Sat: 10AM - 4PM</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Copyright Area -->
-    <div class="copyright-area style-three">
-        <div class="container">
-            <div class="d-flex flex-wrap justify-content-center gap-10 justify-content-md-between align-items-center">
-                <p class="copyright mb-0">© Viaja is Proudly Owned by <a href="https://envytheme.com/" target="_blank">EnvyTheme</a></p>
-                <div class="d-flex justify-content-center justify-content-md-end align-items-center gap-10 pay">
-                    <span>We Accept</span>
-                    <img src="images/mastercard.png" alt="mastercard">
-                    <img src="images/visa.png" alt="visa">
-                    <img src="images/paypal.png" alt="paypal">
-                    <img src="images/wechat-pay.png" alt="wechat-pay">
-                </div>
-            </div>
-        </div>
-    </div>
-
-} @else {
-
-    <!-- Footer Area -->
-    <div
-        class="footer-area bg-blue2 ptb-120 position-relative z-1 overflow-hidden"
-        [class.oveflow-without]="router.url === '/'"
-    >
-        <div class="container">
+<!-- Footer Area -->
+<div class="footer-area bg-dark2 ptb-120">
+    <div class="container mw-1345">
+        <div class="pb-120">
             <div class="row g-4">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="footer-single-item">
-                        <a routerLink="/" class="d-block text-decoration-none logo">
-                            <img src="images/white-logo2.svg" alt="white-logo">
-                        </a>
-                        <p>Your trusted partner for unforgettable travel experiences. We specialize in curated tours and personalized travel solutions around the globe.</p>
+                <div class="col-lg-6">
+                    <!-- <a class="d-inline-block" routerLink="/">
+                            <img src="images/footer-logo.svg" alt="footer-logo">
+                        </a> -->
+                    <h4 style="color: white;">INIGO TRAVELS</h4>
+                </div>
+                <div class="col-lg-6">
+                    <div class="footer-content">
+                        <p>Your trusted partner for unforgettable travel experiences. We specialize in curated tours and
+                            personalized travel solutions around the globe.</p>
+                        <ul class="p-0 m-0 list-unstyled d-flex flex-wrap align-items-center social-link">
+                            <li>
+                                <span class="text-white fs-14">Follow Us:</span>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/share/1DhES9VePL/" target="_blank">
+                                    <i class="ri-facebook-fill"></i>
+                                </a>
+                            </li>
+                            <!-- <li>
+                                <a href="https://www.twitter.com/" target="_blank">
+                                    <i class="ri-twitter-x-line"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/" target="_blank">
+                                    <i class="ri-linkedin-fill"></i>
+                                </a>
+                            </li> -->
+                            <li>
+                                <a href="https://www.instagram.com/inigo_travels?utm_source=qr&igsh=NHJjZWJjZDMydGZj" target="_blank">
+                                    <i class="ri-instagram-line"></i>
+                                </a>
+                            </li>
+                            <!-- <li>
+                                <a href="https://www.youtube.com/" target="_blank">
+                                    <i class="ri-youtube-line"></i>
+                                </a>
+                            </li> -->
+                        </ul>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
+            </div>
+        </div>
+        <div class="footer-content-wrap pt-120">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-single-item mw-auto">
+                        <h3>Sign up for all the latest news and offers</h3>
+                        <form class="position-relative z-1 discount-form mx-auto">
+                            <input type="email" class="form-control" placeholder="Your email address">
+                            <button type="submit"
+                                class="submit-btn style-two default-btn position-absolute top-50 end-0 translate-middle-y gap-15 d-flex align-items-center">
+                                <i class="ri-send-plane-fill"></i>
+                            </button>
+                        </form>
+                        <p class="dec">We respect your privacy. Unsubscribe at any time.</p>
+                    </div>
+                </div>
+                <div class="col-lg-5">
                     <div class="d-flex justify-content-lg-center">
-                        <div class="footer-single-item">
-                            <h3>Quick Links</h3>
-                            <ul class="p-0 m-0 list-unstyled import-link">
-                                <li>
-                                    <a routerLink="/about-us">About Us</a>
-                                </li>
-                                <li>
-                                    <a routerLink="/faq">FAQs</a>
-                                </li>
-                                <li>
-                                    <a routerLink="/contact-us">Contact Us</a>
-                                </li>
-                                <li>
-                                    <a routerLink="/privacy-policy">Privacy Policy</a>
-                                </li>
-                                <li>
-                                    <a routerLink="/terms-conditions">Terms & Conditions</a>
-                                </li>
-                            </ul>
+                        <div class="footer-single-item mw-auto">
+                            <!-- <h3>Quick Links</h3>
+                            <div class="d-flex flex-wrap justify-content-between gap-10 gap-50">
+                                <ul class="p-0 m-0 list-unstyled import-link">
+                                    <li>
+                                        <a routerLink="/about-us">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a routerLink="/fa">FAQs</a>
+                                    </li>
+                                    <li>
+                                        <a routerLink="/contact-us">Contact Us</a>
+                                    </li>
+                                    <li>
+                                        <a routerLink="/tour-guide">Meet the Guides</a>
+                                    </li>
+                                    <li>
+                                        <a routerLink="/blog">Travel Blog</a>
+                                    </li>
+                                </ul>
+                               <ul class="p-0 m-0 list-unstyled import-link">
+                                    <li>
+                                        <a routerLink=".">Popular Cities</a>
+                                    </li>
+                                    <li>
+                                        <a routerLink="/privacy-policy">Privacy Policy</a>
+                                    </li>
+                                    <li>
+                                        <a routerLink="/terms-conditions">Terms & Conditions</a>
+                                    </li>
+                                </ul> 
+                            </div> -->
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="d-flex justify-content-lg-center">
-                        <div class="footer-single-item">
-                            <h3>Social Media</h3>
-                            <ul class="p-0 m-0 list-unstyled import-link">
-                                <li>
-                                    <a href="https://www.facebook.com/" target="_blank">Facebook</a>
-                                </li>
-                                <li>
-                                    <a href="https://www.instagram.com/" target="_blank">Instagram</a>
-                                </li>
-                                <li>
-                                    <a href="https://www.youtube.com/" target="_blank">YouTube</a>
-                                </li>
-                                <li>
-                                    <a href="https://www.twitter.com/" target="_blank">Twitter/X</a>
-                                </li>
-                                <li>
-                                    <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
+                <div class="col-lg-3">
                     <div class="d-flex justify-content-lg-end">
                         <div class="footer-single-item">
                             <h3>Contact info</h3>
-                            <p>258 Travel Street, Suite 101 San Francisco, CA 94847</p>
+                            <p>Vandanganavilai veedu
+                                Mariagiri
+                                Kulappuram post
+                                Kanyakumari dist
+                                Tamil Nadu
+                                629153</p>
                             <ul class="p-0 m-0 list-unstyled info-link">
                                 <li class="d-flex align-items-center gap-10">
-                                    <i class="ri-mail-line"></i>
-                                    <a href="mailto:hello@viaja.com">hello@viaja.com</a>
+                                    <i class="ri-mail-line text-primary"></i>
+                                    <a href="mailto:inigotravels069@gmail.com">inigotravels069@gmail.com</a>
                                 </li>
                                 <li class="d-flex align-items-center gap-10">
-                                    <i class="ri-phone-line"></i>
-                                    <a href="tel:+1(444)5859282">+1 (444) 585 - 9282</a>
+                                    <i class="ri-phone-line text-primary"></i>
+                                    <a href="tel:+1(444)5859282">+91 9952243861</a>
                                 </li>
                                 <li class="d-flex align-items-center gap-10">
-                                    <i class="ri-time-line"></i>
-                                    <span>Mon-Fri: 9AM - 6PM   |   Sat: 10AM - 4PM</span>
+                                    <i class="ri-time-line text-primary"></i>
+                                    <span>Mon-Fri: 9AM - 6PM | Sat: 10AM - 4PM</span>
                                 </li>
                             </ul>
                         </div>
@@ -374,23 +131,278 @@
                 </div>
             </div>
         </div>
-        <img src="images/footer-shape.png" class="footer-shape d-none d-lg-inline-block" alt="footer-shape">
     </div>
+</div>
 
-    <!-- Copyright Area -->
-    <div class="copyright-area bg-blue2">
-        <div class="container">
-            <div class="d-flex flex-wrap justify-content-center gap-10 justify-content-md-between align-items-center">
-                <p class="copyright mb-0">© Viaja is Proudly Owned by <a href="https://envytheme.com/" target="_blank">EnvyTheme</a></p>
-                <div class="d-flex justify-content-center justify-content-md-end align-items-center gap-10 pay">
-                    <span>We Accept</span>
-                    <img src="images/mastercard.png" alt="mastercard">
-                    <img src="images/visa.png" alt="visa">
-                    <img src="images/paypal.png" alt="paypal">
-                    <img src="images/wechat-pay.png" alt="wechat-pay">
+<!-- Copyright Area -->
+<div class="copyright-area style-two">
+    <div class="container">
+        <div class="d-flex flex-wrap justify-content-center gap-10 justify-content-md-between align-items-center">
+            <p class="copyright mb-0">© Inigo Travels is Proudly Owned by</p>
+            <div class="d-flex justify-content-center justify-content-md-end align-items-center gap-10 pay">
+                <span>We Accept</span>
+                <img src="images/mastercard.png" alt="mastercard">
+                <img src="images/visa.png" alt="visa">
+                <img src="images/paypal.png" alt="paypal">
+                <img src="images/wechat-pay.png" alt="wechat-pay">
+            </div>
+        </div>
+    </div>
+</div>
+
+} @else if (router.url === '/index-3' || router.url === '/index-4' || router.url === '/tour-listing-right-sidebar') {
+
+<!-- Footer Area -->
+<div class="footer-area-three pb-120">
+    <div class="container mw-1345">
+        <div class="pb-120">
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <a class="d-inline-block footer-logo-wrap" routerLink="/">
+                        <img src="images/footer-logo2.svg" class="d-block" alt="footer-logo">
+                        <img src="images/footer-logo.svg" class="d-none" alt="footer-logo">
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="footer-content style-three">
+                        <p>Your trusted partner for unforgettable travel experiences. We specialize in curated tours and
+                            personalized travel solutions around the globe.</p>
+                        <ul class="p-0 m-0 list-unstyled d-flex flex-wrap align-items-center social-link">
+                            <li>
+                                <span class="text-white fs-14">Follow Us:</span>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/share/1DhES9VePL/" target="_blank">
+                                    <i class="ri-facebook-fill"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/inigo_travels?utm_source=qr&igsh=NHJjZWJjZDMydGZj" target="_blank">
+                                    <i class="ri-instagram-line"></i>
+                                </a>
+                            </li>
+                            <!-- <li>
+                                <a href="https://www.youtube.com/" target="_blank">
+                                    <i class="ri-youtube-line"></i>
+                                </a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-content-wrap style-three pt-120">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-single-item style-three mw-auto">
+                        <h3>Sign up for all the latest news and offers</h3>
+                        <form class="position-relative z-1 discount-form mx-auto">
+                            <input type="email" class="form-control" placeholder="Your email address">
+                            <button type="submit"
+                                class="submit-btn style-two default-btn position-absolute top-50 end-0 translate-middle-y gap-15 d-flex align-items-center">
+                                <i class="ri-send-plane-fill"></i>
+                            </button>
+                        </form>
+                        <p class="dec">We respect your privacy. Unsubscribe at any time.</p>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="d-flex justify-content-lg-center">
+                        <div class="footer-single-item style-three mw-auto">
+                            <h3>Quick Links</h3>
+                            <div class="d-flex flex-wrap justify-content-between gap-10 gap-50">
+                                <ul class="p-0 m-0 list-unstyled import-link">
+                                    <li>
+                                        <a routerLink="/about-us">About Us</a>
+                                    </li>
+                                    <!-- <li>
+                                        <a routerLink="/faq">FAQs</a>
+                                    </li> -->
+                                    <li>
+                                        <a routerLink="/contact-us">Contact Us</a>
+                                    </li>
+                                    <li>
+                                        <a routerLink="/tour-guide">Meet the Guides</a>
+                                    </li>
+                                    <li>
+                                        <a routerLink="/blog">Travel Blog</a>
+                                    </li>
+                                </ul>
+                                <ul class="p-0 m-0 list-unstyled import-link">
+                                    <li>
+                                        <a routerLink=".">Popular Cities</a>
+                                    </li>
+                                    <li>
+                                        <a routerLink="/privacy-policy">Privacy Policy</a>
+                                    </li>
+                                    <li>
+                                        <a routerLink="/terms-conditions">Terms & Conditions</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="d-flex justify-content-lg-end">
+                        <div class="footer-single-item style-three">
+                            <h3>Contact info</h3>
+                            <p>Vandanganavilai veedu
+                                Mariagiri
+                                Kulappuram post
+                                Kanyakumari dist
+                                Tamil Nadu
+                                629153</p>
+                            <ul class="p-0 m-0 list-unstyled info-link">
+                                <li class="d-flex align-items-center gap-10">
+                                    <i class="ri-mail-line text-primary"></i>
+                                    <a href="mailto:inigotravels069@gmail.com">inigotravels069@gmail.com</a>
+                                </li>
+                                <li class="d-flex align-items-center gap-10">
+                                    <i class="ri-phone-line text-primary"></i>
+                                    <a href="tel:+1(444)5859282">+91 9952243861</a>
+                                </li>
+                                <li class="d-flex align-items-center gap-10">
+                                    <i class="ri-time-line text-primary"></i>
+                                    <span>Mon-Fri: 9AM - 6PM | Sat: 10AM - 4PM</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+<!-- Copyright Area -->
+<div class="copyright-area style-three">
+    <div class="container">
+        <div class="d-flex flex-wrap justify-content-center gap-10 justify-content-md-between align-items-center">
+            <!-- <p class="copyright mb-0">© Viaja is Proudly Owned by <a href="https://envytheme.com/" target="_blank">EnvyTheme</a></p> -->
+            <div class="d-flex justify-content-center justify-content-md-end align-items-center gap-10 pay">
+                <span>We Accept</span>
+                <img src="images/mastercard.png" alt="mastercard">
+                <img src="images/visa.png" alt="visa">
+                <img src="images/paypal.png" alt="paypal">
+                <img src="images/wechat-pay.png" alt="wechat-pay">
+            </div>
+        </div>
+    </div>
+</div>
+
+} @else {
+
+<!-- Footer Area -->
+<div class="footer-area bg-blue2 ptb-120 position-relative z-1 overflow-hidden"
+    [class.oveflow-without]="router.url === '/'">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-3 col-sm-6">
+                <div class="footer-single-item">
+                    <!-- <a routerLink="/" class="d-block text-decoration-none logo">
+                            <img src="images/white-logo2.svg" alt="white-logo">
+                        </a> -->
+                    <h4 style="color: white;">INIGO TRAVELS</h4>
+                    <p>Your trusted partner for unforgettable travel experiences. We specialize in curated tours and
+                        personalized travel solutions around the globe.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="d-flex justify-content-lg-center">
+                    <div class="footer-single-item">
+                        <h3>Quick Links</h3>
+                        <ul class="p-0 m-0 list-unstyled import-link">
+                            <li>
+                                <a routerLink="/about-us">About Us</a>
+                            </li>
+                            <!-- <li>
+                                <a routerLink="/faq">FAQs</a>
+                            </li> -->
+                            <li>
+                                <a routerLink="/contact-us">Contact Us</a>
+                            </li>
+                            <!-- <li>
+                                <a routerLink="/privacy-policy">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a routerLink="/terms-conditions">Terms & Conditions</a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="d-flex justify-content-lg-center">
+                    <div class="footer-single-item">
+                        <h3>Social Media</h3>
+                        <ul class="p-0 m-0 list-unstyled import-link">
+                            <li>
+                                <a href="https://www.facebook.com/share/1DhES9VePL/" target="_blank">Facebook</a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/inigo_travels?utm_source=qr&igsh=NHJjZWJjZDMydGZj" target="_blank">Instagram</a>
+                            </li>
+                            <!-- <li>
+                                <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+                            </li>
+                            <li>
+                                <a href="https://www.twitter.com/" target="_blank">Twitter/X</a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="d-flex justify-content-lg-end">
+                    <div class="footer-single-item">
+                        <h3>Contact info</h3>
+                        <p>Vandanganavilai veedu
+                            Mariagiri
+                            Kulappuram post
+                            Kanyakumari dist
+                            Tamil Nadu
+                            629153</p>
+                        <ul class="p-0 m-0 list-unstyled info-link">
+                            <li class="d-flex align-items-center gap-10">
+                                <i class="ri-mail-line"></i>
+                                <a href="mailto:inigotravels069@gmail.com">inigotravels069@gmail.com</a>
+                            </li>
+                            <li class="d-flex align-items-center gap-10">
+                                <i class="ri-phone-line"></i>
+                                <a href="tel:+1(444)5859282">+91 9952243861</a>
+                            </li>
+                            <li class="d-flex align-items-center gap-10">
+                                <i class="ri-time-line"></i>
+                                <span>Mon-Fri: 9AM - 6PM | Sat: 10AM - 4PM</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="images/footer-shape.png" class="footer-shape d-none d-lg-inline-block" alt="footer-shape">
+</div>
+
+<!-- Copyright Area -->
+<div class="copyright-area bg-blue2">
+    <div class="container">
+        <div class="d-flex flex-wrap justify-content-center gap-10 justify-content-md-between align-items-center">
+            <p class="copyright mb-0">© Inigo Travels is Proudly Owned by</p>
+            <!-- <h4 style="color: white;">© Inigo Travels is Proudly Owned by</h4> -->
+            <div class="d-flex justify-content-center justify-content-md-end align-items-center gap-10 pay">
+                <span>We Accept</span>
+                <img src="images/mastercard.png" alt="mastercard">
+                <img src="images/visa.png" alt="visa">
+                <img src="images/paypal.png" alt="paypal">
+                <img src="images/wechat-pay.png" alt="wechat-pay">
+            </div>
+        </div>
+    </div>
+</div>
 
 }
