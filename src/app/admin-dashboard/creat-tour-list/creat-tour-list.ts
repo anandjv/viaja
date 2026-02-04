@@ -6,13 +6,13 @@ import { TourModal } from '../tour-modal/tour-modal';
 import { TourList } from '../tour-modal/tour-list';
 
 @Component({
-  selector: 'app-creat-tour-list',
-  imports: [CommonModule, CarouselModule],
-  templateUrl: './creat-tour-list.html',
-  styleUrl: './creat-tour-list.scss',
+    selector: 'app-creat-tour-list',
+    imports: [CommonModule, CarouselModule],
+    templateUrl: './creat-tour-list.html',
+    styleUrl: './creat-tour-list.scss',
 })
 export class CreatTourList {
- destinations: any[] = [];
+    destinations: any[] = [];
     imageBaseUrl = 'https://www.inigotravels.com/uploads';
 
     constructor(
@@ -28,7 +28,6 @@ export class CreatTourList {
         this.tourService.getTour().subscribe({
             next: (res: any[]) => {
                 this.destinations = res;
-                // console.log('Destinations:', res);
             },
             error: (err) => {
                 console.error('Error loading destinations', err);
@@ -36,18 +35,29 @@ export class CreatTourList {
         });
     }
 
-    open() {
-        this.modalService.open(TourModal, {
-            size: 'xl',
-            centered: true,
-            backdrop: 'static',
-        });
+open() {
+  const modalRef = this.modalService.open(TourModal, {
+    size: 'xl',
+    centered: true,
+    backdrop: 'static',
+  });
+
+  // ✅ ADD THIS BLOCK HERE 👇
+  modalRef.result.then(
+    (result) => {
+      if (result === 'success') {
+        this.loadDestinations(); // 🔄 reload list immediately
+      }
+    },
+    () => {
+      // dismissed (ESC / backdrop click)
     }
+  );
+}
 
     trackByIndex(index: number): number {
         return index;
     }
-    
 
     toursSlider: OwlOptions = {
         nav: true,

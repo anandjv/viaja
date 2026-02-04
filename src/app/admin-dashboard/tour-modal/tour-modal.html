@@ -20,6 +20,11 @@
             </div>
         </div>
 
+        <div class="mb-3 text-center" *ngIf="isEditMode && existingImageUrl">
+            <label class="form-label d-block">Current Image</label>
+            <img [src]="existingImageUrl" class="img-thumbnail" style="max-width: 250px;" alt="Current Image" />
+        </div>
+
         <!-- State Title -->
         <div class="mb-3">
             <label class="form-label">State Title</label>
@@ -70,9 +75,15 @@
 
     <div class="modal-footer">
         <button class="btn btn-secondary" type="button" (click)="close()">Close</button>
-        <button class="btn btn-primary" type="button" (click)="save()" [disabled]="form.invalid">
+
+        <button class="btn btn-primary" type="button" *ngIf="!isEditMode" (click)="save()">
             Save
         </button>
+
+        <button class="btn btn-warning" type="button" *ngIf="isEditMode" (click)="update()">
+            Update
+        </button>
+
     </div>
 
 </form>

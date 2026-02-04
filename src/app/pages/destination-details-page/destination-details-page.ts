@@ -1,5 +1,5 @@
 import { PageBanner } from '../../common/page-banner/page-banner';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -15,42 +15,37 @@ import { BookingForm } from '../booking-form/booking-form';
     styleUrl: './destination-details-page.scss',
 })
 export class DestinationDetailsPage implements OnInit {
-    destinations: any = null;
+    destination: any = null;
     highlightsArray: string[] = [];
-    description!: SafeHtml;
     imageBaseUrl = 'https://www.inigotravels.com/uploads';
 
     constructor(
-        private modalService: NgbModal,
         private destinationService: Destination,
-        private sanitizer: DomSanitizer,
+        private route: ActivatedRoute,
     ) {}
 
     ngOnInit(): void {
-        this.loadDestinations();
-        this.description = this.sanitizer.bypassSecurityTrustHtml(
-            this.destinations.description,
-        );
+        this.route.paramMap.subscribe((params) => {
+            const id = Number(params.get('id'));
+
+            if (id) {
+                this.loadDestination(id);
+            }
+        });
     }
 
-    loadDestinations(): void {
-        this.destinationService.getDestinations().subscribe({
-            next: (res: any[]) => {
-                this.destinations = res[0];
+    loadDestination(id: number) {
+        this.destinationService.getDestinations().subscribe((res) => {
+            this.destination = res.find((d) => Number(d.id) === id);
 
-                if (this.destinations.highlight) {
-                    const tempDiv = document.createElement('div');
-                    tempDiv.innerHTML = this.destinations.highlight;
-
-                    const text = tempDiv.textContent || '';
-
-                    this.highlightsArray = text
-                    .split('\n')              // ✅ NEWLINE
-                    .map(item => item.trim())
-                    .filter(item => item.length);
-                }
-            },
-            error: (err) => console.error(err),
+            if (this.destination?.highlight) {
+                const div = document.createElement('div');
+                div.innerHTML = this.destination.highlight;
+                this.highlightsArray = div.innerText
+                    .split('\n')
+                    .map((v) => v.trim())
+                    .filter(Boolean);
+            }
         });
     }
 

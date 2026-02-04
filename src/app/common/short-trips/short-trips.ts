@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Destination } from '../../admin-dashboard/wishlist/destination';
 import { CommonModule } from '@angular/common';
+import { TourList } from '../../admin-dashboard/tour-modal/tour-list';
 
 @Component({
   selector: 'app-short-trips',
@@ -12,12 +12,12 @@ import { CommonModule } from '@angular/common';
   styleUrl: './short-trips.scss',
 })
 export class ShortTrips {
- destinations: any[] = [];
+    destinations: any[] = [];
     imageBaseUrl = 'https://www.inigotravels.com/uploads';
 
     constructor(
         private modalService: NgbModal,
-        private destinationService: Destination,
+        private destinationService: TourList,
     ) {}
 
     ngOnInit(): void {
@@ -25,7 +25,7 @@ export class ShortTrips {
     }
 
     loadDestinations(): void {
-        this.destinationService.getDestinations().subscribe({
+        this.destinationService.getTour().subscribe({
             next: (res: any[]) => {
                 this.destinations = res;
                 console.log('Destinations:', res);
@@ -38,26 +38,6 @@ export class ShortTrips {
     trackByIndex(index: number): number {
         return index;
     }
-
-getRoute(dest: any): string {
-    if (!dest?.title) return '/';
-
-    const title = dest.title.toLowerCase().trim();
-
-    if (title === 'tamil nadu') return '/tamil-nadu';
-    if (title === 'karnataka') return '/karnataka';
-    if (title === 'kerala') return '/kerala';
-    if (title === 'telangana') return '/telangana';
-    if (title === 'india’s golden triangle') return '/golden-triangle';
-    if (title === 'jammu and kashmir') return '/jammu-and-kashmir';
-    if (title === 'bollywood mumbai') return '/bollywood-mumbai';
-    if (title === 'punjab') return '/punjab';
-    if (title === 'goa') return '/goa';
-
-    return '/';
-}
-
-
 
     // Owl Carousel
     toursSlider: OwlOptions = {

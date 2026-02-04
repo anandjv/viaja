@@ -12,6 +12,8 @@ import {
     FormArray,
 } from '@angular/forms';
 import { Destination } from './destination';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'app-wishlist',
@@ -22,15 +24,100 @@ import { Destination } from './destination';
 export class Wishlist {
     form!: any;
     imageFile: File | null = null;
+    editData: any = null;
+    isEditMode = false;
+    imageBaseUrl = 'https://www.inigotravels.com/bknd/uploads/';
+    existingImageUrl: string | null = null;
+    successMessage = '';
+    errorMessage = '';
 
     constructor(
         public activeModal: NgbActiveModal,
         private fb: FormBuilder,
         private destinationService: Destination,
+        private http: HttpClient,
     ) {}
 
     ngOnInit(): void {
         this.initForm();
+
+        if (this.editData) {
+            this.isEditMode = true;
+            this.patchForm(this.editData);
+
+            // ❌ Image NOT required in edit
+            this.form.get('image')?.clearValidators();
+            this.form.get('image')?.updateValueAndValidity();
+        } else {
+            // ✅ Image REQUIRED in create
+            this.form.get('image')?.setValidators(Validators.required);
+            this.form.get('image')?.updateValueAndValidity();
+        }
+    }
+
+    patchForm(data: any) {
+        this.form.patchValue({
+            stateTitle: data.title,
+            subheading: data.sub_heading,
+            description: data.description,
+            image: null, // important
+        });
+
+        this.existingImageUrl = data.image
+            ? this.imageBaseUrl + data.image
+            : null;
+
+        this.highlights.clear();
+
+        if (data.highlight) {
+            data.highlight.split('\n').forEach((h: string) => {
+                this.highlights.push(this.fb.control(h, Validators.required));
+            });
+        } else {
+            this.addHighlight();
+        }
+    }
+
+    updateDestination(id: number, payload: FormData): Observable<any> {
+        return this.http.post(
+            `https://www.inigotravels.com/bknd/api/destinations/${id}`,
+            payload,
+        );
+    }
+
+    update() {
+        if (this.form.invalid) {
+            this.form.markAllAsTouched();
+            return;
+        }
+
+        const formData = new FormData();
+
+        const highlightsText = this.highlights.value
+            .filter((h: string) => h.trim() !== '')
+            .join('\n');
+
+        formData.append('title', this.form.value.stateTitle);
+        formData.append('sub_heading', this.form.value.subheading);
+        formData.append('description', this.form.value.description);
+        formData.append('highlight', highlightsText);
+
+        // ✅ ONLY when user uploads new image
+        if (this.form.value.image) {
+            formData.append('image', this.form.value.image); // binary
+        }
+
+        this.destinationService
+            .updateDestination(this.editData.id, formData)
+            .subscribe({
+                next: () => {
+                    this.successMessage = 'Updated successfully!';
+                    setTimeout(() => {
+                        this.activeModal.close('success');
+                    }, 1500);
+                },
+                error: (err) => console.error(err),
+            });
     }
 
     /* -----------------------
@@ -93,6 +180,7 @@ export class Wishlist {
     /* -----------------------
        SAVE
     ------------------------*/
+
     save() {
         if (this.form.invalid) {
             this.form.markAllAsTouched();
@@ -103,17 +191,29 @@ export class Wishlist {
 
         const highlightsText = this.highlights.value
             .filter((h: string) => h.trim() !== '')
-            .join('\n'); // ✅ VERY IMPORTANT
+            .join('\n');
 
         formData.append('title', this.form.value.stateTitle);
         formData.append('sub_heading', this.form.value.subheading);
         formData.append('description', this.form.value.description);
-        formData.append('highlight', highlightsText); // ✅ clean text
+        formData.append('highlight', highlightsText);
         formData.append('image', this.form.value.image);
 
         this.destinationService.createDestination(formData).subscribe({
-            next: () => this.activeModal.dismiss(),
-            error: (err) => console.error(err),
+            next: (res: any) => {
+                // ✅ SHOW SUCCESS MESSAGE
+                this.successMessage = res.message || 'Created successfully!';
+                this.errorMessage = '';
+
+                // ✅ CLOSE AFTER 1.5 SECONDS
+                setTimeout(() => {
+                    this.activeModal.close('success');
+                }, 1500);
+            },
+            error: () => {
+                this.errorMessage = 'Something went wrong';
+                this.successMessage = '';
+            },
         });
     }
 

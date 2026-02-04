@@ -12,6 +12,8 @@ import {
     FormArray,
 } from '@angular/forms';
 import { TourList } from './tour-list';
+import { Observable } from 'rxjs/internal/Observable';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'app-tour-modal',
@@ -24,16 +26,97 @@ export class TourModal {
     imageFile: File | null = null;
     successMessage = '';
     errorMessage = '';
+    editData: any = null;
+    isEditMode = false;
+    imageBaseUrl = 'https://www.inigotravels.com/bknd/uploads/';
+    existingImageUrl: string | null = null;
 
     constructor(
         public activeModal: NgbActiveModal,
         private fb: FormBuilder,
         private tourService: TourList,
+        private http: HttpClient
     ) {}
 
     ngOnInit(): void {
         this.initForm();
+
+        if (this.editData) {
+            this.isEditMode = true;
+            this.patchForm(this.editData);
+
+            // ❌ Image NOT required in edit
+            this.form.get('image')?.clearValidators();
+            this.form.get('image')?.updateValueAndValidity();
+        } else {
+            // ✅ Image REQUIRED in create
+            this.form.get('image')?.setValidators(Validators.required);
+            this.form.get('image')?.updateValueAndValidity();
+        }
     }
+
+        patchForm(data: any) {
+            this.form.patchValue({
+                stateTitle: data.title,
+                subheading: data.sub_heading,
+                attractions: data.attractions,
+                image: null, // important
+            });
+    
+            this.existingImageUrl = data.image
+                ? this.imageBaseUrl + data.image
+                : null;
+    
+            this.highlights.clear();
+    
+            if (data.highlights) {
+                data.highlights.split('\n').forEach((h: string) => {
+                    this.highlights.push(this.fb.control(h, Validators.required));
+                });
+            } else {
+                this.addHighlight();
+            }
+        }
+    
+        updateDestination(id: number, payload: FormData): Observable<any> {
+            return this.http.post(
+                `https://www.inigotravels.com/bknd/api/tours/${id}`,
+                payload,
+            );
+        }
+    
+update() {
+  if (this.form.invalid) {
+    this.form.markAllAsTouched();
+    return;
+  }
+
+  const formData = new FormData();
+
+  const highlightsText = this.highlights.value
+    .filter((h: string) => h.trim() !== '')
+    .join('\n');
+
+  formData.append('title', this.form.value.stateTitle);
+  formData.append('sub_heading', this.form.value.subheading);
+  formData.append('attractions', this.form.value.attractions);
+  formData.append('highlight', highlightsText);
+
+  if (this.form.value.image) {
+    formData.append('image', this.form.value.image);
+  }
+
+  this.tourService.updateDestination(this.editData.id, formData).subscribe({
+    next: () => {
+      this.successMessage = 'Updated successfully!';
+      setTimeout(() => {
+        this.activeModal.close('success'); // ✅ IMPORTANT
+      }, 1500);
+    },
+    error: (err) => console.error(err),
+  });
+}
+
 
     /* -----------------------
        FORM INIT
@@ -95,48 +178,48 @@ export class TourModal {
     /* -----------------------
        SAVE
     ------------------------*/
-save() {
-  if (this.form.invalid) {
-    this.form.markAllAsTouched();
-    return;
-  }
+    save() {
+        if (this.form.invalid) {
+            this.form.markAllAsTouched();
+            return;
+        }
 
-  const formData = new FormData();
+        const formData = new FormData();
 
-  const highlightsText = this.highlights.value
-    .filter((h: string) => h.trim() !== '')
-    .join('\n');
+        const highlightsText = this.highlights.value
+            .filter((h: string) => h.trim() !== '')
+            .join('\n');
 
-  formData.append('title', this.form.value.stateTitle);
-  formData.append('sub_heading', this.form.value.subheading);
-  formData.append('attractions', this.form.value.attractions);
-  formData.append('highlights', highlightsText);
-  formData.append('image', this.form.value.image);
+        formData.append('title', this.form.value.stateTitle);
+        formData.append('sub_heading', this.form.value.subheading);
+        formData.append('attractions', this.form.value.attractions);
+        formData.append('highlights', highlightsText);
+        formData.append('image', this.form.value.image);
 
-  this.tourService.createTour(formData).subscribe({
-    next: (res: any) => {
-      // ✅ SHOW SUCCESS MESSAGE
-      this.successMessage = res.message || 'Tour created successfully!';
-      this.errorMessage = '';
+        this.tourService.createTour(formData).subscribe({
+            next: (res: any) => {
+                // ✅ SHOW SUCCESS MESSAGE
+                this.successMessage =
+                    res.message || 'Tour created successfully!';
+                this.errorMessage = '';
 
-      // reset form
-      this.form.reset();
-      this.highlights.clear();
-      this.addHighlight();
+                // reset form
+                this.form.reset();
+                this.highlights.clear();
+                this.addHighlight();
 
-      // optional: auto close modal after 2 seconds
-      setTimeout(() => {
-        this.activeModal.dismiss('success');
-      }, 2000);
-    },
-    error: (err) => {
-      this.errorMessage = 'Something went wrong. Please try again.';
-      this.successMessage = '';
-      console.error(err);
-    },
-  });
-}
-
+                // optional: auto close modal after 2 seconds
+                setTimeout(() => {
+                    this.activeModal.dismiss('success');
+                }, 2000);
+            },
+            error: (err) => {
+                this.errorMessage = 'Something went wrong. Please try again.';
+                this.successMessage = '';
+                console.error(err);
+            },
+        });
+    }
 
     stripHtml(html: string): string {
         const temp = document.createElement('div');

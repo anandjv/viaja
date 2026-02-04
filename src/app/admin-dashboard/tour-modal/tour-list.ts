@@ -19,4 +19,13 @@ export class TourList {
   createTour(payload: FormData): Observable<any> {
     return this.http.post(this.apiUrl, payload);
   }
+    updateDestination(id: number, payload: FormData): Observable<any> {
+    payload.append('_method', 'PUT'); // 🔥 IMPORTANT (Laravel support)
+    return this.http.post(`${this.apiUrl}/${id}`, payload);
+  }
+
+ deleteTour(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
+
 }

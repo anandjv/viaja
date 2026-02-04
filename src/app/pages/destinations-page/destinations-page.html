@@ -1,6 +1,4 @@
-<app-page-banner
-    [title]="`All Destinations`"
-/>
+<app-page-banner [title]="`All Destinations`" />
 
 <!-- Destinations -->
 <div class="trending-destinations-area ptb-120">
@@ -10,16 +8,28 @@
             <p>Discover the world's most thrilling landscapes with our expert-curated selection</p>
         </div>
         <div class="row g-4 gy-42 justify-content-center">
-            <div class="col-lg-4 col-md-6" *ngFor="let dest of destinations">
+            <div class="col-lg-4 col-md-6" *ngFor="let dest of paginatedData; trackBy: trackByIndex">
                 <div class="trending-destinations-single-item">
                     <div class="trending-destinations-img position-relative z-1">
-                        <a [routerLink]="getRoute(dest)" class="text-decoration-none d-block">
-                            <img [src]="'https://www.inigotravels.com/bknd/uploads/' + dest.image" alt="{{ dest.title }}" />
-                        </a>   
-                        <a routerLink="." class="tag d-inline-block text-decoration-none">Trending</a>
-                    </div> 
+                        <a [routerLink]="['/destination', dest.id]" class="text-decoration-none d-block">
+                            <img [src]="'https://www.inigotravels.com/bknd/uploads/' + dest.image"
+                                alt="{{ dest.title }}" />
+                        </a>
+                        <a class="tag d-inline-block text-decoration-none" href="javascript:void(0)"
+                            (click)="openEditModal(dest)">
+                            Edit
+                        </a>
+                        <a class="tags d-inline-block text-decoration-none" href="javascript:void(0)"
+                            style="color: white;"  (click)="deleteDestination(dest.id)"><svg xmlns="http://www.w3.org/2000/svg"
+                                width="16" height="16" fill="currentColor" class="bi bi-trash3-fill"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5" />
+                            </svg> &nbsp;&nbsp; Delete
+                        </a>
+                    </div>
                     <div class="trending-destinations-content bg-fafafb">
-                        <a [routerLink]="getRoute(dest)" class="title d-block text-decoration-none">
+                        <a [routerLink]="['/destination', dest.id]" class="title d-block text-decoration-none">
                             <h3>{{ dest.title }}</h3>
                         </a>
                         <a routerLink="/destination-details" class="read-more d-inline-block text-decoration-none">
@@ -27,6 +37,28 @@
                             <i class="ri-arrow-right-long-line"></i>
                         </a>
                     </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="pagination-area d-flex align-items-center justify-content-center">
+
+                    <!-- PREV -->
+                    <button class="next page-numbers border-0" (click)="prevPage()" [disabled]="currentPage === 1">
+                        <i class="ri-arrow-left-long-line"></i>
+                    </button>
+
+                    <!-- PAGE NUMBERS -->
+                    <button *ngFor="let p of [].constructor(totalPages); let i = index" class="page-numbers border-0"
+                        [class.current]="currentPage === i + 1" (click)="setPage(i + 1)">
+                        {{ i + 1 | number:'2.0' }}
+                    </button>
+
+                    <!-- NEXT -->
+                    <button class="next page-numbers border-0" (click)="nextPage()"
+                        [disabled]="currentPage === totalPages">
+                        <i class="ri-arrow-right-long-line"></i>
+                    </button>
+
                 </div>
             </div>
         </div>

@@ -36,18 +36,24 @@ export class DestinationCreatPage {
         });
     }
 
-    open() {
-        this.modalService.open(Wishlist, {
-            size: 'xl',
-            centered: true,
-            backdrop: 'static',
-        });
+open() {
+  const modalRef = this.modalService.open(Wishlist, {
+    size: 'xl',
+    centered: true,
+    backdrop: 'static',
+  });
+
+  modalRef.result.then(result => {
+    if (result === 'success') {
+      this.loadDestinations(); // ✅ reload list
     }
+  });
+}
+
 
     trackByIndex(index: number): number {
         return index;
     }
-    
 
     toursSlider: OwlOptions = {
         nav: true,

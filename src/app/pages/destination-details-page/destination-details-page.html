@@ -1,4 +1,4 @@
-<app-page-banner [title]="`Kerala`" />
+<app-page-banner [title]="destination.title" />
 
 <!-- Destination Details -->
 <div class="destination-details-area ptb-120">
@@ -55,15 +55,15 @@
             </div>
         </div>
         <div class="destination-top-info">
-            <h2>{{ destinations.sub_heading }}</h2>
+            <h2>{{ destination.sub_heading }}</h2>
             <p>Stand at the foot of the world's highest mountain on this legendary Himalayan adventure</p>
             <br>
         </div>
-        <div class="row g-4" *ngIf="destinations">
+        <div class="row g-4" *ngIf="destination">
             <div class="col-lg-8">
                 <div class="destination-details-content">
                     <h3>Destination Overview</h3>
-                    <p>{{ destinations.description }}</p>
+                    <p>{{ destination.description }}</p>
                     <h3>Highlights</h3>
                     <ul class="p-0 m-0 list-unstyled">
                         <li class="d-flex align-items-start gap-10 mb-3" *ngFor="let item of highlightsArray">

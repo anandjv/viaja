@@ -19,4 +19,17 @@ export class Destination {
   createDestination(payload: FormData): Observable<any> {
     return this.http.post(this.apiUrl, payload);
   }
+  updateDestination(id: number, payload: FormData): Observable<any> {
+    payload.append('_method', 'PUT'); // 🔥 IMPORTANT (Laravel support)
+    return this.http.post(`${this.apiUrl}/${id}`, payload);
+  }
+
+  // ✅ DELETE destination
+deleteDestination(id: number): Observable<any> {
+  return this.http.delete(
+    `https://inigotravels.com/bknd/api/destinations/${id}`
+  );
+}
+
+
 }

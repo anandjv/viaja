@@ -8,7 +8,7 @@
             <owl-carousel-o *ngIf="destinations.length" [options]="toursSlider">
                 <ng-template carouselSlide *ngFor="let dest of destinations">
                     <div class="city-tour-single-item">
-                        <a [routerLink]="getRoute(dest)" class="d-block text-decoration-none city-tour-img">
+                        <a [routerLink]="['/destination', dest.id]" class="d-block text-decoration-none city-tour-img">
                               <img [src]="'https://www.inigotravels.com/bknd/uploads/' + dest.image" alt="{{ dest.title }}" />
                         </a>
                         <div class="city-tour-content">
@@ -24,7 +24,7 @@
                                     <span>4.9 (28 reviews)</span>
                                 </div>
                             </div>
-                            <a [routerLink]="getRoute(dest)" class="text-decoration-none d-block title">
+                            <a [routerLink]="['/destination', dest.id]" class="text-decoration-none d-block title">
                                  <h3>{{ dest.title }}</h3>
                             </a>
                             <div class="book-hours d-flex justify-content-between align-items-center">

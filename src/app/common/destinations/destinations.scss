@@ -19,6 +19,16 @@
             margin: 20px;
             border-radius: 5px;
         }
+        .tags {
+            padding: 4px 10px;
+            background-color: rgb(238, 56, 56);
+            color: var(--blackColor);
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 20px;
+            border-radius: 5px;
+        }
     }
     .trending-destinations-content {
         background-color: var(--whiteColor);

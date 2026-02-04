@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { PageBanner } from "../../common/page-banner/page-banner";
+import { PageBanner } from '../../common/page-banner/page-banner';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { Destination } from '../../admin-dashboard/wishlist/destination';
+import { Wishlist } from '../../admin-dashboard/wishlist/wishlist';
 
 @Component({
     selector: 'app-destinations-page',
@@ -13,7 +14,11 @@ import { Destination } from '../../admin-dashboard/wishlist/destination';
     styleUrl: './destinations-page.scss',
 })
 export class DestinationsPage {
-     destinations: any[] = [];
+    destinations: any[] = [];
+    paginatedData: any[] = [];
+    currentPage = 1;
+    itemsPerPage = 9;
+    totalPages = 0;
     imageBaseUrl = 'https://www.inigotravels.com/uploads';
 
     constructor(
@@ -26,39 +31,92 @@ export class DestinationsPage {
     }
 
     loadDestinations(): void {
-        this.destinationService.getDestinations().subscribe({
-            next: (res: any[]) => {
-                this.destinations = res;
-                console.log('Destinations:', res);
-            },
-            error: (err) => {
-                console.error('Error loading destinations', err);
-            },
+        this.destinationService.getDestinations().subscribe((res) => {
+            this.destinations = res;
+            this.totalPages = Math.ceil(
+                this.destinations.length / this.itemsPerPage,
+            );
+            this.setPage(1);
         });
     }
+
+    setPage(page: number): void {
+        if (page < 1 || page > this.totalPages) return;
+
+        this.currentPage = page;
+
+        const start = (page - 1) * this.itemsPerPage;
+        const end = start + this.itemsPerPage;
+
+        this.paginatedData = this.destinations.slice(start, end);
+    }
+
+    nextPage(): void {
+        this.setPage(this.currentPage + 1);
+    }
+
+    prevPage(): void {
+        this.setPage(this.currentPage - 1);
+    }
+
     trackByIndex(index: number): number {
         return index;
     }
 
-getRoute(dest: any): string {
-    if (!dest?.title) return '/';
+    openEditModal(dest: any) {
+        const modalRef = this.modalService.open(Wishlist, {
+            size: 'lg',
+            centered: true,
+            backdrop: 'static',
+        });
 
-    const title = dest.title.toLowerCase().trim();
+        modalRef.componentInstance.editData = dest;
 
-    if (title === 'tamil nadu') return '/tamil-nadu';
-    if (title === 'karnataka') return '/karnataka';
-    if (title === 'kerala') return '/kerala';
-    if (title === 'telangana') return '/telangana';
-    if (title === 'india’s golden triangle') return '/golden-triangle';
-    if (title === 'jammu and kashmir') return '/jammu-and-kashmir';
-    if (title === 'bollywood mumbai') return '/bollywood-mumbai';
-    if (title === 'punjab') return '/punjab';
-    if (title === 'goa') return '/goa';
+        // ✅ LISTEN FOR MODAL CLOSE
+        modalRef.result.then(
+            (result) => {
+                if (result === 'success') {
+                    this.loadDestinations(); // 🔄 reload immediately
+                }
+            },
+            () => {
+                // dismissed (ESC / backdrop click)
+            },
+        );
+    }
 
-    return '/';
-}
+    deleteDestination(id: number): void {
+        if (!confirm('Are you sure you want to delete this destination?')) {
+            return;
+        }
 
+        this.destinationService.deleteDestination(id).subscribe({
+            next: (res: any) => {
+                alert(res.message || 'Deleted successfully');
 
+                // ✅ REMOVE FROM LIST (instant UI update)
+                this.destinations = this.destinations.filter(
+                    (d) => d.id !== id,
+                );
+
+                // ✅ RE-CALCULATE PAGINATION
+                this.totalPages = Math.ceil(
+                    this.destinations.length / this.itemsPerPage,
+                );
+
+                // ✅ KEEP CURRENT PAGE VALID
+                if (this.currentPage > this.totalPages) {
+                    this.currentPage = this.totalPages || 1;
+                }
+
+                this.setPage(this.currentPage);
+            },
+            error: (err) => {
+                console.error(err);
+                alert('Delete failed');
+            },
+        });
+    }
 
     // Owl Carousel
     toursSlider: OwlOptions = {

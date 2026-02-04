@@ -39,24 +39,6 @@ export class Tours {
         return index;
     }
 
-getRoute(dest: any): string {
-    if (!dest?.title) return '/';
-
-    const title = dest.title.toLowerCase().trim();
-
-    if (title === 'tamil nadu') return '/tamil-nadu';
-    if (title === 'karnataka') return '/karnataka';
-    if (title === 'kerala') return '/kerala';
-    if (title === 'telangana') return '/telangana';
-    if (title === 'india’s golden triangle') return '/golden-triangle';
-    if (title === 'jammu and kashmir') return '/jammu-and-kashmir';
-    if (title === 'bollywood mumbai') return '/bollywood-mumbai';
-    if (title === 'punjab') return '/punjab';
-    if (title === 'goa') return '/goa';
-
-    return '/';
-}
-
 
 
     // Owl Carousel
