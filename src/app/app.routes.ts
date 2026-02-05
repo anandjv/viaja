@@ -11,8 +11,6 @@ import { TourListingListViewPage } from './pages/tour-listing-list-view-page/tou
 import { TourDetailsPage } from './pages/tour-details-page/tour-details-page';
 import { TeamPage } from './pages/team-page/team-page';
 import { TestimonialsPage } from './pages/testimonials-page/testimonials-page';
-import { CareersPage } from './pages/careers-page/careers-page';
-import { CareerDetailsPage } from './pages/career-details-page/career-details-page';
 import { TermsConditionsPage } from './pages/terms-conditions-page/terms-conditions-page';
 import { BookingFormPage } from './pages/booking-form-page/booking-form-page';
 import { BlogGridPage } from './pages/blog-grid-page/blog-grid-page';
@@ -29,14 +27,6 @@ import { Reviews } from './admin-dashboard/reviews/reviews';
 import { Settings } from './admin-dashboard/settings/settings';
 import { Password } from './admin-dashboard/password/password';
 import { DestinationCreatPage } from './admin-dashboard/destination-creat-page/destination-creat-page';
-import { TamilNadu } from './pages/tamil-nadu/tamil-nadu';
-import { Karnataka } from './pages/karnataka/karnataka';
-import { Telangana } from './pages/telangana/telangana';
-import { GoldenTriangle } from './pages/golden-triangle/golden-triangle';
-import { JammuAndKashmir } from './pages/jammu-and-kashmir/jammu-and-kashmir';
-import { BollywoodMumbai } from './pages/bollywood-mumbai/bollywood-mumbai';
-import { Punjab } from './pages/punjab/punjab';
-import { Goa } from './pages/goa/goa';
 import { CreatTourList } from './admin-dashboard/creat-tour-list/creat-tour-list';
 
 export const routes: Routes = [
@@ -50,8 +40,6 @@ export const routes: Routes = [
     {path: 'tour-details/:id', component: TourDetailsPage},
     {path: 'tour-guide', component: TeamPage},
     {path: 'testimonials', component: TestimonialsPage},
-    {path: 'careers', component: CareersPage},
-    {path: 'career-details', component: CareerDetailsPage},
     {path: 'booking-form', component: BookingFormPage},
     {path: 'terms-conditions', component: TermsConditionsPage},
     {path: 'blog-grid', component: BlogGridPage},
@@ -61,15 +49,6 @@ export const routes: Routes = [
     {path: 'my-account', component: MyAccountPage},
     {path: 'forgot-password', component: ForgotPasswordPage},
     {path: 'contact-us', component: ContactUsPage},
-    // {path: 'tamil-nadu', component: TamilNadu},
-    // {path: 'karnataka', component: Karnataka},
-    // {path: 'telangana', component: Telangana},
-    // {path: 'golden-triangle', component: GoldenTriangle},
-    // {path: 'jammu-and-kashmir', component: JammuAndKashmir},
-    // {path: 'bollywood-mumbai', component: BollywoodMumbai},
-    // {path: 'punjab', component: Punjab},
-    // {path: 'goa', component: Goa},
-
 
     {
         path: 'admin-dashboard',
