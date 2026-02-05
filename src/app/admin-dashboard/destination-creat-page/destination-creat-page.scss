@@ -1,2 +1,22 @@
 @use "../dashboard/dashboard.scss" as *;
 @use "../../common/featured-tours-packages/featured-tours-packages.scss" as *;
+.city-tour-img {
+  position: relative;
+
+  img {
+    width: 100%;
+    border-radius: 20px;
+  }
+}
+
+/* 🔥 Upload Button like Edit button */
+.upload-btn {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 10;
+  padding: 6px 8px;
+  font-size: 16px;
+  border-radius: 6px;
+  color: white;
+}

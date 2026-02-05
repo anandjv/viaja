@@ -4,10 +4,13 @@ import { CommonModule } from '@angular/common';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Destination } from '../wishlist/destination';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import { DestinationImageUploade } from '../destination-image-uploade/destination-image-uploade';
+import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-destination-creat-page',
-    imports: [CommonModule, CarouselModule],
+    imports: [CommonModule, CarouselModule, RouterLink],
+
     templateUrl: './destination-creat-page.html',
     styleUrl: './destination-creat-page.scss',
 })
@@ -50,7 +53,14 @@ open() {
   });
 }
 
+ openUploadModal(destinationId: number) {
+    const modalRef = this.modalService.open(
+      DestinationImageUploade,
+      { size: 'xl', centered: true }
+    );
 
+    modalRef.componentInstance.destinationId = destinationId;
+  }
     trackByIndex(index: number): number {
         return index;
     }

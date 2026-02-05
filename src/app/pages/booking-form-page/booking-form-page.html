@@ -1,44 +1,66 @@
-<app-page-banner [title]="`Booking Form`" />
+<app-page-banner [title]="'Booking Form'" />
 
-<!-- Booking Form -->
 <div class="tour-booking-form-area ptb-120">
     <div class="container">
         <div class="tour-booking-form mx-auto">
-            <div class="row gy-3">
-                <div class="col-lg-6">
-                    <div>
-                        <label class="label">First name *</label>
-                        <input type="text" class="form-control" placeholder="Enter first namel">
+            <form [formGroup]="bookingForm" (ngSubmit)="submit()">
+                <div class="row gy-3">
+                    <div class="col-lg-12">
+                        <label class="label">First name *</label>
+                        <input type="text" class="form-control" formControlName="first_name"
+                            placeholder="Enter first name" />
+                        <small class="text-danger"
+                            *ngIf="bookingForm.get('first_name')?.touched && bookingForm.get('first_name')?.invalid">
+                            First name is required
+                        </small>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <div>
-                        <label class="label">Last name *</label>
-                        <input type="text" class="form-control" placeholder="Enter last name">
+
+                    <div class="col-lg-12">
+                        <label class="label">Email *</label>
+                        <input type="email" class="form-control" formControlName="email"
+                            placeholder="Enter email address" />
+                        <small class="text-danger"
+                            *ngIf="bookingForm.get('email')?.touched && bookingForm.get('email')?.invalid">
+                            Valid email is required
+                        </small>
                     </div>
-                </div>
-                <div class="col-lg-12">
-                    <div>
-                        <label class="label">Email *</label>
-                        <input type="email" class="form-control" placeholder="Enter email address">
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div>
+
+                    <div class="col-lg-12">
                         <label class="label">Phone *</label>
-                        <input type="number" class="form-control" placeholder="Enter phone number">
+                        <input type="text" class="form-control" formControlName="phone"
+                            placeholder="Enter phone number" />
+                        <small class="text-danger"
+                            *ngIf="bookingForm.get('phone')?.touched && bookingForm.get('phone')?.invalid">
+                            Phone number is required
+                        </small>
                     </div>
+
+                    <div class="col-lg-12">
+                        <label class="label">Message *</label>
+                        <textarea rows="5" class="form-control" formControlName="description" placeholder="Write about yourself"></textarea>
+                    
+                        <small class="text-danger" *ngIf="
+                          bookingForm.get('description')?.touched &&
+                          bookingForm.get('description')?.invalid
+                        ">
+                            Message is required
+                        </small>
+                    </div>
+
+
+                    <div class="col-lg-12">
+                        <button class="default-btn px-40" type="submit" [disabled]="loading">
+                            {{ loading ? 'Submitting...' : 'Submit Form' }}
+                        </button>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <p class="text-success" *ngIf="successMessage">{{ successMessage }}</p>
+                        <p class="text-danger" *ngIf="errorMessage">{{ errorMessage }}</p>
+                    </div>
+
                 </div>
-                <div class="col-lg-12">
-                    <label class="label">Describe Yourself</label>
-                    <textarea rows="5" class="form-control" placeholder="Write about yourself"></textarea>
-                </div>
-                <div class="col-lg-12">
-                    <button class="default-btn px-40" type="submit">
-                        Submit Form
-                    </button>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>

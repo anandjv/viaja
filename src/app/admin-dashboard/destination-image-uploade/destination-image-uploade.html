@@ -1,0 +1,39 @@
+<div class="modal-header">
+  <h5 class="modal-title">Upload Destination Images</h5>
+  <button type="button" class="btn-close" (click)="activeModal.dismiss()"></button>
+</div>
+
+<div class="modal-body">
+  <input
+    type="file"
+    class="form-control"
+    multiple
+    accept="image/*"
+    (change)="onFileSelect($event)"
+  />
+
+  <!-- Image Preview -->
+  <div class="row mt-3" *ngIf="previews.length">
+    <div class="col-md-3 mb-2" *ngFor="let img of previews">
+      <img
+        [src]="img"
+        class="img-fluid rounded border"
+        style="height: 120px; object-fit: cover"
+      />
+    </div>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button class="btn btn-secondary" (click)="activeModal.dismiss()">
+    Cancel
+  </button>
+
+  <button
+    class="btn btn-primary"
+    [disabled]="loading || !selectedFiles.length"
+    (click)="upload()"
+  >
+    {{ loading ? 'Uploading...' : 'Upload Images' }}
+  </button>
+</div>
