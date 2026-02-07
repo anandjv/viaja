@@ -103,9 +103,13 @@
                 <span class="count">0</span>
             </a> -->
             @if (isLoggedIn) {
+            <button type="button" class="btn btn-primary" routerLink="/admin-dashboard">
+                Admin
+            </button>
+<!-- 
             <button type="button" class="btn btn-danger" (click)="logout()">
                 Logout
-            </button>
+            </button> -->
             } @else {
             <a routerLink="/my-account" class="others-btn">
                 <i class="ri-user-line"></i>

@@ -1,12 +1,11 @@
 <div class="tour-booking-form-area mt-4">
-     <div class="container">
+    <div class="container">
         <div class="tour-booking-form mx-auto">
             <form [formGroup]="bookingForm" (ngSubmit)="submit()">
                 <div class="row gy-3">
                     <div class="col-lg-12">
                         <label class="label">First name *</label>
-                        <input type="text" class="form-control" formControlName="name"
-                            placeholder="Enter first name" />
+                        <input type="text" class="form-control" formControlName="name" placeholder="Enter first name" />
                         <small class="text-danger"
                             *ngIf="bookingForm.get('name')?.touched && bookingForm.get('name')?.invalid">
                             First name is required
@@ -26,17 +25,29 @@
                     <div class="col-lg-12">
                         <label class="label">Phone *</label>
                         <input type="text" class="form-control" formControlName="mobile"
-                            placeholder="Enter phone number" />
+                            placeholder="Enter phone number" maxlength="10"
+                            (keypress)="($event.charCode >= 48 && $event.charCode <= 57) ? null : $event.preventDefault()" />
+
                         <small class="text-danger"
-                            *ngIf="bookingForm.get('mobile')?.touched && bookingForm.get('mobile')?.invalid">
-                            Phone number is required
+                            *ngIf="bookingForm.get('mobile')?.touched && bookingForm.get('mobile')?.errors">
+
+                            <span *ngIf="bookingForm.get('mobile')?.errors?.['required']">
+                                Phone number is required
+                            </span>
+
+                            <span *ngIf="bookingForm.get('mobile')?.errors?.['pattern']">
+                                Phone number must be exactly 10 digits
+                            </span>
+
                         </small>
+
                     </div>
 
                     <div class="col-lg-12">
                         <label class="label">Message *</label>
-                        <textarea rows="5" class="form-control" formControlName="message" placeholder="Write about yourself"></textarea>
-                    
+                        <textarea rows="5" class="form-control" formControlName="message"
+                            placeholder="Write about yourself"></textarea>
+
                         <small class="text-danger" *ngIf="
                           bookingForm.get('message')?.touched &&
                           bookingForm.get('message')?.invalid

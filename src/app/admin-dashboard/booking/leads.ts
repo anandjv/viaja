@@ -19,4 +19,14 @@ export class Leads {
     return this.http.get<any>(this.api);
   }
   
+    // ✅ DELETE LEAD
+  deleteLead(id: number) {
+    return this.http.delete(`${this.api}/${id}`);
+  }
+
+updateLead(id: number, data: any) {
+  return this.http.put(`${this.api}/${id}`, data);
+}
+
+
 }

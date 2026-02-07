@@ -12,6 +12,10 @@
                         <th scope="col">Email</th>
                         <th scope="col">Mobile</th>
                         <th scope="col">Message</th>
+                        <th scope="col">Source</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Assigned To</th>
+
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -21,12 +25,25 @@
                         <td>{{ lead.name }}</td>
                         <td>{{ lead.email }}</td>
                         <td>{{ lead.mobile }}</td>
-                        <td>{{ lead.message }}</td>
+                        <td class="text-center align-middle">
+                            <button
+                                class="bg-transparent p-0 border-0 d-flex align-items-center justify-content-center mx-auto"
+                                title="View Message" (click)="openMessagePopup(lead.message)">
+                                <i class="ri-eye-line fs-5"></i>
+                            </button>
+                        </td>
+
+                        <td>{{ lead.source }}</td>
+                        <td class="text-success text-center align-middle">{{ lead.status }}</td>
+                        <td class="text-center align-middle">{{ lead.assigned_to }}</td>
+
                         <td>
                             <div class="d-flex gap-10">
-                                <button class="bg-transparent p-0 border-0" title="View">
-                                    <i class="ri-eye-line"></i>
+                                <button class="bg-transparent p-0 border-0" title="Edit Booking"
+                                    (click)="openEditPopup(lead)">
+                                    <i class="ri-edit-2-line"></i>
                                 </button>
+
 
                                 <button class="bg-transparent p-0 border-0 text-danger" title="Delete"
                                     (click)="deleteLead(lead.id)">
@@ -67,6 +84,103 @@
                     <i class="ri-arrow-right-long-line"></i>
                 </button>
             </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Edit Lead Modal -->
+<div class="modal fade show" *ngIf="showEditPopup" style="display:block; background: rgba(0,0,0,0.6);" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+
+            <!-- Header -->
+            <div class="modal-header">
+                <h5 class="modal-title">Booking Details</h5>
+                <button class="btn-close" (click)="closeEditPopup()"></button>
+            </div>
+
+            <!-- Body -->
+            <div class="modal-body">
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label class="form-label">Name</label>
+                        <input class="form-control" [value]="selectedLead?.name" readonly>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Email</label>
+                        <input class="form-control" [value]="selectedLead?.email" readonly>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Mobile</label>
+                        <input class="form-control" [value]="selectedLead?.mobile" readonly>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Source</label>
+                        <input class="form-control" [value]="selectedLead?.source" readonly>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Status</label>
+                        <input class="form-control" [value]="selectedLead?.status" readonly>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-control" rows="4" readonly>{{ selectedLead?.message }}</textarea>
+                    </div>
+
+                    <!-- ONLY EDITABLE FIELD -->
+                    <div class="col-md-12">
+                        <label class="form-label fw-semibold">Assigned To</label>
+                        <input type="text" class="form-control" [(ngModel)]="selectedLead.assigned_to"
+                            placeholder="Enter staff name">
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="modal-footer">
+                <button class="btn btn-secondary" (click)="closeEditPopup()">Cancel</button>
+                <button class="btn btn-primary" (click)="saveAssignedTo()">
+                    Save
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Lead Message Modal -->
+<div class="modal fade show" *ngIf="showMessagePopup" style="display: block; background: rgba(0,0,0,0.6);"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Lead Message</h5>
+                <button class="btn-close" (click)="closeMessagePopup()"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="p-3 border rounded bg-light"
+                    style="max-height: 300px; overflow-y: auto; white-space: pre-line;">
+                    {{ selectedMessage }}
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-secondary" (click)="closeMessagePopup()">
+                    Close
+                </button>
+            </div>
+
         </div>
     </div>
 </div>

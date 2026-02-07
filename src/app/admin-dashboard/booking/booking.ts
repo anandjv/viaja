@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Leads } from './leads';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-booking',
-    imports: [CommonModule],
+    imports: [CommonModule, FormsModule],
     templateUrl: './booking.html',
     styleUrl: './booking.scss',
 })
@@ -54,23 +55,68 @@ export class Booking {
         this.setPage(this.currentPage - 1);
     }
 
-    deleteLead(id: number): void {
-        if (!confirm('Delete this booking?')) return;
+deleteLead(id: number) {
+  this.leadsService.deleteLead(id).subscribe({
+    next: () => {
+      alert('Lead deleted');
+      this.loadLeads();
+    },
+    error: err => console.error(err)
+  });
+}
 
-        // remove from list
-        this.leads = this.leads.filter((l) => l.id !== id);
+showMessagePopup = false;
+selectedMessage = '';
 
-        // 🔁 recalculate pagination
-        this.totalPages = Math.ceil(this.leads.length / this.itemsPerPage);
+openMessagePopup(message: string) {
+  this.selectedMessage = message || 'No message available';
+  this.showMessagePopup = true;
+}
 
-        // ⛔ prevent invalid page (when last item deleted)
-        if (this.currentPage > this.totalPages) {
-            this.currentPage = this.totalPages || 1;
-        }
+closeMessagePopup() {
+  this.showMessagePopup = false;
+  this.selectedMessage = '';
+}
 
-        // refresh page data
-        this.setPage(this.currentPage);
-    }
+showEditPopup = false;
+selectedLead: any = null;
+
+openEditPopup(lead: any) {
+  this.selectedLead = { ...lead }; // clone to avoid instant table update
+  this.showEditPopup = true;
+}
+
+closeEditPopup() {
+  this.showEditPopup = false;
+  this.selectedLead = null;
+}
+
+saveAssignedTo() {
+  if (!this.selectedLead) return;
+
+  const payload = {
+    id: this.selectedLead.id,
+    name: this.selectedLead.name,
+    email: this.selectedLead.email,
+    mobile: this.selectedLead.mobile,
+    message: this.selectedLead.message,
+    source: this.selectedLead.source,
+    status: this.selectedLead.status,
+    assigned_to: this.selectedLead.assigned_to
+  };
+
+  this.leadsService.updateLead(this.selectedLead.id, payload)
+    .subscribe({
+      next: () => {
+        alert('Lead updated successfully');
+        this.closeEditPopup();
+        this.loadLeads();
+      },
+      error: (err) => {
+        console.error('Update failed', err);
+      }
+    });
+}
 
     // Tabs
     currentTab = 'tab1';
