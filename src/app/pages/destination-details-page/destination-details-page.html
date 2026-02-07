@@ -4,51 +4,11 @@
 <div class="destination-details-area ptb-120">
     <div class="container mw-1345">
         <div class="position-relative mb-50">
-            <div class="destination-slide">
+            <div class="destination-slide" *ngIf="destination?.images?.length">
                 <owl-carousel-o [options]="destinationDetailsImageSlider">
-                    <ng-template carouselSlide>
+                    <ng-template carouselSlide *ngFor="let img of destination.images">
                         <div class="destination-details-item">
-                            <img src="images/destination10.jpg" alt="destination">
-                        </div>
-                    </ng-template>
-                    <ng-template carouselSlide>
-                        <div class="destination-details-item">
-                            <img src="images/destination11.jpg" alt="destination">
-                        </div>
-                    </ng-template>
-                    <ng-template carouselSlide>
-                        <div class="destination-details-item">
-                            <img src="images/destination12.jpg" alt="destination">
-                        </div>
-                    </ng-template>
-                    <ng-template carouselSlide>
-                        <div class="destination-details-item">
-                            <img src="images/destination10.jpg" alt="destination">
-                        </div>
-                    </ng-template>
-                    <ng-template carouselSlide>
-                        <div class="destination-details-item">
-                            <img src="images/destination11.jpg" alt="destination">
-                        </div>
-                    </ng-template>
-                    <ng-template carouselSlide>
-                        <div class="destination-details-item">
-                            <img src="images/destination12.jpg" alt="destination">
-                        </div>
-                    </ng-template>
-                    <ng-template carouselSlide>
-                        <div class="destination-details-item">
-                            <img src="images/destination10.jpg" alt="destination">
-                        </div>
-                    </ng-template>
-                    <ng-template carouselSlide>
-                        <div class="destination-details-item">
-                            <img src="images/destination11.jpg" alt="destination">
-                        </div>
-                    </ng-template>
-                    <ng-template carouselSlide>
-                        <div class="destination-details-item">
-                            <img src="images/destination12.jpg" alt="destination">
+                            <img [src]="resolveImageUrl(img.image_url)" alt="destination" class="img-fluid" />
                         </div>
                     </ng-template>
                 </owl-carousel-o>

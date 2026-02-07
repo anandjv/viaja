@@ -6,6 +6,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { Destination } from '../../admin-dashboard/wishlist/destination';
 import { Wishlist } from '../../admin-dashboard/wishlist/wishlist';
+import { AuthService } from '../my-account-page/auth-service';
 
 @Component({
     selector: 'app-destinations-page',
@@ -24,6 +25,7 @@ export class DestinationsPage {
     constructor(
         private modalService: NgbModal,
         private destinationService: Destination,
+        public authService: AuthService
     ) {}
 
     ngOnInit(): void {
@@ -63,27 +65,60 @@ export class DestinationsPage {
         return index;
     }
 
-    openEditModal(dest: any) {
-        const modalRef = this.modalService.open(Wishlist, {
-            size: 'lg',
-            centered: true,
-            backdrop: 'static',
-        });
-
-        modalRef.componentInstance.editData = dest;
-
-        // ✅ LISTEN FOR MODAL CLOSE
-        modalRef.result.then(
-            (result) => {
-                if (result === 'success') {
-                    this.loadDestinations(); // 🔄 reload immediately
-                }
-            },
-            () => {
-                // dismissed (ESC / backdrop click)
-            },
-        );
+    isAdmin(): boolean {
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
+        return user.role === 'admin';
     }
+
+    // openEditModal(dest: any) {
+    //     const modalRef = this.modalService.open(Wishlist, {
+    //         size: 'lg',
+    //         centered: true,
+    //         backdrop: 'static',
+    //     });
+
+    //     modalRef.componentInstance.editData = dest;
+
+    //     // ✅ LISTEN FOR MODAL CLOSE
+    //     modalRef.result.then(
+    //         (result) => {
+    //             if (result === 'success') {
+    //                 this.loadDestinations(); // 🔄 reload immediately
+    //             }
+    //         },
+    //         () => {
+    //             // dismissed (ESC / backdrop click)
+    //         },
+    //     );
+    // }
+
+    openEditModal(dest: any) {
+    this.destinationService.getDestinationById(dest.id).subscribe({
+        next: (res: any) => {
+            const modalRef = this.modalService.open(Wishlist, {
+                size: 'lg',
+                centered: true,
+                backdrop: 'static',
+            });
+
+            // ✅ PASS FULL DESTINATION DETAILS
+            modalRef.componentInstance.editData = res.data;
+
+            modalRef.result.then(
+                (result) => {
+                    if (result === 'success') {
+                        this.loadDestinations(); // 🔄 refresh list
+                    }
+                },
+                () => {}
+            );
+        },
+        error: (err) => {
+            console.error('Failed to load destination details', err);
+        },
+    });
+}
+
 
     deleteDestination(id: number): void {
         if (!confirm('Are you sure you want to delete this destination?')) {

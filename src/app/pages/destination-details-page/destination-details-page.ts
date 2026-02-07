@@ -34,20 +34,58 @@ export class DestinationDetailsPage implements OnInit {
         });
     }
 
-    loadDestination(id: number) {
-        this.destinationService.getDestinations().subscribe((res) => {
-            this.destination = res.find((d) => Number(d.id) === id);
+    // loadDestination(id: number) {
+    //     this.destinationService.getDestinations().subscribe((res) => {
+    //         this.destination = res.find((d) => Number(d.id) === id);
 
-            if (this.destination?.highlight) {
-                const div = document.createElement('div');
-                div.innerHTML = this.destination.highlight;
-                this.highlightsArray = div.innerText
-                    .split('\n')
-                    .map((v) => v.trim())
-                    .filter(Boolean);
-            }
-        });
+    //         if (this.destination?.highlight) {
+    //             const div = document.createElement('div');
+    //             div.innerHTML = this.destination.highlight;
+    //             this.highlightsArray = div.innerText
+    //                 .split('\n')
+    //                 .map((v) => v.trim())
+    //                 .filter(Boolean);
+    //         }
+    //     });
+    // }
+
+loadDestination(id: number) {
+    this.destinationService.getDestinationById(id).subscribe((res: any) => {
+
+        // IMPORTANT
+        this.destination = res.data;
+
+        // Highlights
+        if (this.destination?.highlight) {
+            this.highlightsArray = this.destination.highlight
+                .split('\r\n')
+                .map((v: string) => v.trim())
+                .filter(Boolean);
+        }
+
+        console.log('Images:', this.destination.images);
+    });
+}
+
+
+trackById(index: number, item: any) {
+    return item.id;
+}
+
+resolveImageUrl(url: string): string {
+    if (!url) return '';
+
+    // Remove localhost backend URL
+    if (url.includes('localhost:8080')) {
+        const filename = url.split('/uploads/')[1];
+        return `https://www.inigotravels.com/bknd/uploads/${filename}`;
     }
+
+    // Already correct
+    return url;
+}
+
+
 
     // Owl Carousel
     destinationDetailsImageSlider: OwlOptions = {

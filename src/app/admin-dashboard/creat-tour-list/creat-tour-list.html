@@ -17,6 +17,9 @@
                 <a routerLink="/destination-details" class="d-block text-decoration-none city-tour-img">
                     <img [src]="'https://www.inigotravels.com/bknd/uploads/' + dest.image" alt="{{ dest.title }}" />
                 </a>
+                <button class="btn btn-warning btn-sm upload-btns" (click)="openUploadModal(dest.id)">
+                        Multiple Image Upload
+                    </button>
                 <div class="city-tour-content">
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="d-flex align-items-center review">

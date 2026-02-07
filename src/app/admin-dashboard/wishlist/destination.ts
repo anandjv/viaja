@@ -15,6 +15,12 @@ export class Destination {
     return this.http.get<any[]>(this.apiUrl);
   }
 
+  getDestinationById(id: number): Observable<any> {
+  return this.http.get<any>(
+    `https://www.inigotravels.com/bknd/api/destinations/${id}`
+  );
+}
+
   // ✅ POST destination (already working)
   createDestination(payload: FormData): Observable<any> {
     return this.http.post(this.apiUrl, payload);

@@ -1,22 +1,18 @@
 <!-- Navbar -->
-<nav
-    [class.style-two]="router.url === '/' || router.url === '/index-3'"
-    class="navbar navbar-expand-lg bg-primary position-relative"
-    [class.style-three]="router.url === '/index-4'"
-    [ngClass]="{'sticky': isSticky}"
-    [class.active]="classApplied"
->
+<nav [class.style-two]="router.url === '/' || router.url === '/index-3'"
+    class="navbar navbar-expand-lg bg-primary position-relative" [class.style-three]="router.url === '/index-4'"
+    [ngClass]="{'sticky': isSticky}" [class.active]="classApplied">
     <div class="container mw-1680">
         <div class="d-flex align-items-center">
             @if (router.url === '/index-4') {
-                <a class="navbar-brand p-0 m-0" routerLink="/">
-                    <img src="images/white-logo2.svg" class="white-logo" alt="white-logo">
-                </a>
+            <a class="navbar-brand p-0 m-0" routerLink="/">
+                <img src="images/white-logo2.svg" class="white-logo" alt="white-logo">
+            </a>
             } @else {
-                <a class="navbar-brand" routerLink="/">
-                    INIGO TRAVELS
-                  
-                </a>
+            <a class="navbar-brand" routerLink="/">
+                INIGO TRAVELS
+
+            </a>
             }
         </div>
         <div class="collapse navbar-collapse">
@@ -27,11 +23,12 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="dropdown-item" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                            <a class="dropdown-item" routerLink="/" routerLinkActive="active"
+                                [routerLinkActiveOptions]="{exact: true}">
                                 City Tour
                             </a>
                         </li>
-              
+
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -40,7 +37,8 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="dropdown-item" routerLink="/all-destinations" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                            <a class="dropdown-item" routerLink="/all-destinations" routerLinkActive="active"
+                                [routerLinkActiveOptions]="{exact: true}">
                                 All Destinations
                             </a>
                         </li>
@@ -52,22 +50,25 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="dropdown-item" routerLink="/tour-listing" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                            <a class="dropdown-item" routerLink="/tour-listing" routerLinkActive="active"
+                                [routerLinkActiveOptions]="{exact: true}">
                                 Tour Listing
                             </a>
                         </li>
-                 
+
                         <li>
-                            <a class="dropdown-item" routerLink="/booking-form" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                            <a class="dropdown-item" routerLink="/booking-form" routerLinkActive="active"
+                                [routerLinkActiveOptions]="{exact: true}">
                                 Booking Form
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" routerLink="/tour-guide" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                            <a class="dropdown-item" routerLink="/tour-guide" routerLinkActive="active"
+                                [routerLinkActiveOptions]="{exact: true}">
                                 Tour Guide
                             </a>
                         </li>
-                    
+
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -76,67 +77,45 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="dropdown-item" routerLink="/about-us" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                            <a class="dropdown-item" routerLink="/about-us" routerLinkActive="active"
+                                [routerLinkActiveOptions]="{exact: true}">
                                 About Us
                             </a>
                         </li>
-                  
+
                         <li>
-                            <a class="dropdown-item" routerLink="/contact-us" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                            <a class="dropdown-item" routerLink="/contact-us" routerLinkActive="active"
+                                [routerLinkActiveOptions]="{exact: true}">
                                 Contact Us
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
-                    <!-- <a class="nav-link dropdown-toggle" href="javascript:void(0);">
-                        Blog
-                    </a> -->
-                    <!-- <ul class="dropdown-menu">
-                        <li>
-                            <a class="dropdown-item" routerLink="/blog-grid" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                                Blog Grid
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/blog-right-sidebar" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                                Blog Right Sidebar
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/blog-left-sidebar" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                                Blog Left Sidebar
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/blog-details" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                                Blog Details
-                            </a>
-                        </li>
-                    </ul> -->
-                </li>
-          
+
             </ul>
         </div>
         <div class="others-options d-flex align-items-center">
-            <button
-                class="border-0 p-0 others-btn"
-                (click)="toggleSearchPopupClass()"
-            >
+            <button class="border-0 p-0 others-btn" (click)="toggleSearchPopupClass()">
                 <i class="ri-search-line"></i>
             </button>
-            <a routerLink="/cart" class="others-btn position-relative z-1">
+            <!-- <a routerLink="/cart" class="others-btn position-relative z-1">
                 <i class="ri-shopping-cart-line"></i>
                 <span class="count">0</span>
-            </a>
+            </a> -->
+            @if (isLoggedIn) {
+            <button type="button" class="btn btn-danger" (click)="logout()">
+                Logout
+            </button>
+            } @else {
             <a routerLink="/my-account" class="others-btn">
                 <i class="ri-user-line"></i>
             </a>
-            <button
-                type="button"
-                (click)="toggleClass()"
-                class="navbar-toggler p-0"
-            >
+            }
+
+            <!-- <a routerLink="/my-account" class="others-btn">
+                <i class="ri-user-line"></i>
+            </a> -->
+            <button type="button" (click)="toggleClass()" class="navbar-toggler p-0">
                 <span class="burger-menu">
                     <span class="top-bar"></span>
                     <span class="middle-bar"></span>
@@ -145,50 +124,32 @@
             </button>
         </div>
     </div>
-    <img
-        src="images/nav-shape.png"
-        class="position-absolute start-0 bottom-0 z-n1 nav-shape d-none d-lg-inline-block"
+    <img src="images/nav-shape.png" class="position-absolute start-0 bottom-0 z-n1 nav-shape d-none d-lg-inline-block"
         alt="nav-shape"
-        [class.d-lg-none]="router.url === '/' || router.url === '/index-3' || router.url === '/index-4'"
-    >
-    <img
-        src="images/nav-shape2.png"
-        class="position-absolute end-0 bottom-0 z-n1 nav-shape d-none d-lg-inline-block"
+        [class.d-lg-none]="router.url === '/' || router.url === '/index-3' || router.url === '/index-4'">
+    <img src="images/nav-shape2.png" class="position-absolute end-0 bottom-0 z-n1 nav-shape d-none d-lg-inline-block"
         alt="nav-shape"
-        [class.d-lg-none]="router.url === '/' || router.url === '/index-3' || router.url === '/index-4'"
-    >
+        [class.d-lg-none]="router.url === '/' || router.url === '/index-3' || router.url === '/index-4'">
 </nav>
 
 <!-- Modal -->
-<div
-    [class.active]="classSearchPopupApplied"
-    class="modal fade src-modal"
-    id="staticBackdrop"
-    aria-hidden="true"
-    tabindex="-1"
->
+<div [class.active]="classSearchPopupApplied" class="modal fade src-modal" id="staticBackdrop" aria-hidden="true"
+    tabindex="-1">
     <div class="modal-dialog modal-fullscreen">
-        <div
-            class="modal-content"
-            style="background-color: rgba(0, 0, 0, 0.6);"
-        >
+        <div class="modal-content" style="background-color: rgba(0, 0, 0, 0.6);">
             <div class="modal-header border-0">
                 <div class="modal-title"></div>
-                <button
-                    type="button"
-                    class="btn-close bg-primary text-white opacity-100"
-                    (click)="toggleSearchPopupClass()"
-                ></button>
+                <button type="button" class="btn-close bg-primary text-white opacity-100"
+                    (click)="toggleSearchPopupClass()"></button>
             </div>
             <div class="modal-body d-flex justify-content-center align-items-center">
-                <form
-                    class="w-100"
-                    style="max-width: 500px;"
-                >
+                <form class="w-100" style="max-width: 500px;">
                     <div class="position-relative">
                         <input id="searchInput" type="text" class="form-control bg-gray border-0" placeholder="Search">
-                        <button class="border-0 bg-primary d-flex justify-content-center align-items-center position-absolute top-50 end-0 translate-middle-y m-2 my-0 rounded-3" type="button" style="width: 40px; height: 40px;">
-                        <i class="ri-search-line text-white"></i>
+                        <button
+                            class="border-0 bg-primary d-flex justify-content-center align-items-center position-absolute top-50 end-0 translate-middle-y m-2 my-0 rounded-3"
+                            type="button" style="width: 40px; height: 40px;">
+                            <i class="ri-search-line text-white"></i>
                         </button>
                     </div>
                 </form>

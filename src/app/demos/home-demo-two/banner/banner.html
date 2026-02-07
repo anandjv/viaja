@@ -3,13 +3,18 @@
         <div class="row g-4">
             <div class="col-lg-5">
                 <div class="banner-img-two">
-                    <img src="images/banner-img.gif" alt="banner-img">
+                    <div class="banner-img-two">
+                        <video #videoPlayer autoplay muted loop playsinline (loadedmetadata)="onLoaded()">
+                            <source [src]="videoPath" type="video/mp4" />
+                        </video>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-7">
                 <div class="banner-content-two">
                     <h2>Travel. Discover. Live the Experience</h2>
-                    <p>Travel is not just movement - it is a passion written in the soul. India is a land where every journey tells a story.
+                    <p style="color: black;">Travel is not just movement - it is a passion written in the soul. India is a land where every
+                        journey tells a story.
                         Inigo Travels is here to turn your travel dreams into meaningful experiences</p>
                     <a routerLink="/booking-form" class="default-btn position-relative z-1">
                         Book a Tour
@@ -93,7 +98,7 @@
                                     <i class="ri-walk-line icon"></i>
                                 </div>
                             </div>
-                               <div class="mb-12">
+                            <div class="mb-12">
                                 <!-- Date -->
                                 <label class="label">Date</label>
                                 <app-date-range-picker />

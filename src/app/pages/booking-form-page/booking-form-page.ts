@@ -19,10 +19,10 @@ export class BookingFormPage {
 
   constructor(private fb: FormBuilder, private leadsService: Leads) {
     this.bookingForm = this.fb.group({
-      first_name: ['', Validators.required],
+      name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', Validators.required],
-      description: ['', Validators.required],
+      mobile: ['', Validators.required],
+      message: ['', Validators.required],
     });
   }
 

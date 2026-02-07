@@ -1,12 +1,11 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
-export class DestinationsImage {
-
-  private api = 'https://inigotravels.com/bknd/api/destinations/sync-images';
+export class Tour {
+    private api = 'https://inigotravels.com/bknd/api/tours/sync-images';
 
   constructor(private http: HttpClient) {}
 

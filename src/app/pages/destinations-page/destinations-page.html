@@ -15,18 +15,26 @@
                             <img [src]="'https://www.inigotravels.com/bknd/uploads/' + dest.image"
                                 alt="{{ dest.title }}" />
                         </a>
-                        <a class="tag d-inline-block text-decoration-none" href="javascript:void(0)"
-                            (click)="openEditModal(dest)">
-                            Edit
-                        </a>
-                        <a class="tags d-inline-block text-decoration-none" href="javascript:void(0)"
-                            style="color: white;"  (click)="deleteDestination(dest.id)"><svg xmlns="http://www.w3.org/2000/svg"
-                                width="16" height="16" fill="currentColor" class="bi bi-trash3-fill"
-                                viewBox="0 0 16 16">
-                                <path
-                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5" />
-                            </svg> &nbsp;&nbsp; Delete
-                        </a>
+                        <!-- ADMIN ACTIONS -->
+                        <div *ngIf="authService.isAdmin()">
+
+                            <a class="tag d-inline-block text-decoration-none" href="javascript:void(0)"
+                                (click)="openEditModal(dest)">
+                                Edit
+                            </a>
+
+                            <a class="tags d-inline-block text-decoration-none" href="javascript:void(0)"
+                                style="color: white;" (click)="deleteDestination(dest.id)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
+                                </svg>
+                                &nbsp; Delete
+                            </a>
+
+                        </div>
+
                     </div>
                     <div class="trending-destinations-content bg-fafafb">
                         <a [routerLink]="['/destination', dest.id]" class="title d-block text-decoration-none">

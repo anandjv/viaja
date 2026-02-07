@@ -4,6 +4,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { TourModal } from '../tour-modal/tour-modal';
 import { TourList } from '../tour-modal/tour-list';
+import { TourImageUploade } from '../tour-image-uploade/tour-image-uploade';
 
 @Component({
     selector: 'app-creat-tour-list',
@@ -54,6 +55,15 @@ open() {
     }
   );
 }
+
+ openUploadModal(destinationId: number) {
+    const modalRef = this.modalService.open(
+      TourImageUploade,
+      { size: 'xl', centered: true }
+    );
+
+    modalRef.componentInstance.destinationId = destinationId;
+  }
 
     trackByIndex(index: number): number {
         return index;

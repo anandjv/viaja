@@ -29,15 +29,8 @@ import { Reviews } from './admin-dashboard/reviews/reviews';
 import { Settings } from './admin-dashboard/settings/settings';
 import { Password } from './admin-dashboard/password/password';
 import { DestinationCreatPage } from './admin-dashboard/destination-creat-page/destination-creat-page';
-import { TamilNadu } from './pages/tamil-nadu/tamil-nadu';
-import { Karnataka } from './pages/karnataka/karnataka';
-import { Telangana } from './pages/telangana/telangana';
-import { GoldenTriangle } from './pages/golden-triangle/golden-triangle';
-import { JammuAndKashmir } from './pages/jammu-and-kashmir/jammu-and-kashmir';
-import { BollywoodMumbai } from './pages/bollywood-mumbai/bollywood-mumbai';
-import { Punjab } from './pages/punjab/punjab';
-import { Goa } from './pages/goa/goa';
 import { CreatTourList } from './admin-dashboard/creat-tour-list/creat-tour-list';
+import { AuthGuard } from './pages/my-account-page/auth-guard';
 
 export const routes: Routes = [
     {path: '', component: HomeDemoTwo},
@@ -61,30 +54,23 @@ export const routes: Routes = [
     {path: 'my-account', component: MyAccountPage},
     {path: 'forgot-password', component: ForgotPasswordPage},
     {path: 'contact-us', component: ContactUsPage},
-    // {path: 'tamil-nadu', component: TamilNadu},
-    // {path: 'karnataka', component: Karnataka},
-    // {path: 'telangana', component: Telangana},
-    // {path: 'golden-triangle', component: GoldenTriangle},
-    // {path: 'jammu-and-kashmir', component: JammuAndKashmir},
-    // {path: 'bollywood-mumbai', component: BollywoodMumbai},
-    // {path: 'punjab', component: Punjab},
-    // {path: 'goa', component: Goa},
 
 
-    {
-        path: 'admin-dashboard',
-        component: AdminDashboard,
-        children: [
-            {path: '', component: Dashboard},
-            {path: 'booking', component: Booking},
-            {path: 'wishlist', component: Wishlist},
-            {path: 'destination-creat-page', component: DestinationCreatPage},
-            {path: 'reviews', component: Reviews},
-            {path: 'settings', component: Settings},
-            {path: 'password', component: Password},
-            {path: 'creat-tour-list', component: CreatTourList}
-        ]
-    },
+{
+  path: 'admin-dashboard',
+  component: AdminDashboard,
+  canActivate: [AuthGuard],
+  children: [
+    { path: '', component: Dashboard },
+    { path: 'booking', component: Booking },
+    { path: 'wishlist', component: Wishlist },
+    { path: 'destination-creat-page', component: DestinationCreatPage },
+    { path: 'reviews', component: Reviews },
+    { path: 'settings', component: Settings },
+    { path: 'password', component: Password },
+    { path: 'creat-tour-list', component: CreatTourList }
+  ]
+},
     // Here add new pages component
 
     {path: '**', component: ErrorPage} // This line will remain down from the whole pages component list

@@ -1,6 +1,4 @@
-<app-page-banner
-    [title]="`My Account`"
-/>
+<app-page-banner [title]="`My Account`" />
 
 <!-- My Account -->
 <div class="my-account-area ptb-120">
@@ -8,16 +6,12 @@
         <div class="authentication-wrap">
             <ul class="nav nav-tabs border-0 justify-content-center authentication-tab" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button
-                        [ngClass]="{'active': currentTab === 'tab1'}"
-                        class="nav-link bg-transparent border-0"
-                        (click)="switchTab($event, 'tab1')"
-                        type="button"
-                    >
+                    <button [ngClass]="{'active': currentTab === 'tab1'}" class="nav-link bg-transparent border-0"
+                        (click)="switchTab($event, 'tab1')" type="button">
                         Login
                     </button>
                 </li>
-                <li class="nav-item" role="presentation">
+                <!-- <li class="nav-item" role="presentation">
                     <button
                         [ngClass]="{'active': currentTab === 'tab2'}"
                         class="nav-link bg-transparent border-0"
@@ -26,32 +20,35 @@
                     >
                         Register
                     </button>
-                </li>
+                </li> -->
             </ul>
             <div class="tab-content">
                 @if (currentTab === 'tab1') {
-                    <div class="tab-pane fade show active">
-                        <h3>Welcome to Viaja</h3>
-                        <form>
-                            <div class="mb-3">
-                                <label class="label">Username or email address</label>
-                                <input type="email" class="form-control" placeholder="Enter name or email">
-                            </div>
-                            <div class="mb-3">
-                                <label class="label">Password *</label>
-                                <input type="password" class="form-control" value="Password ">
-                            </div>
-                            <button type="submit" class="default-btn w-100 mb-3">Log In</button>
-                            <a routerLink="/forgot-password" class="text-decoration-none mb-3 d-inline-block">Forgot password?</a>
-                            <div class="or mb-3">
-                                <span>Or</span>
-                            </div>
-                            <button type="submit" class="default-btn bg-transparent w-100 text-secondary style-two mb-3">Continue with Google</button>
-                            <button type="submit" class="default-btn bg-transparent w-100 text-secondary">Continue with Facebook</button>
-                        </form>
-                    </div>
+                <div class="tab-pane fade show active">
+                    <h3>Welcome to Inigo Travels</h3>
+                    <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+                        <div class="mb-3">
+                            <label class="label">Username or email address</label>
+                            <input type="text" class="form-control" placeholder="Enter username" name="username"
+                                [(ngModel)]="loginData.username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="label">Password *</label>
+                            <input type="password" class="form-control" name="password" [(ngModel)]="loginData.password"
+                                required>
+                        </div>
+                        <button type="submit" class="default-btn w-100 mb-3">
+                            Log In
+                        </button>
+                        <button type="submit"
+                            class="default-btn bg-transparent w-100 text-secondary style-two mb-3">Continue with
+                            Google</button>
+                        <button type="submit" class="default-btn bg-transparent w-100 text-secondary">Continue with
+                            Facebook</button>
+                    </form>
+                </div>
                 }
-                @if (currentTab === 'tab2') {
+                <!-- @if (currentTab === 'tab2') {
                     <div class="tab-pane fade show active">
                         <h3>Create an Account</h3>
                         <form>
@@ -74,7 +71,7 @@
                             <button type="submit" class="default-btn w-100">Register</button>
                         </form>
                     </div>
-                }
+                } -->
             </div>
         </div>
     </div>

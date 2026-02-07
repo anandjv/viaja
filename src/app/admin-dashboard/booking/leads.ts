@@ -13,4 +13,10 @@ export class Leads {
   createLead(data: any): Observable<any> {
     return this.http.post(this.api, data);
   }
+
+  // ✅ ADD THIS
+  getLeads(): Observable<any> {
+    return this.http.get<any>(this.api);
+  }
+  
 }

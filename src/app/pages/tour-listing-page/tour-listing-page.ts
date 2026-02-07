@@ -6,6 +6,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { TourModal } from '../../admin-dashboard/tour-modal/tour-modal';
 import { TourList } from '../../admin-dashboard/tour-modal/tour-list';
+import { AuthService } from '../my-account-page/auth-service';
 
 @Component({
     selector: 'app-tour-listing-page',
@@ -24,6 +25,7 @@ export class TourListingPage {
     constructor(
         private modalService: NgbModal,
         private destinationService: TourList,
+         public authService: AuthService
     ) {}
 
     ngOnInit(): void {
@@ -38,6 +40,11 @@ export class TourListingPage {
             );
             this.setPage(1);
         });
+    }
+
+      isAdmin(): boolean {
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
+        return user.role === 'admin';
     }
 
     setPage(page: number): void {

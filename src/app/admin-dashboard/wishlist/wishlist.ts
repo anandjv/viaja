@@ -30,6 +30,9 @@ export class Wishlist {
     existingImageUrl: string | null = null;
     successMessage = '';
     errorMessage = '';
+    galleryImages: any[] = []; // existing images
+    removedImageIds: number[] = []; // deleted image IDs
+    newGalleryFiles: File[] = []; // new uploads
 
     constructor(
         public activeModal: NgbActiveModal,
@@ -55,18 +58,57 @@ export class Wishlist {
         }
     }
 
+    //  patchForm(data: any) {
+    //     this.form.patchValue({
+    //         stateTitle: data.title,
+    //         subheading: data.sub_heading,
+    //         description: data.description,
+    //         image: null,
+    //     });
+
+    //     // ✅ MAIN IMAGE
+    //     this.existingImageUrl = data.image
+    //         ? this.imageBaseUrl + data.image
+    //         : null;
+
+    //     // ✅ GALLERY IMAGES (🔥 THIS WAS MISSING)
+    //     this.galleryImages = data.images ?? [];
+
+    //     // 🔍 DEBUG (optional – check console)
+    //     console.log('Gallery Images:', this.galleryImages);
+
+    //     // ✅ HIGHLIGHTS
+    //     this.highlights.clear();
+
+    //     if (data.highlight) {
+    //         data.highlight.split('\n').forEach((h: string) => {
+    //             this.highlights.push(this.fb.control(h, Validators.required));
+    //         });
+    //     } else {
+    //         this.addHighlight();
+    //     }
+    // }
+
     patchForm(data: any) {
         this.form.patchValue({
             stateTitle: data.title,
             subheading: data.sub_heading,
             description: data.description,
-            image: null, // important
+            image: null,
         });
 
+        // ✅ MAIN IMAGE
         this.existingImageUrl = data.image
             ? this.imageBaseUrl + data.image
             : null;
 
+        // ✅ GALLERY IMAGES (🔥 THIS WAS MISSING)
+        this.galleryImages = data.images ?? [];
+
+        // 🔍 DEBUG (optional – check console)
+        console.log('Gallery Images:', this.galleryImages);
+
+        // ✅ HIGHLIGHTS
         this.highlights.clear();
 
         if (data.highlight) {
@@ -78,47 +120,130 @@ export class Wishlist {
         }
     }
 
-    updateDestination(id: number, payload: FormData): Observable<any> {
-        return this.http.post(
-            `https://www.inigotravels.com/bknd/api/destinations/${id}`,
-            payload,
-        );
+removeGalleryImage(imageId: number, index: number) {
+    if (!confirm('Delete this image?')) return;
+    this.galleryImages.splice(index, 1);
+}
+
+    onGalleryFilesChange(event: any) {
+        const files: FileList = event.target.files;
+
+        for (let i = 0; i < files.length; i++) {
+            this.newGalleryFiles.push(files[i]);
+        }
     }
 
-    update() {
-        if (this.form.invalid) {
-            this.form.markAllAsTouched();
-            return;
-        }
+// syncGalleryImages() {
+//     const formData = new FormData();
 
-        const formData = new FormData();
+//     // ✅ KEEP existing images
+//     this.galleryImages.forEach(img => {
+//         formData.append('keep_image_ids[]', img.id);
+//     });
 
-        const highlightsText = this.highlights.value
-            .filter((h: string) => h.trim() !== '')
-            .join('\n');
+//     // ✅ ADD new images
+//     this.newGalleryFiles.forEach(file => {
+//         formData.append('images[]', file);
+//     });
 
-        formData.append('title', this.form.value.stateTitle);
-        formData.append('sub_heading', this.form.value.subheading);
-        formData.append('description', this.form.value.description);
-        formData.append('highlight', highlightsText);
+//     return this.http.post(
+//          `https://www.inigotravels.com/bknd/api/destinations/${id}`,
+//         formData
+//     );
+// }
 
-        // ✅ ONLY when user uploads new image
-        if (this.form.value.image) {
-            formData.append('image', this.form.value.image); // binary
-        }
+updateDestination(id: number, payload: FormData): Observable<any> {
+    return this.http.post(
+        `https://inigotravels.com/bknd/api/destinations/${id}`,
+        payload
+    );
+}
 
-        this.destinationService
-            .updateDestination(this.editData.id, formData)
-            .subscribe({
-                next: () => {
-                    this.successMessage = 'Updated successfully!';
-                    setTimeout(() => {
-                        this.activeModal.close('success');
-                    }, 1500);
-                },
-                error: (err) => console.error(err),
-            });
+
+    // update() {
+    //     if (this.form.invalid) {
+    //         this.form.markAllAsTouched();
+    //         return;
+    //     }
+
+    //     const formData = new FormData();
+
+    //     const highlightsText = this.highlights.value
+    //         .filter((h: string) => h.trim() !== '')
+    //         .join('\n');
+
+    //     formData.append('title', this.form.value.stateTitle);
+    //     formData.append('sub_heading', this.form.value.subheading);
+    //     formData.append('description', this.form.value.description);
+    //     formData.append('highlight', highlightsText);
+
+    //     // ✅ ONLY when user uploads new image
+    //     if (this.form.value.image) {
+    //         formData.append('image', this.form.value.image); // binary
+    //     }
+
+    //     this.destinationService
+    //         .updateDestination(this.editData.id, formData)
+    //         .subscribe({
+    //             next: () => {
+    //                 this.successMessage = 'Updated successfully!';
+    //                 setTimeout(() => {
+    //                     this.activeModal.close('success');
+    //                 }, 1500);
+    //             },
+    //             error: (err) => console.error(err),
+    //         });
+    // }
+
+update() {
+    if (this.form.invalid) {
+        this.form.markAllAsTouched();
+        return;
     }
+
+    const formData = new FormData();
+
+    const highlightsText = this.highlights.value
+        .filter((h: string) => h.trim() !== '')
+        .join('\n');
+
+    // ✅ BASIC FIELDS
+    formData.append('title', this.form.value.stateTitle);
+    formData.append('sub_heading', this.form.value.subheading);
+    formData.append('description', this.form.value.description);
+    formData.append('highlight', highlightsText);
+
+    // ✅ MAIN IMAGE (only if changed)
+    if (this.form.value.image) {
+        formData.append('image', this.form.value.image);
+    }
+
+    // ✅ KEEP EXISTING GALLERY IMAGES
+    this.galleryImages.forEach(img => {
+        formData.append('keep_image_ids[]', img.id);
+    });
+
+    // ✅ ADD NEW GALLERY IMAGES
+    this.newGalleryFiles.forEach(file => {
+        formData.append('images[]', file);
+    });
+
+    // ✅ SINGLE API CALL
+    this.destinationService
+        .updateDestination(this.editData.id, formData)
+        .subscribe({
+            next: () => {
+                this.successMessage = 'Updated successfully!';
+                setTimeout(() => {
+                    this.activeModal.close('success');
+                }, 1200);
+            },
+            error: err => {
+                console.error('Update failed', err);
+                this.errorMessage = 'Update failed';
+            },
+        });
+}
 
     /* -----------------------
        FORM INIT

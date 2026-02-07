@@ -1,6 +1,7 @@
 import { NgClass } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { AuthService } from '../../pages/my-account-page/auth-service';
 
 @Component({
     selector: 'app-navbar',
@@ -11,7 +12,8 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 export class Navbar {
 
     constructor(
-        public router: Router
+        public router: Router,
+        public authService: AuthService
     ) {}
 
     // Navbar Sticky
@@ -37,5 +39,13 @@ export class Navbar {
     toggleSearchPopupClass() {
         this.classSearchPopupApplied = !this.classSearchPopupApplied;
     }
+    
+    get isLoggedIn(): boolean {
+        return this.authService.isLoggedIn();
+    }
 
+    logout() {
+        this.authService.logout();
+        this.router.navigate(['/my-account']);
+    }
 }

@@ -1,98 +1,127 @@
 <form [formGroup]="form">
 
     <form [formGroup]="form">
-    <!-- SUCCESS MESSAGE -->
-    <div class="alert alert-success text-center" *ngIf="successMessage">
-        ✅ {{ successMessage }}
-    </div>
+        <!-- SUCCESS MESSAGE -->
+        <div class="alert alert-success text-center" *ngIf="successMessage">
+            ✅ {{ successMessage }}
+        </div>
 
-    <!-- ERROR MESSAGE -->
-    <div class="alert alert-danger text-center" *ngIf="errorMessage">
-        ❌ {{ errorMessage }}
-    </div>
+        <!-- ERROR MESSAGE -->
+        <div class="alert alert-danger text-center" *ngIf="errorMessage">
+            ❌ {{ errorMessage }}
+        </div>
 
-    <div class="modal-body">
+        <div class="modal-body">
 
-        <!-- Image -->
-        <div class="mb-3">
-            <label class="form-label">Upload Image</label>
-            <input type="file" accept="image/*" (change)="onFileChange($event)" class="form-control" />
+            <!-- Image -->
+            <div class="mb-3">
+                <label class="form-label">Upload Image</label>
+                <input type="file" accept="image/*" (change)="onFileChange($event)" class="form-control" />
 
-            <!-- Validation -->
-            <div *ngIf="form.get('image')?.touched && form.get('image')?.invalid">
-                <small class="text-danger">Image is required</small>
+                <!-- Validation -->
+                <div *ngIf="form.get('image')?.touched && form.get('image')?.invalid">
+                    <small class="text-danger">Image is required</small>
+                </div>
             </div>
 
-        </div>
-
-        <!-- EXISTING IMAGE PREVIEW (EDIT MODE) -->
-        <div class="mb-3 text-center" *ngIf="isEditMode && existingImageUrl">
-            <label class="form-label d-block">Current Image</label>
-            <img [src]="existingImageUrl" class="img-thumbnail" style="max-width: 250px;" alt="Current Image" />
-        </div>
-
-
-        <!-- State Title -->
-        <div class="mb-3">
-            <label class="form-label">State Title</label>
-            <input type="text" class="form-control" formControlName="stateTitle" placeholder="State Title" />
-            <div class="text-danger" *ngIf="form.get('stateTitle')?.touched && form.get('stateTitle')?.invalid">
-                Title is required (min 3 characters)
+            <!-- EXISTING IMAGE PREVIEW (EDIT MODE) -->
+            <div class="mb-3 text-center" *ngIf="isEditMode && existingImageUrl">
+                <label class="form-label d-block">Current Image</label>
+                <img [src]="existingImageUrl" class="img-thumbnail" style="max-width: 250px;" alt="Current Image" />
             </div>
-        </div>
 
-        <!-- Sub Title -->
-        <div class="mb-3">
-            <label class="form-label">Sub Heading Title</label>
-            <input type="text" class="form-control" formControlName="subheading" placeholder="Sub Heading Title" />
-            <div class="text-danger" *ngIf="form.get('subheading')?.touched && form.get('subheading')?.invalid">
-                Title is required (min 3 characters)
+            <!-- GALLERY IMAGES -->
+            <!-- GALLERY IMAGES -->
+            <div class="mb-4" *ngIf="isEditMode && galleryImages.length > 0">
+                <label class="form-label">Gallery Images</label>
+
+                <div class="row g-3">
+                    <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let img of galleryImages; let i = index">
+                        <div class="card h-100 shadow-sm position-relative">
+
+                            <!-- DELETE BUTTON -->
+                            <button type="button" class="btn btn-danger btn-sm position-absolute top-0 end-0 m-1"
+                                (click)="removeGalleryImage(img.id, i)">
+                                ✕
+                            </button>
+
+                            <img [src]="img.image_url" class="card-img-top" style="height: 140px; object-fit: cover;" />
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <!-- Description -->
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" formControlName="description"
-                rows="3"></textarea>
-            <div class="text-danger" *ngIf="form.get('description')?.touched && form.get('description')?.invalid">
-                Description is required
+            <!-- ADD NEW GALLERY IMAGES -->
+            <div class="mb-3" *ngIf="isEditMode">
+                <label class="form-label">Add Gallery Images</label>
+                <input type="file" class="form-control" multiple accept="image/*"
+                    (change)="onGalleryFilesChange($event)" />
             </div>
-        </div>
 
-        <!-- Highlights -->
 
-        <div formArrayName="highlights">
-            <div class="mb-2 d-flex gap-2" *ngFor="let ctrl of highlights.controls; let i = index">
-                <input type="text" class="form-control" [formControlName]="i" placeholder="Highlight {{ i + 1 }}" />
-
-                <!-- ADD -->
-                <button type="button" class="btn btn-success" (click)="addHighlight()"
-                    *ngIf="i === highlights.length - 1 && highlights.length < 9">
-                    +
-                </button>
-
-                <!-- REMOVE -->
-                <button type="button" class="btn btn-danger" (click)="removeHighlight(i)" *ngIf="highlights.length > 1">
-                    −
-                </button>
+            <!-- State Title -->
+            <div class="mb-3">
+                <label class="form-label">State Title</label>
+                <input type="text" class="form-control" formControlName="stateTitle" placeholder="State Title" />
+                <div class="text-danger" *ngIf="form.get('stateTitle')?.touched && form.get('stateTitle')?.invalid">
+                    Title is required (min 3 characters)
+                </div>
             </div>
+
+            <!-- Sub Title -->
+            <div class="mb-3">
+                <label class="form-label">Sub Heading Title</label>
+                <input type="text" class="form-control" formControlName="subheading" placeholder="Sub Heading Title" />
+                <div class="text-danger" *ngIf="form.get('subheading')?.touched && form.get('subheading')?.invalid">
+                    Title is required (min 3 characters)
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" formControlName="description"
+                    rows="3"></textarea>
+                <div class="text-danger" *ngIf="form.get('description')?.touched && form.get('description')?.invalid">
+                    Description is required
+                </div>
+            </div>
+
+            <!-- Highlights -->
+
+            <div formArrayName="highlights">
+                <label for="exampleFormControlTextarea1" class="form-label">Highlight</label>
+                <div class="mb-2 d-flex gap-2" *ngFor="let ctrl of highlights.controls; let i = index">
+                    <input type="text" class="form-control" [formControlName]="i" placeholder="Highlight {{ i + 1 }}" />
+
+                    <!-- ADD -->
+                    <button type="button" class="btn btn-success" (click)="addHighlight()"
+                        *ngIf="i === highlights.length - 1 && highlights.length < 9">
+                        +
+                    </button>
+
+                    <!-- REMOVE -->
+                    <button type="button" class="btn btn-danger" (click)="removeHighlight(i)"
+                        *ngIf="highlights.length > 1">
+                        −
+                    </button>
+                </div>
+            </div>
+
+
         </div>
 
+        <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" (click)="close()">Close</button>
 
-    </div>
+            <button class="btn btn-primary" type="button" *ngIf="!isEditMode" (click)="save()">
+                Save
+            </button>
 
-    <div class="modal-footer">
-        <button class="btn btn-secondary" type="button" (click)="close()">Close</button>
+            <button class="btn btn-warning" type="button" *ngIf="isEditMode" (click)="update()">
+                Update
+            </button>
 
-        <button class="btn btn-primary" type="button" *ngIf="!isEditMode" (click)="save()">
-            Save
-        </button>
+        </div>
 
-        <button class="btn btn-warning" type="button" *ngIf="isEditMode" (click)="update()">
-            Update
-        </button>
-
-    </div>
-
-</form>
+    </form>
