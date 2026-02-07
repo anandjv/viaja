@@ -29,6 +29,7 @@ export class CreatTourList {
         this.tourService.getTour().subscribe({
             next: (res: any[]) => {
                 this.destinations = res;
+                console.log('Destinations loaded:', this.destinations);
             },
             error: (err) => {
                 console.error('Error loading destinations', err);
@@ -56,13 +57,13 @@ open() {
   );
 }
 
- openUploadModal(destinationId: number) {
+ openUploadModal(toursId: number) {
     const modalRef = this.modalService.open(
       TourImageUploade,
       { size: 'xl', centered: true }
     );
 
-    modalRef.componentInstance.destinationId = destinationId;
+    modalRef.componentInstance.toursId = toursId;
   }
 
     trackByIndex(index: number): number {

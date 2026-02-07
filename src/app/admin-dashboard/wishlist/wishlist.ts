@@ -122,8 +122,11 @@ export class Wishlist {
 
 removeGalleryImage(imageId: number, index: number) {
     if (!confirm('Delete this image?')) return;
+
+    // Just remove from array
     this.galleryImages.splice(index, 1);
 }
+
 
     onGalleryFilesChange(event: any) {
         const files: FileList = event.target.files;
@@ -133,24 +136,28 @@ removeGalleryImage(imageId: number, index: number) {
         }
     }
 
-// syncGalleryImages() {
-//     const formData = new FormData();
+syncGalleryImages(destinationId: number): Observable<any> {
+    const formData = new FormData();
 
-//     // ✅ KEEP existing images
-//     this.galleryImages.forEach(img => {
-//         formData.append('keep_image_ids[]', img.id);
-//     });
+    // 🔹 destination id
+    formData.append('destination_id', destinationId.toString());
 
-//     // ✅ ADD new images
-//     this.newGalleryFiles.forEach(file => {
-//         formData.append('images[]', file);
-//     });
+    // 🔹 KEEP existing images
+    this.galleryImages.forEach(img => {
+        formData.append('keep_image_ids[]', img.id);
+    });
 
-//     return this.http.post(
-//          `https://www.inigotravels.com/bknd/api/destinations/${id}`,
-//         formData
-//     );
-// }
+    // 🔹 ADD new images
+    this.newGalleryFiles.forEach(file => {
+        formData.append('images[]', file);
+    });
+
+    return this.http.post(
+        'https://inigotravels.com/bknd/api/destinations/sync-images',
+        formData
+    );
+}
+
 
 updateDestination(id: number, payload: FormData): Observable<any> {
     return this.http.post(
@@ -213,30 +220,30 @@ update() {
     formData.append('description', this.form.value.description);
     formData.append('highlight', highlightsText);
 
-    // ✅ MAIN IMAGE (only if changed)
+    // ✅ MAIN IMAGE
     if (this.form.value.image) {
         formData.append('image', this.form.value.image);
     }
 
-    // ✅ KEEP EXISTING GALLERY IMAGES
-    this.galleryImages.forEach(img => {
-        formData.append('keep_image_ids[]', img.id);
-    });
-
-    // ✅ ADD NEW GALLERY IMAGES
-    this.newGalleryFiles.forEach(file => {
-        formData.append('images[]', file);
-    });
-
-    // ✅ SINGLE API CALL
+    // 🔹 STEP 1: update destination
     this.destinationService
         .updateDestination(this.editData.id, formData)
         .subscribe({
             next: () => {
-                this.successMessage = 'Updated successfully!';
-                setTimeout(() => {
-                    this.activeModal.close('success');
-                }, 1200);
+
+                // 🔹 STEP 2: sync gallery images
+                this.syncGalleryImages(this.editData.id).subscribe({
+                    next: () => {
+                        this.successMessage = 'Updated successfully!';
+                        setTimeout(() => {
+                            this.activeModal.close('success');
+                        }, 1200);
+                    },
+                    error: err => {
+                        console.error('Gallery sync failed', err);
+                        this.errorMessage = 'Gallery update failed';
+                    },
+                });
             },
             error: err => {
                 console.error('Update failed', err);
@@ -244,6 +251,7 @@ update() {
             },
         });
 }
+
 
     /* -----------------------
        FORM INIT

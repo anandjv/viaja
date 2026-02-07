@@ -13,7 +13,7 @@ export class TourImageUploade {
  selectedFiles: File[] = [];
   previews: string[] = [];
   loading = false;
-  @Input() destinationId!: number;
+  @Input() toursId!: number;
 
   constructor(
     public activeModal: NgbActiveModal,
@@ -35,12 +35,12 @@ export class TourImageUploade {
   }
 
 upload() {
-    if (!this.destinationId || !this.selectedFiles.length) return;
+    if (!this.toursId || !this.selectedFiles.length) return;
 
     this.loading = true;
 
     this.imageService
-      .syncImages(this.destinationId, this.selectedFiles)
+      .syncImages(this.toursId, this.selectedFiles)
       .subscribe({
         next: () => {
           this.loading = false;

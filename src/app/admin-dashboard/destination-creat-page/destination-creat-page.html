@@ -15,7 +15,7 @@
         <ng-template carouselSlide *ngFor="let dest of destinations">
             <div class="city-tour-single-item">
                 <div class="city-tour-img position-relative">
-                    <a routerLink="/destination-details" class="d-block text-decoration-none">
+                    <a class="d-block text-decoration-none">
                         <img [src]="'https://www.inigotravels.com/bknd/uploads/' + dest.image" alt="{{ dest.title }}" />
                     </a>
 
@@ -40,16 +40,6 @@
                     <a routerLink="/destination-details" class="text-decoration-none d-block title">
                         <h3>{{ dest.title }}</h3>
                     </a>
-                    <div class="book-hours d-flex justify-content-between align-items-center">
-                        <a routerLink="/booking-form" class="read-more">
-                            <span>Book Now</span>
-                            <i class="ri-arrow-right-long-line"></i>
-                        </a>
-                        <div class="d-flex align-items-center gap-10">
-                            <i class="ri-time-line text-primary"></i>
-                            <span class="fs-14">2.5 hours</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </ng-template>

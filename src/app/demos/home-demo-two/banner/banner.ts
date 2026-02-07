@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-banner',
-    imports: [DateRangePicker, RouterLink],
+    imports: [RouterLink],
     templateUrl: './banner.html',
     styleUrl: './banner.scss',
 })

@@ -10,10 +10,10 @@ export class Tour {
   constructor(private http: HttpClient) {}
 
   // ✅ DESTINATION ID SENT TO BACKEND
- syncImages(destinationId: number, files: File[]) {
+ syncImages(toursId: number, files: File[]) {
     const formData = new FormData();
 
-    formData.append('destination_id', destinationId.toString());
+    formData.append('id', toursId.toString());
 
     files.forEach(file => {
       formData.append('images[]', file);
